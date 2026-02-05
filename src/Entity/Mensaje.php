@@ -19,6 +19,14 @@ class Mensaje
     #[ORM\Column]
     private ?\DateTime $fecha_envio = null;
 
+    #[ORM\ManyToOne(inversedBy: 'mensajes')]
+    #[ORM\JoinColumn(nullable: false)]
+    private ?Grupo $grupo = null;
+
+    #[ORM\ManyToOne(inversedBy: 'mensajes')]
+    #[ORM\JoinColumn(nullable: false)]
+    private ?Usuario $autor = null;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -51,6 +59,30 @@ class Mensaje
     public function setFechaEnvio(\DateTime $fecha_envio): static
     {
         $this->fecha_envio = $fecha_envio;
+
+        return $this;
+    }
+
+    public function getGrupo(): ?Grupo
+    {
+        return $this->grupo;
+    }
+
+    public function setGrupo(?Grupo $grupo): static
+    {
+        $this->grupo = $grupo;
+
+        return $this;
+    }
+
+    public function getAutor(): ?Usuario
+    {
+        return $this->autor;
+    }
+
+    public function setAutor(?Usuario $autor): static
+    {
+        $this->autor = $autor;
 
         return $this;
     }

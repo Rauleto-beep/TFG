@@ -5,6 +5,8 @@ namespace App\Entity;
 use App\Enum\EstadoTarea;
 use App\Enum\Prioridad;
 use App\Repository\TareaRepository;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
 #[ORM\Entity(repositoryClass: TareaRepository::class)]
@@ -35,6 +37,25 @@ class Tarea
 
     #[ORM\Column(enumType: Prioridad::class)]
     private ?Prioridad $prioridad = null;
+
+    /**
+     * @var Collection<int, Usuario>
+     */
+    #[ORM\ManyToMany(targetEntity: Usuario::class, inversedBy: 'tareas')]
+    private Collection $usuarios;
+
+    #[ORM\ManyToOne(inversedBy: 'tareas')]
+    #[ORM\JoinColumn(nullable: false)]
+    private ?Categoria $categoria = null;
+
+    #[ORM\ManyToOne(inversedBy: 'tareas')]
+    #[ORM\JoinColumn(nullable: false)]
+    private ?Grupo $grupo = null;
+
+    public function __construct()
+    {
+        $this->usuarios = new ArrayCollection();
+    }
 
     public function getId(): ?int
     {
@@ -128,6 +149,54 @@ class Tarea
     public function setPrioridad(Prioridad $prioridad): static
     {
         $this->prioridad = $prioridad;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, Usuario>
+     */
+    public function getUsuarios(): Collection
+    {
+        return $this->usuarios;
+    }
+
+    public function addUsuario(Usuario $usuario): static
+    {
+        if (!$this->usuarios->contains($usuario)) {
+            $this->usuarios->add($usuario);
+        }
+
+        return $this;
+    }
+
+    public function removeUsuario(Usuario $usuario): static
+    {
+        $this->usuarios->removeElement($usuario);
+
+        return $this;
+    }
+
+    public function getCategoria(): ?Categoria
+    {
+        return $this->categoria;
+    }
+
+    public function setCategoria(?Categoria $categoria): static
+    {
+        $this->categoria = $categoria;
+
+        return $this;
+    }
+
+    public function getGrupo(): ?Grupo
+    {
+        return $this->grupo;
+    }
+
+    public function setGrupo(?Grupo $grupo): static
+    {
+        $this->grupo = $grupo;
 
         return $this;
     }

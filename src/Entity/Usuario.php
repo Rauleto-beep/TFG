@@ -3,6 +3,8 @@
 namespace App\Entity;
 
 use App\Repository\UsuarioRepository;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
 
@@ -25,6 +27,31 @@ class Usuario
 
     #[ORM\Column(type: Types::DATE_MUTABLE)]
     private ?\DateTime $fecha_creacion = null;
+
+    /**
+     * @var Collection<int, Tarea>
+     */
+    #[ORM\ManyToMany(targetEntity: Tarea::class, mappedBy: 'usuarios')]
+    private Collection $tareas;
+
+    /**
+     * @var Collection<int, Mensaje>
+     */
+    #[ORM\OneToMany(targetEntity: Mensaje::class, mappedBy: 'autor')]
+    private Collection $mensajes;
+
+    /**
+     * @var Collection<int, Grupo>
+     */
+    #[ORM\ManyToMany(targetEntity: Grupo::class, mappedBy: 'usuarios')]
+    private Collection $grupos;
+
+    public function __construct()
+    {
+        $this->tareas = new ArrayCollection();
+        $this->mensajes = new ArrayCollection();
+        $this->grupos = new ArrayCollection();
+    }
 
     public function getId(): ?int
     {
@@ -82,6 +109,90 @@ class Usuario
     public function setFechaCreacion(\DateTime $fecha_creacion): static
     {
         $this->fecha_creacion = $fecha_creacion;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, Tarea>
+     */
+    public function getTareas(): Collection
+    {
+        return $this->tareas;
+    }
+
+    public function addTarea(Tarea $tarea): static
+    {
+        if (!$this->tareas->contains($tarea)) {
+            $this->tareas->add($tarea);
+            $tarea->addUsuario($this);
+        }
+
+        return $this;
+    }
+
+    public function removeTarea(Tarea $tarea): static
+    {
+        if ($this->tareas->removeElement($tarea)) {
+            $tarea->removeUsuario($this);
+        }
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, Mensaje>
+     */
+    public function getMensajes(): Collection
+    {
+        return $this->mensajes;
+    }
+
+    public function addMensaje(Mensaje $mensaje): static
+    {
+        if (!$this->mensajes->contains($mensaje)) {
+            $this->mensajes->add($mensaje);
+            $mensaje->setAutor($this);
+        }
+
+        return $this;
+    }
+
+    public function removeMensaje(Mensaje $mensaje): static
+    {
+        if ($this->mensajes->removeElement($mensaje)) {
+            // set the owning side to null (unless already changed)
+            if ($mensaje->getAutor() === $this) {
+                $mensaje->setAutor(null);
+            }
+        }
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, Grupo>
+     */
+    public function getGrupos(): Collection
+    {
+        return $this->grupos;
+    }
+
+    public function addGrupo(Grupo $grupo): static
+    {
+        if (!$this->grupos->contains($grupo)) {
+            $this->grupos->add($grupo);
+            $grupo->addUsuario($this);
+        }
+
+        return $this;
+    }
+
+    public function removeGrupo(Grupo $grupo): static
+    {
+        if ($this->grupos->removeElement($grupo)) {
+            $grupo->removeUsuario($this);
+        }
 
         return $this;
     }
