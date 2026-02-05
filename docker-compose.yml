@@ -1,0 +1,31 @@
+services:
+  database:         # Asegúrate de que esta palabra SOLO aparezca aquí
+    image: mysql:8.0
+    environment:
+      MYSQL_ROOT_PASSWORD: 1234
+      MYSQL_DATABASE: bifrost_db
+    ports:
+      - "3306:3306"
+
+  php:
+    build:
+      context: .
+      dockerfile: docker/php/Dockerfile
+    volumes:
+      - .:/var/www/html
+    depends_on:
+      - database
+
+  apache:
+    image: httpd:2.4-alpine
+    ports:
+      - "8080:80"
+    volumes:
+      - .:/usr/local/apache2/htdocs/
+    command: >
+      sh -c "sed -i 's#DocumentRoot \"/usr/local/apache2/htdocs\"#DocumentRoot \"/usr/local/apache2/htdocs/public\"#' /usr/local/apache2/conf/httpd.conf &&
+             sed -i 's#<Directory \"/usr/local/apache2/htdocs\">#<Directory \"/usr/local/apache2/htdocs/public\">#' /usr/local/apache2/conf/httpd.conf &&
+             sed -i 's#^#LoadModule proxy_module modules/mod_proxy.so\\nLoadModule proxy_fcgi_module modules/mod_proxy_fcgi.so\\n#' /usr/local/apache2/conf/httpd.conf &&
+             echo 'ProxyPassMatch ^/(.*\\.php(/.*)?)$ fcgi://php:9000/var/www/html/public/$$1' >> /usr/local/apache2/conf/httpd.conf &&
+             echo 'DirectoryIndex index.php' >> /usr/local/apache2/conf/httpd.conf &&
+             httpd-foreground"
