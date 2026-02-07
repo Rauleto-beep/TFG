@@ -3,7 +3,7 @@
 namespace App\Enum;
 
 
-enum EstadoTarea: string
+enum EstadoSolicitud: string
 {
     case PENDIENTE = 'Pendiente';
     case ACEPTADA = 'Aceptada';
