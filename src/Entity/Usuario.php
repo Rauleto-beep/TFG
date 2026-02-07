@@ -46,11 +46,25 @@ class Usuario
     #[ORM\ManyToMany(targetEntity: Grupo::class, mappedBy: 'usuarios')]
     private Collection $grupos;
 
+    /**
+     * @var Collection<int, Contacto>
+     */
+    #[ORM\OneToMany(targetEntity: Contacto::class, mappedBy: 'usuarioSolicitante')]
+    private Collection $solicitudesEnviadas;
+
+    /**
+     * @var Collection<int, Contacto>
+     */
+    #[ORM\OneToMany(targetEntity: Contacto::class, mappedBy: 'usuarioReceptor')]
+    private Collection $solicitudesRecibidas;
+
     public function __construct()
     {
         $this->tareas = new ArrayCollection();
         $this->mensajes = new ArrayCollection();
         $this->grupos = new ArrayCollection();
+        $this->solicitudesEnviadas = new ArrayCollection();
+        $this->solicitudesRecibidas = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -192,6 +206,66 @@ class Usuario
     {
         if ($this->grupos->removeElement($grupo)) {
             $grupo->removeUsuario($this);
+        }
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, Contacto>
+     */
+    public function getSolicitudesEnviadas(): Collection
+    {
+        return $this->solicitudesEnviadas;
+    }
+
+    public function addSolicitudesEnviada(Contacto $solicitudesEnviada): static
+    {
+        if (!$this->solicitudesEnviadas->contains($solicitudesEnviada)) {
+            $this->solicitudesEnviadas->add($solicitudesEnviada);
+            $solicitudesEnviada->setUsuarioSolicitante($this);
+        }
+
+        return $this;
+    }
+
+    public function removeSolicitudesEnviada(Contacto $solicitudesEnviada): static
+    {
+        if ($this->solicitudesEnviadas->removeElement($solicitudesEnviada)) {
+            // set the owning side to null (unless already changed)
+            if ($solicitudesEnviada->getUsuarioSolicitante() === $this) {
+                $solicitudesEnviada->setUsuarioSolicitante(null);
+            }
+        }
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, Contacto>
+     */
+    public function getSolicitudesRecibidas(): Collection
+    {
+        return $this->solicitudesRecibidas;
+    }
+
+    public function addSolicitudesRecibida(Contacto $solicitudesRecibida): static
+    {
+        if (!$this->solicitudesRecibidas->contains($solicitudesRecibida)) {
+            $this->solicitudesRecibidas->add($solicitudesRecibida);
+            $solicitudesRecibida->setUsuarioReceptor($this);
+        }
+
+        return $this;
+    }
+
+    public function removeSolicitudesRecibida(Contacto $solicitudesRecibida): static
+    {
+        if ($this->solicitudesRecibidas->removeElement($solicitudesRecibida)) {
+            // set the owning side to null (unless already changed)
+            if ($solicitudesRecibida->getUsuarioReceptor() === $this) {
+                $solicitudesRecibida->setUsuarioReceptor(null);
+            }
         }
 
         return $this;
