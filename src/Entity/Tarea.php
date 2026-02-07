@@ -45,11 +45,11 @@ class Tarea
     private Collection $usuarios;
 
     #[ORM\ManyToOne(inversedBy: 'tareas')]
-    #[ORM\JoinColumn(nullable: false)]
+    #[ORM\JoinColumn(nullable: true)]
     private ?Categoria $categoria = null;
 
     #[ORM\ManyToOne(inversedBy: 'tareas')]
-    #[ORM\JoinColumn(nullable: false)]
+    #[ORM\JoinColumn(nullable: true)]
     private ?Grupo $grupo = null;
 
     public function __construct()
