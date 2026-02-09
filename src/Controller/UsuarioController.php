@@ -5,15 +5,77 @@ namespace App\Controller;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\Routing\Attribute\Route;
+use App\Repository\UsuarioRepository;
+use Symfony\Component\HttpFoundation\Request;
+
 
 final class UsuarioController extends AbstractController
 {
-    #[Route('/usuario', name: 'app_usuario')]
-    public function index(): JsonResponse
-    {
-        return $this->json([
-            'message' => 'Welcome to your new controller!',
-            'path' => 'src/Controller/UsuarioController.php',
-        ]);
+    #[Route('/usuario/aceptar_solicitud', name: 'app_usuario_aceptar_solicitud')]
+    public function aceptar(Request $request, UsuarioRepository $repo): JsonResponse{
+        try{
+            $datos = json_decode($request->getContent(), true);
+    
+            // Validamos que vengan los IDs necesarios
+            if (!isset($datos['id_solicitante']) || !isset($datos['id_receptor'])) {
+                return $this->json(['error' => 'Datos insuficientes'], 400);
+            }
+
+            $repo->aceptarSolicitud($datos['id_solicitante'], $datos['id_receptor']);
+
+            return $this->json(['message' => '¡Solicitud aceptada!']);
+        }catch(\Exception $e){
+            return $this->json(['message' => 'Error al aceptar la solicitud']);
+        }
+    }
+
+    #[Route('/usuario/crear', name: 'app_usuario_crear')]
+    public function crearUsuario(Request $request, UsuarioRepository $repo):JsonResponse{
+        try{
+            $datos = json_decode($request->getContent(), true);
+
+            $repo->crearUsuario($datos);
+            return $this->json(['message' => 'Usuario creado correctamente']);
+        }catch(\Exception $e){
+            return $this->json(['message' => 'Error al crear usuario']);
+        }
+        
+    }
+
+    #[Route('/usuario/actualizar', name: 'app_usuario_actualizar')]
+    public function actualizarUsuario(Request $request, UsuarioRepository $repo):JsonResponse{
+        try{
+            $datos = json_decode($request->getContent(), true);
+
+            $repo->actualizarUsuario($datos);
+            return $this->json(['message' => 'Usuario actualizado correctamente']);
+        }catch(\Exception $e){
+            return $this->json(['message' => 'Error al actualizar el usuario']);
+        }
+
+    }
+
+    #[Route('/usuario/eliminar', name: 'app_usuario_eliminar')]
+    public function eliminarUsuario(Request $request, UsuarioRepository $repo):JsonResponse{
+        try{
+            $datos = json_decode($request->getContent(), true);
+
+            $repo->eliminarUsuario($datos['id']);
+            return $this->json(['message' => 'Usuario eliminado correctamente']);
+        }catch(\Exception $e){
+            return $this->json(['message' => 'Error al actualizar el usuario']);
+        }
+    }
+
+    #[Route('/usuario/ver', name: 'app_usuario_ver')]
+    public function verUsuario(Request $request, UsuarioRepository $repo):JsonResponse{
+        try{
+            $datos = json_decode($request->getContent(), true);
+
+            $usuarios = $repo->verUsuario($datos);
+            return $this->json($usuarios);
+        }catch(\Exception $e){
+            return $this->json(['message' => 'Error al mostrar la informacion del usuario']);
+        }
     }
 }

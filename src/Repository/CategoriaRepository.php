@@ -16,28 +16,27 @@ class CategoriaRepository extends ServiceEntityRepository
         parent::__construct($registry, Categoria::class);
     }
 
-    //    /**
-    //     * @return Categoria[] Returns an array of Categoria objects
-    //     */
-    //    public function findByExampleField($value): array
-    //    {
-    //        return $this->createQueryBuilder('c')
-    //            ->andWhere('c.exampleField = :val')
-    //            ->setParameter('val', $value)
-    //            ->orderBy('c.id', 'ASC')
-    //            ->setMaxResults(10)
-    //            ->getQuery()
-    //            ->getResult()
-    //        ;
-    //    }
+    public function crearCategoria(array $datos){
+        $sql="INSERT INTO categoria (nombre_categoria, color) 
+            VALUES (:nombre, :color)";
+        $params=[
+            "nombre" => $datos['nombre_categoria'],
+            "color" => $datos['color']
+        ];
+        return $this->getEntityManager()->getConnection()->executeQuery($sql, $params);
+    }
 
-    //    public function findOneBySomeField($value): ?Categoria
-    //    {
-    //        return $this->createQueryBuilder('c')
-    //            ->andWhere('c.exampleField = :val')
-    //            ->setParameter('val', $value)
-    //            ->getQuery()
-    //            ->getOneOrNullResult()
-    //        ;
-    //    }
+    public function eliminarCategoria(int $id){
+        $sql = "DELETE FROM categoria WHERE id = :id";
+        $params=[
+            "id" => $id
+        ];
+        return $this->getEntityManager()->getConnection()->executeQuery($sql, $params);
+    }
+
+    public function verCategorias(){
+        $sql = "SELECT id, nombre_categoria, color FROM categoria";
+        return $this->getEntityManager()->getConnection()->executeQuery($sql)->fetchAllAssociative();
+    }
+
 }

@@ -32,7 +32,7 @@ class TareaRepository extends ServiceEntityRepository
     }
 
     return $resultados;
-}
+    }
 
 
     /*
@@ -116,9 +116,9 @@ class TareaRepository extends ServiceEntityRepository
             
     return $this->ejecutarYFormatear($sql, ['prioridad' => $prioridad]);
     }
-    public function verTareasPorCategoria(string $categoria){
+    public function verTareasPorCategoria(int $categoria){
         $sql = "SELECT id, nombre_tarea, descripcion, fecha_publicacion, fecha_vencimiento, ia, estado, prioridad, categoria_id, grupo_id 
-            FROM tarea WHERE categoria = :categoria";
+            FROM tarea WHERE categoria_id = :categoria";
             
     return $this->ejecutarYFormatear($sql, ['categoria' => $categoria]);
     }

@@ -16,28 +16,67 @@ class GrupoRepository extends ServiceEntityRepository
         parent::__construct($registry, Grupo::class);
     }
 
-    //    /**
-    //     * @return Grupo[] Returns an array of Grupo objects
-    //     */
-    //    public function findByExampleField($value): array
-    //    {
-    //        return $this->createQueryBuilder('g')
-    //            ->andWhere('g.exampleField = :val')
-    //            ->setParameter('val', $value)
-    //            ->orderBy('g.id', 'ASC')
-    //            ->setMaxResults(10)
-    //            ->getQuery()
-    //            ->getResult()
-    //        ;
-    //    }
+    //Formateo de fecha distinto para el FRONT
+    private function ejecutarYFormatear(string $sql, array $params = []): array {
+        $resultados = $this->getEntityManager()->getConnection()->executeQuery($sql, $params)->fetchAllAssociative();
 
-    //    public function findOneBySomeField($value): ?Grupo
-    //    {
-    //        return $this->createQueryBuilder('g')
-    //            ->andWhere('g.exampleField = :val')
-    //            ->setParameter('val', $value)
-    //            ->getQuery()
-    //            ->getOneOrNullResult()
-    //        ;
-    //    }
+        foreach ($resultados as &$fila) {
+            if (isset($fila['fecha_creacion']) && $fila['fecha_creacion']) {
+                $fila['fecha_creacion'] = (new \DateTime($fila['fecha_creacion']))->format('d-m-Y H:i:s');
+            }
+        }
+        return $resultados;
+    }
+
+    
+    public function crearGrupo(array $datos){
+        $sql = "INSERT INTO grupo (nombre_grupo,fecha_creacion) 
+                VALUES (:nombre, :fecha)";
+
+        $params =[
+            "nombre" => $datos['nombre_grupo'],
+            "fecha" => $datos['fecha_creacion']
+        ];
+        return $this->getEntityManager()->getConnection()->executeQuery($sql, $params);
+    }
+
+    public function eliminarGrupo(int $id){
+        $sql = "DELETE FROM grupo WHERE id = :id";
+    
+        $params = [
+            'id' => $id
+        ];
+
+    return $this->getEntityManager()->getConnection()->executeQuery($sql, $params);
+    }
+
+    public function actualizarNombreGrupo(int $id, string $nuevoNombre){
+        $sql = "UPDATE grupo SET nombre_grupo = :nombre WHERE id = :id";
+    
+        $params = [
+            'nombre' => $nuevoNombre,
+            'id'     => $id
+        ];
+        return $this->getEntityManager()->getConnection()->executeQuery($sql, $params);
+    }
+
+    public function verGrupo(){
+        $sql = "SELECT id,nombre_grupo,fecha_creacion FROM grupo";
+
+        // Aquí usamos el formateador visual
+        return $this->ejecutarYFormatear($sql);
+    }
+
+    public function crarGrupo(array $datos){
+        // 1. Preparamos la fecha para la BBDD (Formato ISO)
+        $fechaParaBBDD = (new \DateTime($datos['fecha_creacion'] ?? 'now'))->format('Y-m-d H:i:s');
+
+        $sql = "INSERT INTO grupo (nombre_grupo, fecha_creacion) VALUES (:nombre, :fecha)";
+        $params = [
+            "nombre" => $datos['nombre_grupo'],
+            "fecha"  => $fechaParaBBDD
+        ];
+        
+        return $this->getEntityManager()->getConnection()->executeQuery($sql, $params);
+    }
 }
