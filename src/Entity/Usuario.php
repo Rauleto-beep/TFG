@@ -7,9 +7,11 @@ use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Security\Core\User\UserInterface;
+use Symfony\Component\Security\Core\User\PasswordAuthenticatedUserInterface;
 
 #[ORM\Entity(repositoryClass: UsuarioRepository::class)]
-class Usuario
+class Usuario implements UserInterface, PasswordAuthenticatedUserInterface
 {
     #[ORM\Id]
     #[ORM\GeneratedValue]
@@ -101,11 +103,6 @@ class Usuario
         $this->correo = $correo;
 
         return $this;
-    }
-
-    public function getPasswordHash(): ?string
-    {
-        return $this->password_hash;
     }
 
     public function setPasswordHash(string $password_hash): static
@@ -269,5 +266,29 @@ class Usuario
         }
 
         return $this;
+    }
+
+    // 1. Identificador único del usuario (usamos el correo)
+    public function getUserIdentifier(): string 
+    {
+        return (string) $this->correo;
+    }
+
+    // 2. Roles del usuario (mínimo debe tener ROLE_USER)
+    public function getRoles(): array 
+    {
+        return ['ROLE_USER'];
+    }
+
+    // 3. Devuelve la contraseña encriptada
+    public function getPassword(): ?string 
+    {
+        return $this->password_hash;
+    }
+
+    // 4. Limpieza de datos sensibles (se deja vacío normalmente)
+    public function eraseCredentials(): void 
+    {
+        // Si guardaras algo temporal en texto plano, lo borrarías aquí
     }
 }
