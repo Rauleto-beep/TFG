@@ -1,12 +1,9 @@
-import { createApp, h } from 'vue';
+import './styles/app.css'; // Esto le dice a Webpack que procese Tailwind
 
-const app = createApp({
-    render() {
-        return h('div', { style: 'text-align:center; margin-top:50px; font-family:sans-serif;' }, [
-            h('h1', '¡Entorno listo!'),
-            h('p', 'Vue.js está funcionando correctamente en el TFG.')
-        ]);
-    }
-});
+import { createApp } from 'vue';
+import App from './components/App.vue'; // Importamos el componente
+import router from '../src/JavaScript/login/index.js';
 
-app.mount('#app');
+createApp(App)
+    .use(router) // ESTA LÍNEA ES LA QUE ACTIVA TUS RUTAS
+    .mount('#app');

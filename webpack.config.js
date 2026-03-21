@@ -43,7 +43,7 @@ Encore
 
     .enableSourceMaps(!Encore.isProduction())
     // enables hashed filenames (e.g. app.abc123.css)
-    .enableVersioning(Encore.isProduction())
+    .enableVersioning(false)
 
     // configure Babel
     // .configureBabel((config) => {
@@ -71,7 +71,8 @@ Encore
 
     // uncomment if you're having problems with a jQuery plugin
     //.autoProvidejQuery()
-    .enableVueLoader();
+    .enableVueLoader(() => {}, { version: 3 })
+    .enablePostCssLoader()
 ;
 
 module.exports = Encore.getWebpackConfig();

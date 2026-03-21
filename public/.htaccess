@@ -1,0 +1,24 @@
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+
+    # 1. ARREGLO PARA EL JWT (Indispensable para el error 401)
+    # Pasa la cabecera Authorization de Apache a PHP
+    RewriteCond %{HTTP:Authorization} ^(.*)
+    RewriteRule .* - [e=HTTP_AUTHORIZATION:%1]
+
+    # 2. PRIORIDAD AL FRONTEND ESTÁTICO
+    # Si pides un archivo que existe (fotos, css, js, index.html), cárgalo directamente
+    RewriteCond %{REQUEST_FILENAME} -f
+    RewriteRule .? - [L]
+
+    # 3. RUTAS DE LA API (SYMFONY)
+    # Todo lo que empiece por /api se va al index.php
+    RewriteCond %{REQUEST_URI} ^/api
+    RewriteRule ^(.*)$ index.php [QSA,L]
+
+    # 4. RUTAS DE VUE (FALLBACK)
+    # Si no es un archivo ni es la API, muestra siempre el index.html
+    # Esto permite que Vue Router tome el control
+    RewriteCond %{REQUEST_URI} !^/api
+    RewriteRule ^(.*)$ index.html [L]
+</IfModule>

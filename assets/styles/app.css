@@ -1,3 +1,88 @@
-body {
-    background-color: lightgray;
+@import "tailwindcss";
+
+@theme {
+  /* Tipografías */
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+
+  /* Colores personalizados (Esto habilita bg-brand, bg-bg, etc.) */
+  --color-brand: #8B5CF6;
+  --color-brand-dark: #4C1D95;
+  --color-bg: #0A0A0B;
+  --color-sidebar: #121214;
+  --color-card: #18181B;
+  --color-border: rgba(255, 255, 255, 0.08);
+  
+  /* Asegúrate de tener zinc-100 definido si lo usas en el body */
+  --color-zinc-100: oklch(96.7% 0.001 286.375);
+  --color-zinc-400: oklch(70.5% 0.015 286.067);
+}
+
+/* En v4, los estilos base se añaden directamente o bajo @layer base */
+@layer base {
+  body {
+    @apply bg-bg text-zinc-100 font-sans antialiased;
+  }
+}
+
+/* Tus clases personalizadas con @apply */
+.glass {
+  @apply bg-white/5 backdrop-blur-md border border-white/10;
+}
+
+.sidebar-item {
+  @apply flex items-center gap-3 px-4 py-2.5 rounded-lg transition-all duration-200 text-zinc-400 hover:text-white hover:bg-white/5;
+}
+.img-logo{
+    padding-top: 13px;
+    max-width: 360%;
+    height: auto;
+  }
+.img-simbolos-nav{
+  max-width: 20%;
+  height: auto;
+}
+.figures-nav {
+  display:flex;
+  align-items: center;
+  gap: 15px;
+}
+.pl-5{
+  padding-left: 5px;
+}
+.sidebar-item.active {
+  @apply text-white bg-brand/10 border border-brand/20;
+}
+
+.card {
+  @apply bg-card border border-border rounded-2xl p-6;
+}
+
+.btn-primary {
+  @apply bg-brand hover:bg-brand/90 text-white px-4 py-2 rounded-xl font-medium transition-all flex items-center justify-center gap-2;
+}
+
+.btn-secondary {
+  @apply bg-white/5 hover:bg-white/10 border border-white/10 text-white px-4 py-2 rounded-xl font-medium transition-all flex items-center justify-center gap-2;
+}
+
+.input {
+  @apply bg-white/5 border border-white/10 rounded-xl px-4 py-2.5 text-white focus:outline-none focus:border-brand/50 transition-all;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-white/10 rounded-full;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-white/20;
 }

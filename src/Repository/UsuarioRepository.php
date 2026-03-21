@@ -5,7 +5,7 @@ namespace App\Repository;
 use App\Entity\Usuario;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Persistence\ManagerRegistry;
-
+use Symfony\Component\PasswordHasher\Hasher\UserPasswordHasherInterface;
 use function Symfony\Component\DependencyInjection\Loader\Configurator\param;
 
 /**
@@ -55,17 +55,21 @@ class UsuarioRepository extends ServiceEntityRepository
     }
 
     //Crear usuario
-    public function crearUsuario(array $datos){
+    public function crearUsuario(array $datos,UserPasswordHasherInterface $hasher){
+        $user = new Usuario(); 
+    
+        $passwordHasheada = $hasher->hashPassword($user, $datos['password']);
+
         $sql = "INSERT INTO usuario (nombre_usuario,correo,password_hash,fecha_creacion) 
                 VALUES (:nombre,:correo,:password_hash ,:fecha_creacion)";
 
         $params=[
             "nombre" => $datos['nombre_usuario'],
             "correo" => $datos['correo'],
-            "password_hash" => $datos['password'],
-            "fecha_creacion" => $datos['fecha_creacion']
+            "password_hash" => $passwordHasheada,
+            "fecha_creacion" => date('Y-m-d')
         ];
-        return $this->getEntityManager()->getConnection()->executeQuery($sql,$params);
+        return $this->getEntityManager()->getConnection()->executeQuery($sql, $params);
     }
 
     //Eliminar usuario

@@ -3,8 +3,13 @@
         "@babel/core": "^7.17.0",
         "@babel/preset-env": "^7.16.0",
         "@symfony/webpack-encore": "^5.1.0",
+        "@tailwindcss/postcss": "^4.2.1",
+        "autoprefixer": "^10.4.27",
         "core-js": "^3.38.0",
+        "postcss": "^8.5.8",
+        "postcss-loader": "^8.2.1",
         "regenerator-runtime": "^0.13.9",
+        "tailwindcss": "^4.2.1",
         "vue": "^3.5.27",
         "vue-loader": "^17.4.2",
         "webpack": "^5.74.0",
@@ -17,5 +22,8 @@
         "dev": "encore dev",
         "watch": "encore dev --watch",
         "build": "encore production --progress"
+    },
+    "dependencies": {
+        "vue-router": "^4.6.4"
     }
 }

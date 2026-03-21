@@ -19,7 +19,7 @@ services:
   apache:
     image: httpd:2.4-alpine
     ports:
-      - "8080:80"
+      - "8081:80"
     volumes:
       - .:/usr/local/apache2/htdocs/
     command: >

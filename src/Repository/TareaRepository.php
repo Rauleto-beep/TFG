@@ -34,11 +34,22 @@ class TareaRepository extends ServiceEntityRepository
     return $resultados;
     }
 
+    /*
+    * Contar numero tareas existentes
+    */
+    public function cantidadTareas(int $id){
+        $sql="SELECT COUNT(tarea_id) FROM tarea_usuario WHERE usuario_id = :id";
+        $params = [
+        'id' => $id 
+        ];
+        return $this->getEntityManager()->getConnection()->fetchOne($sql,$params);
+    }
+
 
     /*
     * CREAR
     */
-    public function crearTarea(array $datos){
+    public function crearTarea(array $datos,int $idUsuario){
         $sql = "INSERT INTO tarea (nombre_tarea, descripcion, fecha_publicacion, fecha_vencimiento, ia, estado, prioridad, categoria_id, grupo_id) 
             VALUES (:nombre, :desc, :fPub, :fVenc, :ia, :estado, :prioridad, :catId, :grupoId)";
        
@@ -55,32 +66,56 @@ class TareaRepository extends ServiceEntityRepository
             'prioridad' => $datos['prioridad'],
             //FKs
             'catId' => $datos['categoria_id'],
-            'grupoId' => $datos['grupo_id'],
+            'grupoId' => $datos['grupo_id'] ?? null,
+        ];
+        $this->getEntityManager()->getConnection()->executeQuery($sql, $params);
+
+        $sqlTareaUsuario = "INSERT INTO tarea_usuario (tarea_id,usuario_id)  VALUES  (:tarea,:usuario)";
+        $tareaId = $this->getEntityManager()->getConnection()->lastInsertId();
+        $paramsTareaUsuario = [
+            'tarea'=> $tareaId,
+            'usuario' => $idUsuario
         ];
 
-        return $this->getEntityManager()->getConnection()->executeQuery($sql, $params);
+        $this->getEntityManager()->getConnection()->executeQuery($sqlTareaUsuario, $paramsTareaUsuario);
     }
     /*
     * ELIMINAR
     */
     public function eliminarTarea(int $id){
         $sql = 'DELETE FROM tarea WHERE id = :id';
-
+        $sqlTU = 'DELETE FROM tarea_usuario WHERE tarea_id = :id';
         $params = [
         'id' => $id 
         ];
 
-        return $this->getEntityManager()->getConnection()->executeQuery($sql, $params);
+        $this->getEntityManager()->getConnection()->executeQuery($sql, $params);
+        $this->getEntityManager()->getConnection()->executeQuery($sqlTU, $params);
     }
 
     /*
     * VER
     */
-    public function verTodasTareas(){
-        $sql = "SELECT id,nombre_tarea,descripcion,fecha_publicacion, fecha_vencimiento, ia, estado, prioridad, categoria_id, grupo_id
-                FROM tarea";
 
-        $resultados = $this->getEntityManager()->getConnection()->executeQuery($sql)->fetchAllAssociative();
+    public function verTareasPorId(int $id){
+        $sql = "SELECT * FROM tarea WHERE id = :id";
+        $param = [
+        'id' => $id 
+        ];
+        return $this->getEntityManager()->getConnection()->executeQuery($sql,$param)->fetchAllAssociative();
+    }
+
+    public function verTodasTareas(int $id){
+        $sql = "SELECT t.id, t.nombre_tarea, t.descripcion, t.fecha_publicacion, t.fecha_vencimiento, t.ia, 
+                t.estado, t.prioridad, t.categoria_id, t.grupo_id, c.nombre_categoria,c.color FROM tarea t 
+                INNER JOIN tarea_usuario tu ON t.id = tu.tarea_id LEFT JOIN categoria c ON t.categoria_id = c.id
+                WHERE tu.usuario_id = :usuario_id;";
+
+        $params = [
+        'usuario_id' => $id 
+        ];
+
+        $resultados = $this->getEntityManager()->getConnection()->executeQuery($sql,$params)->fetchAllAssociative();
 
         $tareasFormateadas = [];
         
@@ -139,6 +174,26 @@ class TareaRepository extends ServiceEntityRepository
     /*
     * ACTUALIZAR
     */
+    public function actualizarTarea(array $datos){
+        $sql = "UPDATE tarea SET 
+                nombre_tarea = :nombre,
+                descripcion = :descripcion,
+                fecha_vencimiento = :fechaVencimiento,
+                prioridad = :prioridad,
+                categoria_id = :categoria WHERE id = :id;";
+
+        $params = [
+            'nombre' => $datos['nombre'],
+            'descripcion' => $datos['descripcion'],
+            'fechaVencimiento' => $datos['fechaVencimiento'] . ' 00:00:00',
+            'prioridad' => $datos['prioridad'],
+            'categoria' => $datos['categoria_id'],
+            'id' => $datos['id_tarea']
+        ];
+
+    $this->getEntityManager()->getConnection()->executeQuery($sql, $params);
+    }
+
     public function actualizarNombreTarea(int $id, string $nuevoNombre){
         $sql = "UPDATE tarea SET nombre_tarea = :nombre WHERE id = :id";
         $params = [

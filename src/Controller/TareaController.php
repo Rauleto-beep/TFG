@@ -15,42 +15,43 @@ use Doctrine\ORM\Query\Expr\Func;
 
 final class TareaController extends AbstractController
 {
+
+    //Contar cantidad de tareas
+    #[Route('/api/tarea/cantidad', name: 'app_tarea_cantidad')]
+    public function contadorTareas(Request $request,TareaRepository $repo): JsonResponse{ 
+        $datos = json_decode($request->getContent(),true);
+        try{
+            $numeroTareas = $repo->cantidadTareas($datos['user_id']);
+            return $this->json($numeroTareas);
+        }
+        catch(\Exception $e){
+            return $this->json([ 'message' => 'Error al devolver el numero de tareas']);
+        }
+    }
     //Crear tareas
     #[Route('/api/tarea/crear', name: 'app_tarea_crear')]
     public function crearTareas(Request $request, TareaRepository $repo): JsonResponse{
-        /*
-        $datos = [
-            "nombre_tarea" => "Prueba tarea con categoria",
-            "descripcion"=> "Descripción de prueba",
-            "fecha_publicacion"=> "2026-02-09 12:00:00",
-            "fecha_vencimiento"=> "2026-02-18 20:00:00",
-            "ia"=> false,
-            "estado"=> "Completada",
-            "prioridad"=> "Media",
-            "categoria_id"=> 1,
-            "grupo_id"=> null
-        ];
-        */
         try{
-            //$datos = json_decode($request->getContent(),true); //JSON que viene de Vue con los datos
+            $datos = json_decode($request->getContent(),true); //JSON que viene de Vue con los datos
             if (!isset($datos['nombre_tarea'])){
                 return $this->json(['error' => 'Falta el nombre de la tarea'], 400);
             }else if (!isset($datos['fecha_vencimiento'])){
                 return $this->json(['error' => 'Falta fecha de vencimiento'], 400);
             }
 
-            $repo->crearTarea($datos);
+            $repo->crearTarea($datos,$datos['usuario_id']);
             return $this->json([ 'message' => 'Tarea creada!']);
         }catch(\Exception $e){
-            return $this->json([ 'message' => 'Error al crear la tarea']);
+            return $this->json([ 'message' => $e->getMessage() ], 500);
         }       
     }
 
     //Ver todas las tareas
     #[Route('/api/tarea/ver_todas', name: 'app_tarea_ver_todas')]
-    public function verTareas(TareaRepository $repo):JsonResponse{
+    public function verTareas(Request $request,TareaRepository $repo):JsonResponse{
         try{
-            $tareas = $repo->verTodasTareas();
+            $datos = json_decode($request->getContent(),true);
+            $tareas = $repo->verTodasTareas($datos['user_id']);
             return $this->json($tareas);
         }catch(\Exception $e){
             return $this->json([ 'message' => 'Error al mostrar las tareas']);
@@ -112,10 +113,26 @@ final class TareaController extends AbstractController
     public function eliminarTareas(Request $request,TareaRepository $repo):JsonResponse{
         try{
             $datos = json_decode($request->getContent(),true);
-            $repo->eliminarTarea($datos['id']);
+            $repo->eliminarTarea($datos['id_tarea']);
             return $this->json([ 'message' => 'Tarea eliminada correctamente!']);
         }catch(\Exception $e){
             return $this->json([ 'message' => 'Error al eliminar tarea']);
+        }
+        
+    }
+
+    //Actualizar tarea
+    #[Route('/api/tarea/actualizar_tarea', name: 'app_tarea_actualizar_tarea')]
+    public function actualizarTarea(Request $request, TareaRepository $repo):JsonResponse{
+        try{
+            $datos = json_decode($request->getContent(), true);
+            if (!isset($datos['id_tarea']) || !isset($datos['nombre'])) {
+                return $this->json(['error' => 'Faltan datos'], 400);
+            }
+            $repo->actualizarTarea($datos);
+            return $this->json(['message' => 'Tarea actualizada correctamente']);
+        }catch(\Exception $e){
+            return $this->json(['error' => $e->getMessage()], 500);
         }
         
     }
@@ -140,10 +157,10 @@ final class TareaController extends AbstractController
     public function actualizarEstadoTarea(Request $request, TareaRepository $repo):JsonResponse{
         try{
             $datos = json_decode($request->getContent(), true);
-            if (!isset($datos['id']) || !isset($datos['estado'])) {
+            if (!isset($datos['id_tarea']) || !isset($datos['estado'])) {
                 return $this->json(['error' => 'Faltan datos'], 400);
             }
-            $repo->actualizarEstadoTarea($datos['id'], $datos['estado']);
+            $repo->actualizarEstadoTarea($datos['id_tarea'], $datos['estado']);
             return $this->json(['message' => 'Estado actualizado correctamente']);
         }catch(\Exception $e){
             return $this->json(['message' => 'Error al actualizar el estado']);

@@ -42,9 +42,20 @@ final class CategoriaController extends AbstractController
     }
 
     #[Route('/api/categoria/ver', name: 'app_categoria_ver')]
-    public function verCategorias(CategoriaRepository $repo):JsonResponse{
+    public function verCategorias(Request $request,CategoriaRepository $repo):JsonResponse{
         try{
             $categorias = $repo->verCategorias();
+            return $this->json($categorias);
+        }catch(\Exception $e){
+            return $this->json(['message' => 'Error al mostrar las categorias']);
+        }
+    }
+
+     #[Route('/api/categoria/ver/nombre', name: 'app_categoria_ver')]
+    public function verCategoriasNombre(Request $request,CategoriaRepository $repo):JsonResponse{
+        try{
+            $datos = json_decode($request->getContent(),true);
+            $categorias = $repo->verCategoriasNombre($datos["nombre_categoria"]);
             return $this->json($categorias);
         }catch(\Exception $e){
             return $this->json(['message' => 'Error al mostrar las categorias']);

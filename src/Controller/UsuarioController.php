@@ -7,7 +7,7 @@ use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\Routing\Attribute\Route;
 use App\Repository\UsuarioRepository;
 use Symfony\Component\HttpFoundation\Request;
-
+use Symfony\Component\PasswordHasher\Hasher\UserPasswordHasherInterface;
 
 final class UsuarioController extends AbstractController
 {
@@ -30,17 +30,52 @@ final class UsuarioController extends AbstractController
     }
 
     #[Route('/usuario/crear', name: 'app_usuario_crear')]
-    public function crearUsuario(Request $request, UsuarioRepository $repo):JsonResponse{
+    public function crearUsuario(Request $request, UsuarioRepository $repo,UserPasswordHasherInterface $hasher):JsonResponse{
         try{
             $datos = json_decode($request->getContent(), true);
 
-            $repo->crearUsuario($datos);
+            $repo->crearUsuario($datos, $hasher);
             return $this->json(['message' => 'Usuario creado correctamente']);
         }catch(\Exception $e){
             return $this->json(['message' => 'Error al crear usuario']);
         }
         
     }
+
+    #[Route('/api/comprobar-usuario', name: 'api_check', methods: ['POST'])]
+public function verificar(Request $request, UsuarioRepository $repo, UserPasswordHasherInterface $hasher): JsonResponse 
+{
+    $data = json_decode($request->getContent(), true);
+    
+    // Si el JSON está mal formado o falta el correo
+    if (!$data || !isset($data['correo'])) {
+        return $this->json(['message' => 'Datos incompletos'], 400);
+    }
+
+    $user = $repo->findOneBy(['correo' => $data['correo']]);
+
+    if (!$user) {
+        return $this->json([
+            'status' => 'error',
+            'message' => 'Este correo electrónico no está registrado.'
+        ], 404);
+    }
+
+    // Si también enviamos la contraseña (para verificar credenciales)
+    if (isset($data['password']) && !empty($data['password'])) {
+        if (!$hasher->isPasswordValid($user, $data['password'])) {
+            return $this->json([
+                'status' => 'error',
+                'message' => 'La contraseña es incorrecta.'
+            ], 401);
+        }
+    }
+
+    return $this->json([
+        'status' => 'success',
+        'message' => 'Usuario encontrado.'
+    ], 200);
+}
 
     #[Route('/usuario/actualizar', name: 'app_usuario_actualizar')]
     public function actualizarUsuario(Request $request, UsuarioRepository $repo):JsonResponse{

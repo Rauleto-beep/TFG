@@ -39,4 +39,11 @@ class CategoriaRepository extends ServiceEntityRepository
         return $this->getEntityManager()->getConnection()->executeQuery($sql)->fetchAllAssociative();
     }
 
+    public function verCategoriasNombre(String $nombre){
+        $sql = "SELECT id, nombre_categoria, color FROM categoria WHERE nombre_categoria = :nombre";
+        $params=[
+            "nombre" => $nombre
+        ];
+        return $this->getEntityManager()->getConnection()->executeQuery($sql,$params)->fetchAllAssociative();
+    }
 }
