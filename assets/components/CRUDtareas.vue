@@ -121,12 +121,12 @@
                                             <div class="relative">
                                                 <select id="inputCategoria" class="input w-full appearance-none" name="selectCategoriaTarea">
                                                     <option class="text-[10px] font-bold uppercase tracking-widest border-brand/50 appearance-none" style="background-color: #1e1f22;" value="" selected>Ninguna</option>
-                                                    <option class="text-[10px] font-bold uppercase tracking-widest border-brand/50 appearance-none" style="background-color: #1e1f22;" value="3">Trabajo</option>
-                                                    <option class="text-[10px] font-bold uppercase tracking-widest border-brand/50 appearance-none" style="background-color: #1e1f22;" value="4">Personal</option>
-                                                    <option class="text-[10px] font-bold uppercase tracking-widest border-brand/50 appearance-none" style="background-color: #1e1f22;" value="5">Urgente</option>
-                                                    <option class="text-[10px] font-bold uppercase tracking-widest border-brand/50 appearance-none" style="background-color: #1e1f22;" value="6">Ocio</option>
-                                                    <option class="text-[10px] font-bold uppercase tracking-widest border-brand/50 appearance-none" style="background-color: #1e1f22;" value="7">Aprendizaje</option>
-                                                    <option class="text-[10px] font-bold uppercase tracking-widest border-brand/50 appearance-none" style="background-color: #1e1f22;" value="8">Eventos</option>
+                                                    <option class="text-[10px] font-bold uppercase tracking-widest border-brand/50 appearance-none" style="background-color: #1e1f22;" value="1">Trabajo</option>
+                                                    <option class="text-[10px] font-bold uppercase tracking-widest border-brand/50 appearance-none" style="background-color: #1e1f22;" value="2">Personal</option>
+                                                    <option class="text-[10px] font-bold uppercase tracking-widest border-brand/50 appearance-none" style="background-color: #1e1f22;" value="3">Urgente</option>
+                                                    <option class="text-[10px] font-bold uppercase tracking-widest border-brand/50 appearance-none" style="background-color: #1e1f22;" value="4">Ocio</option>
+                                                    <option class="text-[10px] font-bold uppercase tracking-widest border-brand/50 appearance-none" style="background-color: #1e1f22;" value="5">Aprendizaje</option>
+                                                    <option class="text-[10px] font-bold uppercase tracking-widest border-brand/50 appearance-none" style="background-color: #1e1f22;" value="6">Eventos</option>
                                                 </select>
                                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-down absolute right-4 top-1/2 -translate-y-1/2 text-zinc-500 pointer-events-none" aria-hidden="true"><path d="m6 9 6 6 6-6"></path></svg>
                                             </div>
@@ -225,9 +225,6 @@
     const { completarTarea } = completarTareasUsuario();
     let { editarTarea,editar, datosTarea } = editarTareasUsuario();
     const { editarTareaConfirmada } = confirmarEdicionTareasUsuario();
-
-    cantidadTareas();
-    infoTareas();
 
     const manejarCreacion = async () => {
         await crearTarea(); 

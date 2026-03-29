@@ -13,30 +13,35 @@
         </div>
         <!-- NAV -->
          <nav class="flex-1 space-y-1">
-            <button class="sidebar-item w-full active">
-                <figure class="figures-nav">
-                    <img class="img-simbolos-nav" src="../imagenes/nav/simbolo_dashboard_nav.svg">
-                    <figcaption class="font-medium">Dashboard</figcaption>
-                </figure>
-            </button>
             <button class="sidebar-item w-full">
                 <figure class="figures-nav">
-                    <img class="img-simbolos-nav" src="../imagenes/nav/simbolo_tareas_nav.svg">
-                    <figcaption class="font-medium">Tareas</figcaption>
+                    <img class="img-simbolos-nav" src="../imagenes/nav/simbolo_dashboard_nav.svg">
+                    <figcaption class="font-medium">Inicio</figcaption>
                 </figure>
             </button>
+            <router-link to="/tareas" active-class="is-active">
+                <button class="sidebar-item w-full">
+                    <figure class="figures-nav">
+                        <img class="img-simbolos-nav" src="../imagenes/nav/simbolo_tareas_nav.svg">
+                        <figcaption class="font-medium">Tareas</figcaption>
+                    </figure>
+                </button>
+            </router-link>
+            
             <button class="sidebar-item w-full">
                 <figure class="figures-nav">
                     <img class="img-simbolos-nav" src="../imagenes/nav/simbolo_calendario_nav.svg">
                     <figcaption class="font-medium">Calendario</figcaption>
                 </figure>
             </button>
-            <button class="sidebar-item w-full">
-                <figure class="figures-nav">
-                    <img class="img-simbolos-nav" src="../imagenes/nav/simbolo_chat_nav.svg">
-                    <figcaption class="font-medium">Chat</figcaption>
-                </figure>
-            </button>
+            <router-link to="/VistaChat" active-class="is-active">
+                <button class="sidebar-item w-full">
+                    <figure class="figures-nav">
+                        <img class="img-simbolos-nav" src="../imagenes/nav/simbolo_chat_nav.svg">
+                        <figcaption class="font-medium">Chat</figcaption>
+                    </figure>
+                </button>
+            </router-link>
             <button class="sidebar-item w-full">
                 <figure class="figures-nav">
                     <img class="img-simbolos-nav" src="../imagenes/nav/simbolo_ajustes_nav.svg">
@@ -52,7 +57,7 @@
                 </figure>
             </button>
             <div class="flex items-center gap-3 p-2 rounded-xl hover:bg-white/5 transition-colors cursor-pointer group">
-                <img src="">
+                <div class="w-8 h-8 rounded-full bg-zinc-700 flex items-center justify-center text-[10px] font-bold">{{ userName.substring(0, 1).toUpperCase() }}</div>
                 <div class="flex-1 min-w-0">
                     <p class="text-sm font-semibold truncate">{{userName}}</p>
                 </div>

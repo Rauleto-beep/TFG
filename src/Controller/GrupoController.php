@@ -11,7 +11,7 @@ use Symfony\Component\HttpFoundation\Request;
 final class GrupoController extends AbstractController
 {
     
-    #[Route('/grupo/crear', name: 'app_grupo_crear')]
+    #[Route('/api/grupo/crear', name: 'app_grupo_crear')]
     public function crearGrupo(Request $request, GrupoRepository $repo){
         try{
             $datos = json_decode($request->getContent(), true);
@@ -23,12 +23,12 @@ final class GrupoController extends AbstractController
         }
 
     }
-    #[Route('/grupo/ver', name: 'app_grupo_ver')]
+    #[Route('/api/grupo/ver', name: 'app_grupo_ver')]
     public function verGrupo(Request $request, GrupoRepository $repo){
         try{
             $datos = json_decode($request->getContent(), true);
 
-            $grupo=$repo->verGrupo();
+            $grupo=$repo->verGrupo($datos['user_id']);
             return $this->json($grupo);
         }catch(\Exception $e){
             return $this->json(['message' => 'Error al mostrar el grupo']);
@@ -47,7 +47,7 @@ final class GrupoController extends AbstractController
         }
     }
 
-    #[Route('/grupo/eliminar', name: 'app_grupo_eliminar')]
+    #[Route('/api/grupo/eliminar', name: 'app_grupo_eliminar')]
     public function eliminarGrupo(Request $request, GrupoRepository $repo){
         try{
             $datos = json_decode($request->getContent(), true);

@@ -11,9 +11,10 @@ use Symfony\Component\Routing\Attribute\Route;
 final class MensajeController extends AbstractController
 {
     #[Route('api/mensaje/ver', name: 'app_mensaje_ver')]
-    public function verMensaje(MensajeRepository $repo):JsonResponse{
+    public function verMensaje(Request $request,MensajeRepository $repo):JsonResponse{
         try{
-            $mensajes = $repo->verMensaje();
+            $datos = json_decode($request->getContent(),true);
+            $mensajes = $repo->verMensaje($datos['grupo_id']);
             return $this->json($mensajes);
         }catch(\Exception $e){
             return $this->json([ 'message' => 'Error al mostrar los mensajes']);
