@@ -4,23 +4,27 @@ import LoginView from '../../../assets/components/LoginView.vue';
 import RegistroView from '../../../assets/components/RegisterView.vue';
 import TareasView from '../../../assets/components/VistaGestionTareas.vue';
 import ChatView from '../../../assets/components/VistaChat.vue';
+import DashboardView from '../../../assets/components/VistaDashboard.vue';
 
 //rutas que redirije automaticamente al usuario
 const routes = [
   { path: '/', 
-    redirect: () => localStorage.getItem('jwt_token') ? '/tareas' : '/login'},
+    redirect: () => localStorage.getItem('jwt_token') ? '/inicio' : '/login'},
   { path: '/login', name: 'login', component: LoginView },
   { path: '/registro', name: 'registro', component: RegistroView },
   { 
     path: '/tareas', 
     name: 'tareas', 
     component: TareasView,
+    
+  },
+  {path: '/vistaChat', name: 'chat', component: ChatView},
+  {path: '/inicio', name: 'inicio', component: DashboardView,
     beforeEnter: (to, from, next) => {
       if (!localStorage.getItem('jwt_token')) next('/login');
       else next();
     }
-  },
-  {path: '/VistaChat', name: 'chat', component: ChatView}
+  }
 ];
 
 const router = createRouter({

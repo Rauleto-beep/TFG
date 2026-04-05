@@ -55,7 +55,7 @@ const hacerLogin = async () => {
       localStorage.setItem('user_nombre', data.user.nombre);
 
       // 3. Redirigimos
-      router.push('/tareas');
+      router.push('/inicio');
     } else if (response.status === 401) {
       // Si las credenciales fallan, ejecutamos la comprobación detallada
       await verificarSiExiste();

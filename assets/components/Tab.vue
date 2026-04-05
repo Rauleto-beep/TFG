@@ -13,12 +13,14 @@
         </div>
         <!-- NAV -->
          <nav class="flex-1 space-y-1">
-            <button class="sidebar-item w-full">
-                <figure class="figures-nav">
-                    <img class="img-simbolos-nav" src="../imagenes/nav/simbolo_dashboard_nav.svg">
-                    <figcaption class="font-medium">Inicio</figcaption>
-                </figure>
-            </button>
+            <router-link to="/inicio" active-class="is-active">
+                <button class="sidebar-item w-full">
+                    <figure class="figures-nav">
+                        <img class="img-simbolos-nav" src="../imagenes/nav/simbolo_dashboard_nav.svg">
+                        <figcaption class="font-medium">Inicio</figcaption>
+                    </figure>
+                </button>
+            </router-link>
             <router-link to="/tareas" active-class="is-active">
                 <button class="sidebar-item w-full">
                     <figure class="figures-nav">
@@ -34,7 +36,7 @@
                     <figcaption class="font-medium">Calendario</figcaption>
                 </figure>
             </button>
-            <router-link to="/VistaChat" active-class="is-active">
+            <router-link to="/vistaChat" active-class="is-active">
                 <button class="sidebar-item w-full">
                     <figure class="figures-nav">
                         <img class="img-simbolos-nav" src="../imagenes/nav/simbolo_chat_nav.svg">
