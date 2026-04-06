@@ -5,6 +5,7 @@ import RegistroView from '../../../assets/components/RegisterView.vue';
 import TareasView from '../../../assets/components/VistaGestionTareas.vue';
 import ChatView from '../../../assets/components/VistaChat.vue';
 import DashboardView from '../../../assets/components/VistaDashboard.vue';
+import CalendariosView from '../../../assets/components/VistaCalendarios.vue';
 
 //rutas que redirije automaticamente al usuario
 const routes = [
@@ -19,6 +20,7 @@ const routes = [
     
   },
   {path: '/vistaChat', name: 'chat', component: ChatView},
+  {path: '/calendarios', name: 'calendarios', component: CalendariosView},
   {path: '/inicio', name: 'inicio', component: DashboardView,
     beforeEnter: (to, from, next) => {
       if (!localStorage.getItem('jwt_token')) next('/login');

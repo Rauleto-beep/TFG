@@ -29,13 +29,14 @@
                     </figure>
                 </button>
             </router-link>
-            
-            <button class="sidebar-item w-full">
-                <figure class="figures-nav">
-                    <img class="img-simbolos-nav" src="../imagenes/nav/simbolo_calendario_nav.svg">
-                    <figcaption class="font-medium">Calendario</figcaption>
-                </figure>
-            </button>
+            <router-link to="/calendarios" active-class="is-active">
+                <button class="sidebar-item w-full">
+                    <figure class="figures-nav">
+                        <img class="img-simbolos-nav" src="../imagenes/nav/simbolo_calendario_nav.svg">
+                        <figcaption class="font-medium">Calendario</figcaption>
+                    </figure>
+                </button>
+            </router-link>
             <router-link to="/vistaChat" active-class="is-active">
                 <button class="sidebar-item w-full">
                     <figure class="figures-nav">

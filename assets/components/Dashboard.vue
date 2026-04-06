@@ -12,15 +12,15 @@
 
       <section class="bg-gray-900/30 border border-gray-800 p-6 rounded-3xl">
         <div class="flex justify-between items-center mb-6">
-          <h3 class="text-xl font-bold text-white">Marzo 2026</h3>
+          <h3 class="text-xl font-bold text-white">{{ tituloActual }}</h3>
           <div class="flex bg-black/40 rounded-lg p-1">
-            <button class="px-4 py-1 text-xs bg-purple-600 text-white rounded-md">Month</button>
-            <button class="px-4 py-1 text-xs text-gray-400">Week</button>
-            <button class="px-4 py-1 text-xs text-gray-400">Day</button>
+            <button @click="cambiarVista('dayGridMonth')" class="px-4 py-1 text-xs text-gray-400" :class="vistaActiva === 'dayGridMonth' ? 'bg-purple-600 text-white shadow-lg rounded-md' : 'text-gray-400 hover:text-white'">Month</button>
+            <button @click="cambiarVista('timeGridWeek')" class="px-4 py-1 text-xs text-gray-400" :class="vistaActiva === 'timeGridWeek' ? 'bg-purple-600 text-white shadow-lg rounded-md' : 'text-gray-400 hover:text-white'">Week</button>
+            <button @click="cambiarVista('timeGridDay')" class="px-4 py-1 text-xs text-gray-400" :class="vistaActiva === 'timeGridDay' ? 'bg-purple-600 text-white shadow-lg rounded-md' : 'text-gray-400 hover:text-white'">Day</button>
           </div>
         </div>
         <!-- CALENDARIO  -->
-        <FullCalendar class="grid gap-2" :options="calendarOptions" />
+        <FullCalendar class="grid gap-2" ref="fullCalendar" :options="calendarOptions" />
       </section>
 
       <section class="bg-gray-900/30 border border-gray-800 p-8 rounded-3xl relative overflow-hidden">
@@ -201,17 +201,24 @@
 import {ref, onMounted } from 'vue';
 import FullCalendar from '@fullcalendar/vue3'
 import dayGridPlugin from '@fullcalendar/daygrid'
+import timeGridPlugin from '@fullcalendar/timegrid'
 import { obtenerTareasUsuario } from '../../src/JavaScript/CRUDtareas/obtenerTareas.js';
 
 const { tareas,infoTareas } = obtenerTareasUsuario();
-
-
+const tituloActual = ref('');
+const fullCalendar = ref(null);
+const vistaActiva = ref('dayGridMonth');
 
  const calendarOptions = ref({
-  plugins: [dayGridPlugin],
+  plugins: [dayGridPlugin, timeGridPlugin],
   initialView: 'dayGridMonth',
   headerToolbar: false, // Desactivamos el suyo para usar el de Tailwind
   themeSystem: 'standard',
+  // Este callback se ejecuta cada vez que cambia la vista o el mes
+  datesSet: (arg) => {
+    tituloActual.value = arg.view.title;
+    vistaActiva.value = arg.view.type; //Asegurar que el aspecto del boton cambie
+  },
   eventBackgroundColor: '#9333ea',
   eventBorderColor: 'transparent',
   contentHeight: 'auto',
@@ -224,6 +231,13 @@ const { tareas,infoTareas } = obtenerTareasUsuario();
   },
   events: []
 })
+
+// Función para cambiar de vista (Month, Week, Day)
+const cambiarVista = (vista) => {
+  const calendarApi = fullCalendar.value.getApi();
+  calendarApi.changeView(vista);
+  vistaActiva.value = vista;
+};
 
 const formatearFecha = (fechaRaw) => {
   if (!fechaRaw) return '';
