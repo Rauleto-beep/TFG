@@ -83,12 +83,22 @@ class UsuarioRepository extends ServiceEntityRepository
 
     //Actualizar usuario
     public function actualizarUsuario(array $datos){
-        $sql = "UPDATE usuario SET nombre_usuario = :usuario, correo = :correo,password_hash = :password
-                WHERE usuario_id = :id";
+        $sql = "UPDATE usuario SET nombre_usuario = :usuario, correo = :correo WHERE id = :id";
         $params=[
-            "usuario" => $datos['nombre_usuario'],
+            "id" => $datos['id'],
+            "usuario" => $datos['nombre'],
             "correo" => $datos['correo'],
-            "password" => $datos['password_hash']
+        ];
+        return $this->getEntityManager()->getConnection()->executeQuery($sql,$params);
+    }
+
+    //Actualizar contraseña de un usuario
+    public function actualizarContraseñaUsuario(int $id,String $passw){
+        $sql = "UPDATE usuario SET password_hash = :passw WHERE id = :id";
+
+        $params=[
+            "id" => $id,
+            "passw" => $passw,
         ];
         return $this->getEntityManager()->getConnection()->executeQuery($sql,$params);
     }

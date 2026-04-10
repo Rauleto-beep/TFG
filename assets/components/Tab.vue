@@ -45,26 +45,32 @@
                     </figure>
                 </button>
             </router-link>
-            <button class="sidebar-item w-full">
-                <figure class="figures-nav">
-                    <img class="img-simbolos-nav" src="../imagenes/nav/simbolo_ajustes_nav.svg">
-                    <figcaption class="font-medium">Ajustes</figcaption>
-                </figure>
-            </button>
+            <router-link to="/ajustes" active-class="is-active">
+                <button class="sidebar-item w-full">
+                    <figure class="figures-nav">
+                        <img class="img-simbolos-nav" src="../imagenes/nav/simbolo_ajustes_nav.svg">
+                        <figcaption class="font-medium">Ajustes</figcaption>
+                    </figure>
+                </button>
+            </router-link>
          </nav>
          <div class="mt-auto pt-6 border-t border-border space-y-4">
-            <button class="w-full btn-primary py-3 shadow-lg shadow-brand/20">
-                <figure>
-                    <img src="">
-                    <figcaption class="font-medium">Nueva Tarea</figcaption>
-                </figure>
-            </button>
+            <router-link to="/tareas" active-class="is-active">
+                <button class="w-full btn-primary py-3 shadow-lg shadow-brand/20">
+                    <figure>
+                        <img src="">
+                        <figcaption class="font-medium">+ Nueva Tarea</figcaption>
+                    </figure>
+                </button>
+            </router-link>
             <div class="flex items-center gap-3 p-2 rounded-xl hover:bg-white/5 transition-colors cursor-pointer group">
-                <div class="w-8 h-8 rounded-full bg-zinc-700 flex items-center justify-center text-[10px] font-bold">{{ userName.substring(0, 1).toUpperCase() }}</div>
-                <div class="flex-1 min-w-0">
-                    <p class="text-sm font-semibold truncate">{{userName}}</p>
-                </div>
-                <img class="img-simbolos-nav" src="../imagenes/nav/simbolo_ajustes_nav.svg">
+                <router-link to="/ajustes" active-class="is-active" class="flex items-center gap-3 p-2 rounded-xl hover:bg-white/5 transition-colors cursor-pointer group decoration-none text-inherit">
+                    <div class="w-8 h-8 rounded-full bg-zinc-700 flex items-center justify-center text-[10px] font-bold">{{ userName.substring(0, 1).toUpperCase() }}</div>
+                    <div class="flex-1 min-w-0">
+                        <p class="text-sm font-semibold truncate">{{userName}}</p>
+                    </div>
+                        <img class="img-simbolos-nav" src="../imagenes/nav/simbolo_ajustes_nav.svg">
+                </router-link>
             </div>
          </div>
     </div>

@@ -8,9 +8,17 @@ use Symfony\Component\Routing\Attribute\Route;
 use App\Repository\UsuarioRepository;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\PasswordHasher\Hasher\UserPasswordHasherInterface;
+use Lexik\Bundle\JWTAuthenticationBundle\Services\JWTTokenManagerInterface;
 
 final class UsuarioController extends AbstractController
 {
+    private $jwtManager;
+
+    public function __construct(JWTTokenManagerInterface $jwtManager)
+    {
+        $this->jwtManager = $jwtManager;
+    }
+
     #[Route('/usuario/aceptar_solicitud', name: 'app_usuario_aceptar_solicitud')]
     public function aceptar(Request $request, UsuarioRepository $repo): JsonResponse{
         try{
@@ -77,15 +85,26 @@ public function verificar(Request $request, UsuarioRepository $repo, UserPasswor
     ], 200);
 }
 
-    #[Route('/usuario/actualizar', name: 'app_usuario_actualizar')]
+    #[Route('/api/usuario/actualizar', name: 'app_usuario_actualizar')]
     public function actualizarUsuario(Request $request, UsuarioRepository $repo):JsonResponse{
         try{
             $datos = json_decode($request->getContent(), true);
 
             $repo->actualizarUsuario($datos);
-            return $this->json(['message' => 'Usuario actualizado correctamente']);
+
+            //Buscamos el objeto Usuario real (necesario para el JWT)
+            $usuario = $repo->find($datos['id']);
+            if (!$usuario) {
+                return $this->json(['message' => 'Usuario no encontrado'], 404);
+            }
+            //Generamos el nuevo token
+            $nuevoToken = $this->jwtManager->create($usuario);
+            return $this->json([
+                'message' => 'Usuario actualizado correctamente',
+                'token' => $nuevoToken
+            ]);
         }catch(\Exception $e){
-            return $this->json(['message' => 'Error al actualizar el usuario']);
+            return $this->json(['message' => $e->getMessage()]);
         }
 
     }
@@ -109,6 +128,21 @@ public function verificar(Request $request, UsuarioRepository $repo, UserPasswor
 
             $usuarios = $repo->verUsuario($datos);
             return $this->json($usuarios);
+        }catch(\Exception $e){
+            return $this->json(['message' => 'Error al mostrar la informacion del usuario']);
+        }
+    }
+
+    #[Route('/api/usuario/actualizar_passw', name: 'app_usuario_actualizar_pass')]
+    public function actualizarContraseñaUsuario(Request $request, UsuarioRepository $repo,UserPasswordHasherInterface $hasher):JsonResponse{
+        try{
+            $datos = json_decode($request->getContent(), true);
+
+            $usuario = $repo->find($datos['id']);
+            $passwordHasheada = $hasher->hashPassword($usuario, $datos['password']);
+
+            $usuarios = $repo->actualizarContraseñaUsuario($datos['id'],$passwordHasheada);
+            return $this->json($usuario);
         }catch(\Exception $e){
             return $this->json(['message' => 'Error al mostrar la informacion del usuario']);
         }

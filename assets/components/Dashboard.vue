@@ -5,18 +5,20 @@
         <div>
           <h2 class="text-3xl font-bold text-white mb-2">Vista del calendario</h2>
         </div>
-        <button class="bg-purple-600 hover:bg-purple-500 text-white px-6 py-3 rounded-xl flex items-center gap-2 transition-all shadow-lg shadow-purple-900/20">
-          <span class="text-xl">+</span> Nueva tarea
-        </button>
+        <router-link to="/tareas" active-class="is-active">
+          <button class="bg-purple-600 hover:bg-purple-500 text-white px-6 py-3 rounded-xl flex items-center gap-2 transition-all shadow-lg shadow-purple-900/20">
+            <span class="text-xl">+</span> Nueva tarea
+          </button>
+        </router-link>
       </header>
 
       <section class="bg-gray-900/30 border border-gray-800 p-6 rounded-3xl">
         <div class="flex justify-between items-center mb-6">
           <h3 class="text-xl font-bold text-white">{{ tituloActual }}</h3>
           <div class="flex bg-black/40 rounded-lg p-1">
-            <button @click="cambiarVista('dayGridMonth')" class="px-4 py-1 text-xs text-gray-400" :class="vistaActiva === 'dayGridMonth' ? 'bg-purple-600 text-white shadow-lg rounded-md' : 'text-gray-400 hover:text-white'">Month</button>
-            <button @click="cambiarVista('timeGridWeek')" class="px-4 py-1 text-xs text-gray-400" :class="vistaActiva === 'timeGridWeek' ? 'bg-purple-600 text-white shadow-lg rounded-md' : 'text-gray-400 hover:text-white'">Week</button>
-            <button @click="cambiarVista('timeGridDay')" class="px-4 py-1 text-xs text-gray-400" :class="vistaActiva === 'timeGridDay' ? 'bg-purple-600 text-white shadow-lg rounded-md' : 'text-gray-400 hover:text-white'">Day</button>
+            <button @click="cambiarVista('dayGridMonth')" class="px-4 py-1 text-xs text-gray-400" :class="vistaActiva === 'dayGridMonth' ? 'bg-purple-600 text-white shadow-lg rounded-md' : 'text-gray-400 hover:text-white'">Mes</button>
+            <button @click="cambiarVista('timeGridWeek')" class="px-4 py-1 text-xs text-gray-400" :class="vistaActiva === 'timeGridWeek' ? 'bg-purple-600 text-white shadow-lg rounded-md' : 'text-gray-400 hover:text-white'">Semana</button>
+            <button @click="cambiarVista('timeGridDay')" class="px-4 py-1 text-xs text-gray-400" :class="vistaActiva === 'timeGridDay' ? 'bg-purple-600 text-white shadow-lg rounded-md' : 'text-gray-400 hover:text-white'">Dia</button>
           </div>
         </div>
         <!-- CALENDARIO  -->
