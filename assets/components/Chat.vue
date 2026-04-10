@@ -79,7 +79,7 @@
           
           <div :class="['px-4 py-2 rounded-2xl text-sm shadow-sm', 
                        m.autor === userName ? 'bg-brand text-white rounded-tr-none' : 'bg-sidebar border border-border text-zinc-200 rounded-tl-none']">
-            {{ m.mensaje }}
+            {{ descifrar(m.mensaje) }}
           </div>
         </div>
         <div ref="scrollEnd"></div>
@@ -152,6 +152,7 @@
     import { obtenerGruposUsuario } from '../../src/JavaScript/Chat/obtenerGrupos.js';
     import { enviarMensajesGrupos } from '../../src/JavaScript/Chat/chat.js';
     import { eliminacionGrupo } from '../../src/JavaScript/Chat/eliminarGrupo.js';
+    import { cifrar, descifrar } from '../../src/JavaScript/Chat/cryptoService.js';
 
     const { crearGrupo } = creacionGrupo();
     const { grupos, infoGrupos } = obtenerGruposUsuario();

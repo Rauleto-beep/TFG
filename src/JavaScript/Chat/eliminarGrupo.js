@@ -10,7 +10,7 @@ export function eliminacionGrupo() {
         const token = localStorage.getItem("jwt_token");
         try {
             //Usamos await para la respuesta
-            const respuesta = await fetch('http://localhost:8081/api/grupo/eliminar', {
+            const respuesta = await fetch('https://localhost:8081/api/grupo/eliminar', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

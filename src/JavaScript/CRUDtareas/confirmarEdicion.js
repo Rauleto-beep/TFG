@@ -16,7 +16,7 @@ export function confirmarEdicionTareasUsuario() {
         const token = localStorage.getItem("jwt_token");
         try {
             //Usamos await para la respuesta
-            const respuesta = await fetch('http://localhost:8081/api/tarea/actualizar_tarea', {
+            const respuesta = await fetch('https://localhost:8081/api/tarea/actualizar_tarea', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

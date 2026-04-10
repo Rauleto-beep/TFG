@@ -12,7 +12,7 @@ export function creacionGrupo() {
         const token = localStorage.getItem("jwt_token");
         try {
             //Usamos await para la respuesta
-            const respuesta = await fetch('http://localhost:8081/api/grupo/crear', {
+            const respuesta = await fetch('https://localhost:8081/api/grupo/crear', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

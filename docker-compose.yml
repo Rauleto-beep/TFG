@@ -21,17 +21,14 @@ services:
   apache:
     image: httpd:2.4-alpine
     ports:
-      - "8081:80"
+      - "8081:443" # HTTPS externo 8081 mapea al 443 interno
     volumes:
-      - .:/usr/local/apache2/htdocs/
-    command: >
-      sh -c "sed -i 's#DocumentRoot \"/usr/local/apache2/htdocs\"#DocumentRoot \"/usr/local/apache2/htdocs/public\"#' /usr/local/apache2/conf/httpd.conf &&
-             sed -i 's#<Directory \"/usr/local/apache2/htdocs\">#<Directory \"/usr/local/apache2/htdocs/public\">#' /usr/local/apache2/conf/httpd.conf &&
-             sed -i 's#AllowOverride None#AllowOverride All#' /usr/local/apache2/conf/httpd.conf &&
-             sed -i 's#^#LoadModule proxy_module modules/mod_proxy.so\\nLoadModule proxy_fcgi_module modules/mod_proxy_fcgi.so\\nLoadModule rewrite_module modules/mod_rewrite.so\\n#' /usr/local/apache2/conf/httpd.conf &&
-             echo 'ProxyPassMatch ^/(.*\\.php(/.*)?)$ fcgi://php:9000/var/www/html/public/$$1' >> /usr/local/apache2/conf/httpd.conf &&
-             echo 'FallbackResource /index.php' >> /usr/local/apache2/conf/httpd.conf &&
-             httpd-foreground"
+      - .:/var/www/html
+      - ./server.crt:/usr/local/apache2/conf/server.crt
+      - ./server.key:/usr/local/apache2/conf/server.key
+      - ./my-httpd-ssl.conf:/usr/local/apache2/conf/httpd.conf 
+    depends_on:
+      - php
 
   mercure:
     image: dunglas/mercure
@@ -43,8 +40,8 @@ services:
       MERCURE_PUBLISHER_JWT_KEY: 'tfg_amatista_secure_key_32_chars_'
       MERCURE_SUBSCRIBER_JWT_KEY: 'tfg_amatista_secure_key_32_chars_'
       MERCURE_EXTRA_DIRECTIVES: |
-        cors_origins http://localhost:8081
-      CORS_ALLOWED_ORIGINS: "http://localhost:8081"
+        cors_origins https://localhost:8081
+      CORS_ALLOWED_ORIGINS: "https://localhost:8081"
     command: /usr/bin/caddy run --config /etc/caddy/dev.Caddyfile
     volumes:
       - mercure_data:/data

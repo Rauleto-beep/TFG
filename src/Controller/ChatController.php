@@ -26,7 +26,7 @@ final class ChatController extends AbstractController{
             ];
 
             $mrepo->crearMensaje($mensaje);
-            $topic = "http://localhost:8081/chat/grupo/" . $datos["grupo_id"];
+            $topic = "https://localhost:8081/chat/grupo/" . $datos["grupo_id"];
             // Publicar en Mercure
             $update = new Update(
                 $topic, // El "tópico" o canal
@@ -35,7 +35,8 @@ final class ChatController extends AbstractController{
                     'autor' => $usuario->getNombreUsuario(),
                     'autor_id' => $datos["autor_id"],
                     'grupo_id' => $datos["grupo_id"]
-                ])
+                ]),
+                true
     );
     $hub->publish($update);
 

@@ -9,7 +9,7 @@ export function obtenerCategoriasNombre() {
 
         try {
             // 2. Usamos await para la respuesta
-            const respuesta = await fetch('http://localhost:8081/api/categoria/ver/nombre', {
+            const respuesta = await fetch('https://localhost:8081/api/categoria/ver/nombre', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

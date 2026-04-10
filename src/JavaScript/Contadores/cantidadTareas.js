@@ -8,7 +8,7 @@ export function useCantidadTareas() {
         const token = localStorage.getItem("jwt_token");
 
         try {
-            const respuesta = await fetch('http://localhost:8081/api/tarea/cantidad', {
+            const respuesta = await fetch('https://localhost:8081/api/tarea/cantidad', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

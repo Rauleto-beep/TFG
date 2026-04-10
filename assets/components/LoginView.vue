@@ -95,7 +95,7 @@ const hacerLogin = async () => {
   };
 
   try {
-    const response = await fetch('http://localhost:8081/index.php/api/login_check', {
+    const response = await fetch('https://localhost:8081/index.php/api/login_check', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(datosLogin)
@@ -124,7 +124,7 @@ const hacerLogin = async () => {
 
 const verificarSiExiste = async () => {
   try {
-    const res = await fetch('http://localhost:8081/index.php/api/comprobar-usuario', {
+    const res = await fetch('https://localhost:8081/index.php/api/comprobar-usuario', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(form.value)

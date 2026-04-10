@@ -86,7 +86,7 @@ const form = ref({
 const enviarRegistro = async () => {
   cargando.value = true; // Corregido .ref por .value
   try {
-    const response = await fetch('http://localhost:8081/index.php/usuario/crear', {
+    const response = await fetch('https://localhost:8081/index.php/usuario/crear', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(form.value)

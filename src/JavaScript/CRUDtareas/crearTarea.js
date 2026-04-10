@@ -29,7 +29,7 @@ export function crearTareasUsuario() {
             "usuario_id": localStorage.getItem("user_id")
         };
         // Enviamos la tarea
-        const respuesta = await fetch('http://localhost:8081/api/tarea/crear', {
+        const respuesta = await fetch('https://localhost:8081/api/tarea/crear', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',

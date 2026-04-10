@@ -9,7 +9,7 @@ export function obtenerGruposUsuario() {
         const token = localStorage.getItem("jwt_token");
 
         try {
-            const respuesta = await fetch('http://localhost:8081/api/grupo/ver', {
+            const respuesta = await fetch('https://localhost:8081/api/grupo/ver', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

@@ -8,7 +8,7 @@ export function eliminarTareasUsuario() {
 
         try {
             // 2. Usamos await para la respuesta
-            const respuesta = await fetch('http://localhost:8081/api/tarea/eliminar', {
+            const respuesta = await fetch('https://localhost:8081/api/tarea/eliminar', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

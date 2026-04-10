@@ -10,7 +10,7 @@ export function completarTareasUsuario() {
 
         try {
             //Usamos await para la respuesta
-            const respuesta = await fetch('http://localhost:8081/api/tarea/actualizar_estado', {
+            const respuesta = await fetch('https://localhost:8081/api/tarea/actualizar_estado', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
