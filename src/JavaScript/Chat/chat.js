@@ -29,59 +29,64 @@ export function enviarMensajesGrupos() {
         }
 
         // 2. CONFIGURAR MERCURE (Fase 2: HTTPS y Credenciales)
-        const url = new URL('https://localhost:3000/.well-known/mercure');
+        const url = new URL('http://127.0.0.1:3001/.well-known/mercure');
         url.searchParams.append('topic', `https://localhost:8081/chat/grupo/${grupoId}`);
 
         // Importante: withCredentials permite enviar la cookie de autorización
-        eventSource = new EventSource(url, {
-            withCredentials: true 
-        });
+        eventSource = new EventSource(url);
 
         eventSource.onmessage = (event) => {
             const data = JSON.parse(event.data);
-            
-            // Fase 3: Descifrar el mensaje en tiempo real cuando llega del Hub
-            const textoLimpio = descifrar(data.mensaje);
-
+    
+            // Simplemente metemos el mensaje tal cual llega (cifrado) al array.
             mensajes.value.push({
-                mensaje: textoLimpio, 
+                id: data.id || Date.now(), // ID temporal si no viene del hub
+                mensaje: data.mensaje || data.contenido, // Ajusta según tu backend
                 autor: data.autor,
                 grupo_id: data.grupo_id
             });
         };
     };
 
-    const enviarMensaje = async (grupoId) => {
-        if (!nuevoMensaje.value.trim()) return;
-        
-        const autorId = localStorage.getItem("user_id");
+//
+const enviarMensaje = async (grupoId, contenidoExterno = null) => {
+    
+    // Si hay contenidoExterno (tarea), usamos ese. Si no, usamos el input.
+    const textoACrear = contenidoExterno || nuevoMensaje.value;
 
-        // Fase 3: Cifrar el texto antes de enviarlo al servidor
-        // Así el servidor solo recibe y guarda el código ilegible
-        const textoCifrado = cifrar(nuevoMensaje.value);
+    if (!textoACrear || !textoACrear.trim()) return;
+    
+    const autorId = localStorage.getItem("user_id");
 
-        const payload = {
-            "contenido": textoCifrado, // <--- Enviamos el mensaje blindado
-            "fecha_envio": new Date().toISOString().slice(0, 19).replace('T', ' '),
-            "grupo_id": grupoId,
-            "autor_id": autorId
-        };
+    // Si viene de fuera (tarea), ya viene cifrado. 
+    // Si viene del input, hay que cifrarlo.
+    const textoCifrado = contenidoExterno ? contenidoExterno : cifrar(textoACrear);
 
-        try {
-            // Cambiado a HTTPS
-            await fetch('https://localhost:8081/api/chat/enviar', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                    'Authorization': `Bearer ${token}`
-                },
-                body: JSON.stringify(payload)
-            });
-            nuevoMensaje.value = ""; 
-        } catch (error) {
-            console.error("Error al enviar mensaje:", error);
-        }
+    const payload = {
+        "contenido": textoCifrado,
+        "fecha_envio": new Date().toISOString().slice(0, 19).replace('T', ' '),
+        "grupo_id": grupoId,
+        "autor_id": autorId
     };
+
+    try {
+        await fetch('https://localhost:8081/api/chat/enviar', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': `Bearer ${token}`
+            },
+            body: JSON.stringify(payload)
+        });
+
+        // Solo limpiamos el input si no es una tarea externa
+        if (!contenidoExterno) {
+            nuevoMensaje.value = ""; 
+        }
+    } catch (error) {
+        console.error("Error al enviar mensaje:", error);
+    }
+};
 
     return { nuevoMensaje, mensajes, enviarMensaje, conectarMercure, eventSource };
 }

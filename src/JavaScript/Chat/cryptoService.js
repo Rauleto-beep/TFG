@@ -9,12 +9,25 @@ export const cifrar = (texto) => {
     return CryptoJS.AES.encrypt(texto, SECRET_KEY).toString();
 };
 
+// cryptoService.js
 export const descifrar = (textoCifrado) => {
+    if (!textoCifrado) return "";
+
+    if (typeof textoCifrado !== 'string' || !textoCifrado.startsWith('U2FsdGVkX1')) {
+        return textoCifrado; 
+    }
+
     try {
         const bytes = CryptoJS.AES.decrypt(textoCifrado, SECRET_KEY);
         const originalText = bytes.toString(CryptoJS.enc.Utf8);
-        return originalText || "Error al descifrar mensaje";
+        
+        // Si el resultado es vacío, hubo un fallo de clave (Key mismatch)
+        if (!originalText) return textoCifrado; 
+        
+        return originalText;
     } catch (e) {
-        return "Mensaje no cifrado o clave incorrecta";
+        // En lugar de lanzar un error que rompa Vue, devolvemos el texto original
+        console.warn("Fallo en descifrado, devolviendo texto original");
+        return textoCifrado;
     }
 };

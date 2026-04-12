@@ -33,19 +33,17 @@ services:
   mercure:
     image: dunglas/mercure
     ports:
-      - "3000:80"
+      - "3001:80"
     restart: unless-stopped
     environment:
       SERVER_NAME: ':80'
       MERCURE_PUBLISHER_JWT_KEY: 'tfg_amatista_secure_key_32_chars_'
       MERCURE_SUBSCRIBER_JWT_KEY: 'tfg_amatista_secure_key_32_chars_'
+      # ESTAS DOS LÍNEAS SON LAS QUE QUITARÁN EL 401:
+      MERCURE_ANONYMOUS: "1" 
       MERCURE_EXTRA_DIRECTIVES: |
+        anonymous
         cors_origins https://localhost:8081
-      CORS_ALLOWED_ORIGINS: "https://localhost:8081"
-    command: /usr/bin/caddy run --config /etc/caddy/dev.Caddyfile
-    volumes:
-      - mercure_data:/data
-      - mercure_config:/config
 
 volumes:
   mercure_data:

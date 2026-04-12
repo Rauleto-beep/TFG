@@ -36,7 +36,7 @@ final class ChatController extends AbstractController{
                     'autor_id' => $datos["autor_id"],
                     'grupo_id' => $datos["grupo_id"]
                 ]),
-                true
+                false
     );
     $hub->publish($update);
 
