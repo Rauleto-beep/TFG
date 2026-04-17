@@ -1,0 +1,149 @@
+2026-04-14 20:23:47 [INFO]: Starting Flowise...
+2026-04-14 20:23:47 [INFO]: 📦 [server]: Data Source initialized successfully
+2026-04-14 20:23:57 [INFO]: 🔄 [server]: Database migrations completed successfully
+2026-04-14 20:23:57 [INFO]: 🔐 [server]: Identity Manager initialized successfully
+2026-04-14 20:24:00 [INFO]: 🔧 [server]: Nodes pool initialized successfully
+2026-04-14 20:24:00 [INFO]: ⏹️ [server]: Abort controllers pool initialized successfully
+2026-04-14 20:24:00 [INFO]: 🔑 [server]: Encryption key initialized successfully
+2026-04-14 20:24:00 [INFO]: 🔐 [server]: Auth initialized successfully
+2026-04-14 20:24:00 [INFO]: 🚦 [server]: Rate limiters initialized successfully
+2026-04-14 20:24:00 [INFO]: 💾 [server]: Cache pool initialized successfully
+2026-04-14 20:24:00 [INFO]: 📊 [server]: Usage cache manager initialized successfully
+2026-04-14 20:24:00 [INFO]: 📈 [server]: Telemetry initialized successfully
+2026-04-14 20:24:00 [INFO]: 🌊 [server]: SSE Streamer initialized successfully
+2026-04-14 20:24:00 [INFO]: 🎉 [server]: All initialization steps completed successfully!
+2026-04-14 20:24:00 [INFO]: ⚡️ [server]: Flowise Server is listening at :3000
+2026-04-14 20:26:33 [INFO]: ⬆️ POST /api/v1/auth/resolve
+2026-04-14 20:26:33 [INFO]: ⬆️ POST /api/v1/auth/resolve
+2026-04-14 20:26:53 [INFO]: ⬆️ POST /api/v1/account/register
+2026-04-14 20:26:54 [INFO]: ⬆️ POST /api/v1/auth/login
+2026-04-14 20:27:06 [INFO]: ⬆️ POST /api/v1/chatflows
+2026-04-14 20:29:57 [INFO]: ⬆️ POST /api/v1/tools
+2026-04-14 20:30:18 [INFO]: ⬆️ POST /api/v1/node-load-method/groqChat
+2026-04-14 20:31:21 [INFO]: ⬆️ POST /api/v1/node-load-method/customTool
+2026-04-14 20:32:36 [INFO]: ⬆️ POST /api/v1/credentials
+2026-04-14 20:32:49 [INFO]: ⬆️ POST /api/v1/node-load-method/groqChat
+2026-04-14 20:36:22 [INFO]: 🖊 PUT /api/v1/chatflows/7f5736f5-91db-4341-a2c5-1a1ca1a20750
+2026-04-14 20:39:06 [ERROR]: Error validating domain for chatflow 2bd3dd4e-149d-4aa2-8518-e817858c0b87: Chatflow 2bd3dd4e-149d-4aa2-8518-e817858c0b87 not found in the database!
+Error: Chatflow 2bd3dd4e-149d-4aa2-8518-e817858c0b87 not found in the database!
+    at Object.getChatflowById (/usr/local/lib/node_modules/flowise/dist/services/chatflows/index.js:225:19)
+    at async validateChatflowDomain (/usr/local/lib/node_modules/flowise/dist/utils/domainValidation.js:36:15)
+    at async origin (/usr/local/lib/node_modules/flowise/dist/utils/XSS.js:72:47)
+2026-04-14 20:39:06 [ERROR]: Error validating domain for chatflow 2bd3dd4e-149d-4aa2-8518-e817858c0b87: Chatflow 2bd3dd4e-149d-4aa2-8518-e817858c0b87 not found in the database!
+Error: Chatflow 2bd3dd4e-149d-4aa2-8518-e817858c0b87 not found in the database!
+    at Object.getChatflowById (/usr/local/lib/node_modules/flowise/dist/services/chatflows/index.js:225:19)
+    at async validateChatflowDomain (/usr/local/lib/node_modules/flowise/dist/utils/domainValidation.js:36:15)
+    at async origin (/usr/local/lib/node_modules/flowise/dist/utils/XSS.js:72:47)
+2026-04-14 20:39:06 [INFO]: ⬆️ POST /api/v1/prediction/2bd3dd4e-149d-4aa2-8518-e817858c0b87
+2026-04-14 20:39:17 [INFO]: ⬆️ POST /api/v1/auth/resolve
+2026-04-14 20:39:26 [INFO]: ⬆️ POST /api/v1/auth/login
+2026-04-14 20:39:30 [INFO]: ⬆️ POST /api/v1/node-load-method/groqChat
+2026-04-14 20:39:30 [INFO]: ⬆️ POST /api/v1/node-load-method/customTool
+2026-04-14 20:41:36 [INFO]: ⬆️ POST /api/v1/prediction/7f5736f5-91db-4341-a2c5-1a1ca1a20750
+2026-04-14 20:41:36 [INFO]: [server]: Request originated from https://localhost:8081
+2026-04-14 20:41:36 [ERROR]: [server]: [3daa061b-8913-453e-9c86-f8248e12ebbb]: Error: Tool  not found
+Error: Error: Tool  not found
+    at CustomTool_Tools.init (/usr/local/lib/node_modules/flowise/node_modules/flowise-components/dist/nodes/tools/CustomTool/CustomTool.js:118:19)
+    at async buildFlow (/usr/local/lib/node_modules/flowise/dist/utils/index.js:493:36)
+    at async executeFlow (/usr/local/lib/node_modules/flowise/dist/utils/buildChatflow.js:389:28)
+    at async utilBuildChatflow (/usr/local/lib/node_modules/flowise/dist/utils/buildChatflow.js:884:28)
+    at async Object.buildChatflow (/usr/local/lib/node_modules/flowise/dist/services/predictions/index.js:9:28)
+    at async createPrediction (/usr/local/lib/node_modules/flowise/dist/controllers/predictions/index.js:91:37)
+2026-04-14 20:41:36 [ERROR]: [server]:3daa061b-8913-453e-9c86-f8248e12ebbb/7f5736f5-91db-4341-a2c5-1a1ca1a20750/9cbb02d5-c803-495a-b4b6-9923158ff596 Error: Error: Error: Tool  not found
+Error: Error: Error: Tool  not found
+    at buildFlow (/usr/local/lib/node_modules/flowise/dist/utils/index.js:548:19)
+    at async executeFlow (/usr/local/lib/node_modules/flowise/dist/utils/buildChatflow.js:389:28)
+    at async utilBuildChatflow (/usr/local/lib/node_modules/flowise/dist/utils/buildChatflow.js:884:28)
+    at async Object.buildChatflow (/usr/local/lib/node_modules/flowise/dist/services/predictions/index.js:9:28)
+    at async createPrediction (/usr/local/lib/node_modules/flowise/dist/controllers/predictions/index.js:91:37)
+2026-04-14 20:41:47 [INFO]: ⬆️ POST /api/v1/node-load-method/customTool
+2026-04-14 20:41:48 [INFO]: 🖊 PUT /api/v1/chatflows/7f5736f5-91db-4341-a2c5-1a1ca1a20750
+2026-04-14 20:41:57 [INFO]: ⬆️ POST /api/v1/prediction/7f5736f5-91db-4341-a2c5-1a1ca1a20750
+2026-04-14 20:41:57 [INFO]: [server]: Request originated from https://localhost:8081
+2026-04-14 20:41:58 [ERROR]: [server]:3daa061b-8913-453e-9c86-f8248e12ebbb/7f5736f5-91db-4341-a2c5-1a1ca1a20750/2ffba0d0-1033-4078-b117-dee08bf9d525 Error: 400 tool call validation failed: parameters for tool crear_tarea_ASISTENTE did not match schema: errors: [`/c`: expected number, but got string]
+Error: 400 tool call validation failed: parameters for tool crear_tarea_ASISTENTE did not match schema: errors: [`/c`: expected number, but got string]
+    at Stream.iterator (/usr/local/lib/node_modules/flowise/node_modules/@langchain/groq/node_modules/groq-sdk/lib/streaming.js:60:35)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async ChatGroq._streamResponseChunks (/usr/local/lib/node_modules/flowise/node_modules/@langchain/groq/dist/chat_models.cjs:693:20)
+    at async ChatGroq._streamIterator (/usr/local/lib/node_modules/flowise/node_modules/@langchain/core/dist/language_models/chat_models.cjs:108:22)
+    at async ChatGroq.transform (/usr/local/lib/node_modules/flowise/node_modules/@langchain/core/dist/runnables/base.cjs:303:3)
+    at async RunnableBinding.transform (/usr/local/lib/node_modules/flowise/node_modules/@langchain/core/dist/runnables/base.cjs:660:3)
+    at async ToolCallingAgentOutputParser.transform (/usr/local/lib/node_modules/flowise/node_modules/flowise-components/node_modules/@langchain/core/dist/runnables/base.cjs:307:20)
+    at async RunnableSequence._streamIterator (/usr/local/lib/node_modules/flowise/node_modules/flowise-components/node_modules/@langchain/core/dist/runnables/base.cjs:1005:21)
+2026-04-14 20:42:25 [INFO]: 🖊 PUT /api/v1/tools/44ff8a52-24b4-4fb9-bfc6-754e52626862
+2026-04-14 20:42:25 [INFO]: ⬆️ POST /api/v1/node-load-method/customTool
+2026-04-14 20:42:32 [INFO]: ⬆️ POST /api/v1/prediction/7f5736f5-91db-4341-a2c5-1a1ca1a20750
+2026-04-14 20:42:32 [INFO]: [server]: Request originated from https://localhost:8081
+2026-04-14 20:42:33 [ERROR]: [server]:3daa061b-8913-453e-9c86-f8248e12ebbb/7f5736f5-91db-4341-a2c5-1a1ca1a20750/82ae690b-afec-40be-9470-09371b3a02dd Error: 400 tool call validation failed: parameters for tool crear_tarea_ASISTENTE did not match schema: errors: [`/c`: expected number, but got string]
+Error: 400 tool call validation failed: parameters for tool crear_tarea_ASISTENTE did not match schema: errors: [`/c`: expected number, but got string]
+    at Stream.iterator (/usr/local/lib/node_modules/flowise/node_modules/@langchain/groq/node_modules/groq-sdk/lib/streaming.js:60:35)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async ChatGroq._streamResponseChunks (/usr/local/lib/node_modules/flowise/node_modules/@langchain/groq/dist/chat_models.cjs:693:20)
+    at async ChatGroq._streamIterator (/usr/local/lib/node_modules/flowise/node_modules/@langchain/core/dist/language_models/chat_models.cjs:108:22)
+    at async ChatGroq.transform (/usr/local/lib/node_modules/flowise/node_modules/@langchain/core/dist/runnables/base.cjs:303:3)
+    at async RunnableBinding.transform (/usr/local/lib/node_modules/flowise/node_modules/@langchain/core/dist/runnables/base.cjs:660:3)
+    at async ToolCallingAgentOutputParser.transform (/usr/local/lib/node_modules/flowise/node_modules/flowise-components/node_modules/@langchain/core/dist/runnables/base.cjs:307:20)
+    at async RunnableSequence._streamIterator (/usr/local/lib/node_modules/flowise/node_modules/flowise-components/node_modules/@langchain/core/dist/runnables/base.cjs:1005:21)
+2026-04-14 20:42:44 [INFO]: 🖊 PUT /api/v1/chatflows/7f5736f5-91db-4341-a2c5-1a1ca1a20750
+2026-04-14 20:42:49 [INFO]: ⬆️ POST /api/v1/prediction/7f5736f5-91db-4341-a2c5-1a1ca1a20750
+2026-04-14 20:42:49 [INFO]: [server]: Request originated from https://localhost:8081
+2026-04-14 20:42:50 [ERROR]: [server]:3daa061b-8913-453e-9c86-f8248e12ebbb/7f5736f5-91db-4341-a2c5-1a1ca1a20750/0d4a1293-c106-4428-9aa1-c8da95f8bb6b Error: 400 tool call validation failed: parameters for tool crear_tarea_ASISTENTE did not match schema: errors: [`/c`: expected number, but got string]
+Error: 400 tool call validation failed: parameters for tool crear_tarea_ASISTENTE did not match schema: errors: [`/c`: expected number, but got string]
+    at Stream.iterator (/usr/local/lib/node_modules/flowise/node_modules/@langchain/groq/node_modules/groq-sdk/lib/streaming.js:60:35)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async ChatGroq._streamResponseChunks (/usr/local/lib/node_modules/flowise/node_modules/@langchain/groq/dist/chat_models.cjs:693:20)
+    at async ChatGroq._streamIterator (/usr/local/lib/node_modules/flowise/node_modules/@langchain/core/dist/language_models/chat_models.cjs:108:22)
+    at async ChatGroq.transform (/usr/local/lib/node_modules/flowise/node_modules/@langchain/core/dist/runnables/base.cjs:303:3)
+    at async RunnableBinding.transform (/usr/local/lib/node_modules/flowise/node_modules/@langchain/core/dist/runnables/base.cjs:660:3)
+    at async ToolCallingAgentOutputParser.transform (/usr/local/lib/node_modules/flowise/node_modules/flowise-components/node_modules/@langchain/core/dist/runnables/base.cjs:307:20)
+    at async RunnableSequence._streamIterator (/usr/local/lib/node_modules/flowise/node_modules/flowise-components/node_modules/@langchain/core/dist/runnables/base.cjs:1005:21)
+2026-04-14 20:43:26 [INFO]: 🖊 PUT /api/v1/tools/44ff8a52-24b4-4fb9-bfc6-754e52626862
+2026-04-14 20:43:26 [INFO]: ⬆️ POST /api/v1/node-load-method/customTool
+2026-04-14 20:43:31 [INFO]: 🖊 PUT /api/v1/chatflows/7f5736f5-91db-4341-a2c5-1a1ca1a20750
+2026-04-14 20:43:36 [INFO]: ⬆️ POST /api/v1/prediction/7f5736f5-91db-4341-a2c5-1a1ca1a20750
+2026-04-14 20:43:36 [INFO]: [server]: Request originated from https://localhost:8081
+2026-04-14 20:43:37 [ERROR]: [server]:3daa061b-8913-453e-9c86-f8248e12ebbb/7f5736f5-91db-4341-a2c5-1a1ca1a20750/251e8c62-6fc0-4d85-8a7a-4f95cd37218e Error: 400 tool call validation failed: parameters for tool crear_tarea_ASISTENTE did not match schema: errors: [`/c`: expected number, but got string]
+Error: 400 tool call validation failed: parameters for tool crear_tarea_ASISTENTE did not match schema: errors: [`/c`: expected number, but got string]
+    at Stream.iterator (/usr/local/lib/node_modules/flowise/node_modules/@langchain/groq/node_modules/groq-sdk/lib/streaming.js:60:35)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async ChatGroq._streamResponseChunks (/usr/local/lib/node_modules/flowise/node_modules/@langchain/groq/dist/chat_models.cjs:693:20)
+    at async ChatGroq._streamIterator (/usr/local/lib/node_modules/flowise/node_modules/@langchain/core/dist/language_models/chat_models.cjs:108:22)
+    at async ChatGroq.transform (/usr/local/lib/node_modules/flowise/node_modules/@langchain/core/dist/runnables/base.cjs:303:3)
+    at async RunnableBinding.transform (/usr/local/lib/node_modules/flowise/node_modules/@langchain/core/dist/runnables/base.cjs:660:3)
+    at async ToolCallingAgentOutputParser.transform (/usr/local/lib/node_modules/flowise/node_modules/flowise-components/node_modules/@langchain/core/dist/runnables/base.cjs:307:20)
+    at async RunnableSequence._streamIterator (/usr/local/lib/node_modules/flowise/node_modules/flowise-components/node_modules/@langchain/core/dist/runnables/base.cjs:1005:21)
+2026-04-14 20:45:19 [INFO]: 🖊 PUT /api/v1/tools/44ff8a52-24b4-4fb9-bfc6-754e52626862
+2026-04-14 20:45:19 [INFO]: ⬆️ POST /api/v1/node-load-method/customTool
+2026-04-14 20:45:28 [INFO]: 🖊 PUT /api/v1/tools/44ff8a52-24b4-4fb9-bfc6-754e52626862
+2026-04-14 20:45:29 [INFO]: ⬆️ POST /api/v1/node-load-method/customTool
+2026-04-14 20:45:36 [INFO]: 🖊 PUT /api/v1/tools/44ff8a52-24b4-4fb9-bfc6-754e52626862
+2026-04-14 20:45:36 [INFO]: ⬆️ POST /api/v1/node-load-method/customTool
+2026-04-14 20:45:40 [INFO]: 🖊 PUT /api/v1/tools/44ff8a52-24b4-4fb9-bfc6-754e52626862
+2026-04-14 20:45:40 [INFO]: ⬆️ POST /api/v1/node-load-method/customTool
+2026-04-14 20:45:41 [INFO]: 🖊 PUT /api/v1/chatflows/7f5736f5-91db-4341-a2c5-1a1ca1a20750
+2026-04-14 20:45:48 [INFO]: ⬆️ POST /api/v1/prediction/7f5736f5-91db-4341-a2c5-1a1ca1a20750
+2026-04-14 20:45:48 [INFO]: [server]: Request originated from https://localhost:8081
+2026-04-14 20:47:48 [INFO]: 🖊 PUT /api/v1/chatflows/7f5736f5-91db-4341-a2c5-1a1ca1a20750
+2026-04-14 20:48:04 [INFO]: 🖊 PUT /api/v1/tools/44ff8a52-24b4-4fb9-bfc6-754e52626862
+2026-04-14 20:48:14 [INFO]: ⬆️ POST /api/v1/variables
+2026-04-14 20:48:17 [INFO]: ⬆️ POST /api/v1/node-load-method/groqChat
+2026-04-14 20:48:17 [INFO]: ⬆️ POST /api/v1/node-load-method/customTool
+2026-04-14 20:48:20 [INFO]: 🖊 PUT /api/v1/tools/44ff8a52-24b4-4fb9-bfc6-754e52626862
+2026-04-14 20:48:20 [INFO]: ⬆️ POST /api/v1/node-load-method/customTool
+2026-04-14 20:48:21 [INFO]: 🖊 PUT /api/v1/chatflows/7f5736f5-91db-4341-a2c5-1a1ca1a20750
+2026-04-14 20:48:30 [INFO]: ⬆️ POST /api/v1/prediction/7f5736f5-91db-4341-a2c5-1a1ca1a20750
+2026-04-14 20:48:30 [INFO]: [server]: Request originated from https://localhost:8081
+2026-04-14 20:49:40 [INFO]: 🖊 PUT /api/v1/tools/44ff8a52-24b4-4fb9-bfc6-754e52626862
+2026-04-14 20:49:40 [INFO]: ⬆️ POST /api/v1/node-load-method/customTool
+2026-04-14 20:49:43 [INFO]: 🖊 PUT /api/v1/chatflows/7f5736f5-91db-4341-a2c5-1a1ca1a20750
+2026-04-14 20:49:49 [INFO]: ⬆️ POST /api/v1/prediction/7f5736f5-91db-4341-a2c5-1a1ca1a20750
+2026-04-14 20:49:49 [INFO]: [server]: Request originated from https://localhost:8081
+2026-04-14 20:51:17 [INFO]: 🖊 PUT /api/v1/tools/44ff8a52-24b4-4fb9-bfc6-754e52626862
+2026-04-14 20:51:18 [INFO]: ⬆️ POST /api/v1/node-load-method/customTool
+2026-04-14 20:51:19 [INFO]: 🖊 PUT /api/v1/chatflows/7f5736f5-91db-4341-a2c5-1a1ca1a20750
+2026-04-14 20:51:26 [INFO]: ⬆️ POST /api/v1/prediction/7f5736f5-91db-4341-a2c5-1a1ca1a20750
+2026-04-14 20:51:26 [INFO]: [server]: Request originated from https://localhost:8081
+2026-04-14 20:56:06 [INFO]: ⬆️ POST /api/v1/prediction/7f5736f5-91db-4341-a2c5-1a1ca1a20750
+2026-04-14 20:56:06 [INFO]: [server]: Request originated from https://localhost:8081
+2026-04-14 20:57:56 [INFO]: 🖊 PUT /api/v1/tools/44ff8a52-24b4-4fb9-bfc6-754e52626862
+2026-04-14 20:57:56 [INFO]: ⬆️ POST /api/v1/node-load-method/customTool

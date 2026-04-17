@@ -57,7 +57,7 @@
             v-model="nuevaTarea.categoria"
             id="inputCategoria" 
             class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-sm text-white appearance-none outline-none focus:ring-1 focus:ring-brand">
-            <option class="text-[10px] font-bold uppercase tracking-widest border-brand/50 appearance-none" style="background-color: #1e1f22;" value="" selected>Ninguna</option>
+            <option class="text-[10px] font-bold uppercase tracking-widest border-brand/50 appearance-none" style="background-color: #1e1f22;" value="7" selected>Ninguna</option>
                                                     <option class="text-[10px] font-bold uppercase tracking-widest border-brand/50 appearance-none" style="background-color: #1e1f22;" value="1">Trabajo</option>
                                                     <option class="text-[10px] font-bold uppercase tracking-widest border-brand/50 appearance-none" style="background-color: #1e1f22;" value="2">Personal</option>
                                                     <option class="text-[10px] font-bold uppercase tracking-widest border-brand/50 appearance-none" style="background-color: #1e1f22;" value="3">Urgente</option>

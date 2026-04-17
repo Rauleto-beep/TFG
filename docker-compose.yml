@@ -13,6 +13,8 @@ services:
     build:
       context: .
       dockerfile: docker/php/Dockerfile
+    ports:
+      - "3000:3000"
     volumes:
       - .:/var/www/html
     depends_on:
@@ -44,6 +46,26 @@ services:
       MERCURE_EXTRA_DIRECTIVES: |
         anonymous
         cors_origins https://localhost:8081
+
+  flowise:
+    image: flowiseai/flowise:latest
+    container_name: tfg-flowise
+    restart: always
+    environment:
+      - PORT=3000
+      - DATABASE_PATH=/root/.flowise
+      - APIKEY_PATH=/root/.flowise
+      - LOG_PATH=/root/.flowise
+      - CORS_ORIGINS=*
+      # AÑADE ESTA LÍNEA PARA PERMITIR LLAMAR A TU APACHE:
+      - BLOCKED_HTTP_ADDRESSES=
+      - ALLOW_ALL_INTERNAL_IPS=true
+      - HTTP_PROXY=
+      - NODE_TLS_REJECT_UNAUTHORIZED=0
+    ports:
+      - "3005:3000"
+    volumes:
+      - ./flowise_data:/root/.flowise
 
 volumes:
   mercure_data:

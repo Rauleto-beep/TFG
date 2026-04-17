@@ -120,7 +120,7 @@
                                         <label class="pl-5 text-[10px] font-bold uppercase tracking-widest text-zinc-500">Categoria</label>
                                             <div class="relative">
                                                 <select id="inputCategoria" class="input w-full appearance-none" name="selectCategoriaTarea">
-                                                    <option class="text-[10px] font-bold uppercase tracking-widest border-brand/50 appearance-none" style="background-color: #1e1f22;" value="" selected>Ninguna</option>
+                                                    <option class="text-[10px] font-bold uppercase tracking-widest border-brand/50 appearance-none" style="background-color: #1e1f22;" value="7" selected>Ninguna</option>
                                                     <option class="text-[10px] font-bold uppercase tracking-widest border-brand/50 appearance-none" style="background-color: #1e1f22;" value="1">Trabajo</option>
                                                     <option class="text-[10px] font-bold uppercase tracking-widest border-brand/50 appearance-none" style="background-color: #1e1f22;" value="2">Personal</option>
                                                     <option class="text-[10px] font-bold uppercase tracking-widest border-brand/50 appearance-none" style="background-color: #1e1f22;" value="3">Urgente</option>

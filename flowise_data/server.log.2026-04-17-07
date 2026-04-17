@@ -1,0 +1,26 @@
+2026-04-17 07:42:09 [INFO]: Starting Flowise...
+2026-04-17 07:42:09 [INFO]: 📦 [server]: Data Source initialized successfully
+2026-04-17 07:42:09 [INFO]: 🔄 [server]: Database migrations completed successfully
+2026-04-17 07:42:09 [INFO]: 🔐 [server]: Identity Manager initialized successfully
+2026-04-17 07:42:15 [INFO]: 🔧 [server]: Nodes pool initialized successfully
+2026-04-17 07:42:15 [INFO]: ⏹️ [server]: Abort controllers pool initialized successfully
+2026-04-17 07:42:15 [INFO]: 🔑 [server]: Encryption key initialized successfully
+2026-04-17 07:42:15 [INFO]: 🔐 [server]: Auth initialized successfully
+2026-04-17 07:42:15 [INFO]: 🚦 [server]: Rate limiters initialized successfully
+2026-04-17 07:42:15 [INFO]: 💾 [server]: Cache pool initialized successfully
+2026-04-17 07:42:15 [INFO]: 📊 [server]: Usage cache manager initialized successfully
+2026-04-17 07:42:15 [INFO]: 📈 [server]: Telemetry initialized successfully
+2026-04-17 07:42:15 [INFO]: 🌊 [server]: SSE Streamer initialized successfully
+2026-04-17 07:42:15 [INFO]: 🎉 [server]: All initialization steps completed successfully!
+2026-04-17 07:42:15 [INFO]: ⚡️ [server]: Flowise Server is listening at :3000
+2026-04-17 07:43:42 [INFO]: ⬆️ POST /api/v1/auth/resolve
+2026-04-17 07:43:42 [INFO]: ⬆️ POST /api/v1/auth/resolve
+2026-04-17 07:43:50 [INFO]: ⬆️ POST /api/v1/auth/login
+2026-04-17 07:44:01 [INFO]: ⬆️ POST /api/v1/auth/resolve
+2026-04-17 07:44:01 [INFO]: ⬆️ POST /api/v1/auth/resolve
+2026-04-17 07:44:06 [INFO]: ⬆️ POST /api/v1/auth/login
+2026-04-17 07:44:33 [INFO]: ⬆️ POST /api/v1/node-load-method/groqChat
+2026-04-17 07:44:33 [INFO]: ⬆️ POST /api/v1/node-load-method/customTool
+2026-04-17 07:55:56 [INFO]: 🖊 PUT /api/v1/tools/44ff8a52-24b4-4fb9-bfc6-754e52626862
+2026-04-17 07:55:56 [INFO]: ⬆️ POST /api/v1/node-load-method/customTool
+2026-04-17 07:59:22 [INFO]: 🖊 PUT /api/v1/chatflows/7f5736f5-91db-4341-a2c5-1a1ca1a20750

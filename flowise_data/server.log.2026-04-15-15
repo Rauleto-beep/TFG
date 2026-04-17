@@ -1,0 +1,45 @@
+2026-04-15 15:02:01 [INFO]: 🖊 PUT /api/v1/tools/60cc696d-2535-4b4c-acd1-21334b31d77f
+2026-04-15 15:02:01 [INFO]: ⬆️ POST /api/v1/node-load-method/customTool
+2026-04-15 15:02:23 [INFO]: 🖊 PUT /api/v1/tools/44ff8a52-24b4-4fb9-bfc6-754e52626862
+2026-04-15 15:02:23 [INFO]: ⬆️ POST /api/v1/node-load-method/customTool
+2026-04-15 15:02:24 [INFO]: 🖊 PUT /api/v1/chatflows/7f5736f5-91db-4341-a2c5-1a1ca1a20750
+2026-04-15 15:02:44 [INFO]: ⬆️ POST /api/v1/prediction/7f5736f5-91db-4341-a2c5-1a1ca1a20750
+2026-04-15 15:02:44 [INFO]: [server]: Request originated from https://localhost:8081
+2026-04-15 15:03:46 [INFO]: 🖊 PUT /api/v1/chatflows/7f5736f5-91db-4341-a2c5-1a1ca1a20750
+2026-04-15 15:03:59 [INFO]: 🖊 PUT /api/v1/tools/60cc696d-2535-4b4c-acd1-21334b31d77f
+2026-04-15 15:03:59 [INFO]: ⬆️ POST /api/v1/node-load-method/customTool
+2026-04-15 15:04:01 [INFO]: 🖊 PUT /api/v1/chatflows/7f5736f5-91db-4341-a2c5-1a1ca1a20750
+2026-04-15 15:04:07 [INFO]: ⬆️ POST /api/v1/prediction/7f5736f5-91db-4341-a2c5-1a1ca1a20750
+2026-04-15 15:04:07 [INFO]: [server]: Request originated from https://localhost:8081
+2026-04-15 15:06:01 [INFO]: 🖊 PUT /api/v1/tools/44ff8a52-24b4-4fb9-bfc6-754e52626862
+2026-04-15 15:06:01 [INFO]: ⬆️ POST /api/v1/node-load-method/customTool
+2026-04-15 15:06:10 [INFO]: 🖊 PUT /api/v1/tools/60cc696d-2535-4b4c-acd1-21334b31d77f
+2026-04-15 15:06:10 [INFO]: ⬆️ POST /api/v1/node-load-method/customTool
+2026-04-15 15:07:04 [INFO]: 🖊 PUT /api/v1/chatflows/7f5736f5-91db-4341-a2c5-1a1ca1a20750
+2026-04-15 15:07:24 [INFO]: ⬆️ POST /api/v1/prediction/7f5736f5-91db-4341-a2c5-1a1ca1a20750
+2026-04-15 15:07:24 [INFO]: [server]: Request originated from https://localhost:8081
+2026-04-15 15:07:54 [INFO]: ⬆️ POST /api/v1/prediction/7f5736f5-91db-4341-a2c5-1a1ca1a20750
+2026-04-15 15:07:54 [INFO]: [server]: Request originated from https://localhost:8081
+2026-04-15 15:08:57 [INFO]: ⬆️ POST /api/v1/prediction/7f5736f5-91db-4341-a2c5-1a1ca1a20750
+2026-04-15 15:08:57 [INFO]: [server]: Request originated from https://localhost:8081
+2026-04-15 15:09:33 [INFO]: ⬆️ POST /api/v1/prediction/7f5736f5-91db-4341-a2c5-1a1ca1a20750
+2026-04-15 15:09:33 [INFO]: [server]: Request originated from https://localhost:8081
+2026-04-15 15:09:34 [ERROR]: [server]:3daa061b-8913-453e-9c86-f8248e12ebbb/7f5736f5-91db-4341-a2c5-1a1ca1a20750/2eeba5d2-e4ab-45ee-b6a2-7473e24f4a2f Error: 400 Failed to call a function. Please adjust your prompt. See 'failed_generation' for more details.
+Error: 400 Failed to call a function. Please adjust your prompt. See 'failed_generation' for more details.
+    at Stream.iterator (/usr/local/lib/node_modules/flowise/node_modules/@langchain/groq/node_modules/groq-sdk/lib/streaming.js:60:35)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async ChatGroq._streamResponseChunks (/usr/local/lib/node_modules/flowise/node_modules/@langchain/groq/dist/chat_models.cjs:693:20)
+    at async ChatGroq._streamIterator (/usr/local/lib/node_modules/flowise/node_modules/@langchain/core/dist/language_models/chat_models.cjs:108:22)
+    at async ChatGroq.transform (/usr/local/lib/node_modules/flowise/node_modules/@langchain/core/dist/runnables/base.cjs:303:3)
+    at async RunnableBinding.transform (/usr/local/lib/node_modules/flowise/node_modules/@langchain/core/dist/runnables/base.cjs:660:3)
+    at async ToolCallingAgentOutputParser.transform (/usr/local/lib/node_modules/flowise/node_modules/flowise-components/node_modules/@langchain/core/dist/runnables/base.cjs:307:20)
+    at async RunnableSequence._streamIterator (/usr/local/lib/node_modules/flowise/node_modules/flowise-components/node_modules/@langchain/core/dist/runnables/base.cjs:1005:21)
+2026-04-15 15:10:58 [INFO]: ⬆️ POST /api/v1/prediction/7f5736f5-91db-4341-a2c5-1a1ca1a20750
+2026-04-15 15:10:58 [INFO]: [server]: Request originated from https://localhost:8081
+2026-04-15 15:11:15 [INFO]: ⬆️ POST /api/v1/prediction/7f5736f5-91db-4341-a2c5-1a1ca1a20750
+2026-04-15 15:11:15 [INFO]: [server]: Request originated from https://localhost:8081
+2026-04-15 15:11:34 [INFO]: ⬆️ POST /api/v1/prediction/7f5736f5-91db-4341-a2c5-1a1ca1a20750
+2026-04-15 15:11:34 [INFO]: [server]: Request originated from https://localhost:8081
+2026-04-15 15:11:48 [INFO]: ⬆️ POST /api/v1/prediction/7f5736f5-91db-4341-a2c5-1a1ca1a20750
+2026-04-15 15:11:48 [INFO]: [server]: Request originated from https://localhost:8081
+2026-04-15 15:12:39 [INFO]: Shutting down Flowise...

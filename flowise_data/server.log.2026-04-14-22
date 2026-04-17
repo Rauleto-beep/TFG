@@ -1,0 +1,105 @@
+2026-04-14 22:00:08 [INFO]: 🖊 PUT /api/v1/tools/44ff8a52-24b4-4fb9-bfc6-754e52626862
+2026-04-14 22:00:54 [INFO]: Shutting down Flowise...
+2026-04-14 22:01:14 [INFO]: Starting Flowise...
+2026-04-14 22:01:14 [INFO]: 📦 [server]: Data Source initialized successfully
+2026-04-14 22:01:14 [INFO]: 🔄 [server]: Database migrations completed successfully
+2026-04-14 22:01:14 [INFO]: 🔐 [server]: Identity Manager initialized successfully
+2026-04-14 22:01:18 [INFO]: 🔧 [server]: Nodes pool initialized successfully
+2026-04-14 22:01:18 [INFO]: ⏹️ [server]: Abort controllers pool initialized successfully
+2026-04-14 22:01:18 [INFO]: 🔑 [server]: Encryption key initialized successfully
+2026-04-14 22:01:18 [INFO]: 🔐 [server]: Auth initialized successfully
+2026-04-14 22:01:18 [INFO]: 🚦 [server]: Rate limiters initialized successfully
+2026-04-14 22:01:18 [INFO]: 💾 [server]: Cache pool initialized successfully
+2026-04-14 22:01:18 [INFO]: 📊 [server]: Usage cache manager initialized successfully
+2026-04-14 22:01:18 [INFO]: 📈 [server]: Telemetry initialized successfully
+2026-04-14 22:01:18 [INFO]: 🌊 [server]: SSE Streamer initialized successfully
+2026-04-14 22:01:18 [INFO]: 🎉 [server]: All initialization steps completed successfully!
+2026-04-14 22:01:18 [INFO]: ⚡️ [server]: Flowise Server is listening at :3000
+2026-04-14 22:01:22 [INFO]: 🖊 PUT /api/v1/tools/44ff8a52-24b4-4fb9-bfc6-754e52626862
+2026-04-14 22:02:10 [INFO]: ⬆️ POST /api/v1/prediction/7f5736f5-91db-4341-a2c5-1a1ca1a20750
+2026-04-14 22:02:10 [INFO]: [server]: Request originated from https://localhost:8081
+2026-04-14 22:03:19 [INFO]: 🖊 PUT /api/v1/tools/44ff8a52-24b4-4fb9-bfc6-754e52626862
+2026-04-14 22:03:59 [INFO]: 🖊 PUT /api/v1/tools/44ff8a52-24b4-4fb9-bfc6-754e52626862
+2026-04-14 22:04:15 [INFO]: ⬆️ POST /api/v1/prediction/7f5736f5-91db-4341-a2c5-1a1ca1a20750
+2026-04-14 22:04:15 [INFO]: [server]: Request originated from https://localhost:8081
+2026-04-14 22:06:25 [INFO]: 🖊 PUT /api/v1/tools/44ff8a52-24b4-4fb9-bfc6-754e52626862
+2026-04-14 22:06:32 [INFO]: ⬆️ POST /api/v1/prediction/7f5736f5-91db-4341-a2c5-1a1ca1a20750
+2026-04-14 22:06:32 [INFO]: [server]: Request originated from https://localhost:8081
+2026-04-14 22:08:44 [INFO]: 🖊 PUT /api/v1/tools/44ff8a52-24b4-4fb9-bfc6-754e52626862
+2026-04-14 22:08:50 [INFO]: ⬆️ POST /api/v1/prediction/7f5736f5-91db-4341-a2c5-1a1ca1a20750
+2026-04-14 22:08:50 [INFO]: [server]: Request originated from https://localhost:8081
+2026-04-14 22:10:04 [INFO]: 🖊 PUT /api/v1/tools/44ff8a52-24b4-4fb9-bfc6-754e52626862
+2026-04-14 22:10:23 [INFO]: ⬆️ POST /api/v1/node-load-method/groqChat
+2026-04-14 22:10:23 [INFO]: ⬆️ POST /api/v1/node-load-method/customTool
+2026-04-14 22:10:25 [INFO]: 🖊 PUT /api/v1/chatflows/7f5736f5-91db-4341-a2c5-1a1ca1a20750
+2026-04-14 22:10:51 [INFO]: ⬆️ POST /api/v1/prediction/7f5736f5-91db-4341-a2c5-1a1ca1a20750
+2026-04-14 22:10:51 [INFO]: [server]: Request originated from https://localhost:8081
+2026-04-14 22:12:23 [INFO]: 🖊 PUT /api/v1/tools/44ff8a52-24b4-4fb9-bfc6-754e52626862
+2026-04-14 22:13:04 [INFO]: ⬆️ POST /api/v1/prediction/7f5736f5-91db-4341-a2c5-1a1ca1a20750
+2026-04-14 22:13:04 [INFO]: [server]: Request originated from https://localhost:8081
+2026-04-14 22:13:39 [INFO]: 🖊 PUT /api/v1/tools/44ff8a52-24b4-4fb9-bfc6-754e52626862
+2026-04-14 22:13:53 [INFO]: ⬆️ POST /api/v1/node-load-method/customTool
+2026-04-14 22:13:53 [INFO]: ⬆️ POST /api/v1/node-load-method/groqChat
+2026-04-14 22:13:54 [INFO]: 🖊 PUT /api/v1/chatflows/7f5736f5-91db-4341-a2c5-1a1ca1a20750
+2026-04-14 22:13:55 [INFO]: 🖊 PUT /api/v1/chatflows/7f5736f5-91db-4341-a2c5-1a1ca1a20750
+2026-04-14 22:13:55 [INFO]: 🖊 PUT /api/v1/chatflows/7f5736f5-91db-4341-a2c5-1a1ca1a20750
+2026-04-14 22:14:08 [INFO]: ⬆️ POST /api/v1/prediction/7f5736f5-91db-4341-a2c5-1a1ca1a20750
+2026-04-14 22:14:08 [INFO]: [server]: Request originated from https://localhost:8081
+2026-04-14 22:14:57 [INFO]: 🖊 PUT /api/v1/tools/44ff8a52-24b4-4fb9-bfc6-754e52626862
+2026-04-14 22:15:00 [INFO]: ⬆️ POST /api/v1/node-load-method/groqChat
+2026-04-14 22:15:00 [INFO]: ⬆️ POST /api/v1/node-load-method/customTool
+2026-04-14 22:15:01 [INFO]: 🖊 PUT /api/v1/chatflows/7f5736f5-91db-4341-a2c5-1a1ca1a20750
+2026-04-14 22:15:02 [INFO]: 🖊 PUT /api/v1/chatflows/7f5736f5-91db-4341-a2c5-1a1ca1a20750
+2026-04-14 22:15:10 [INFO]: ⬆️ POST /api/v1/prediction/7f5736f5-91db-4341-a2c5-1a1ca1a20750
+2026-04-14 22:15:10 [INFO]: [server]: Request originated from https://localhost:8081
+2026-04-14 22:16:20 [INFO]: 🖊 PUT /api/v1/tools/44ff8a52-24b4-4fb9-bfc6-754e52626862
+2026-04-14 22:16:30 [INFO]: ⬆️ POST /api/v1/prediction/7f5736f5-91db-4341-a2c5-1a1ca1a20750
+2026-04-14 22:16:30 [INFO]: [server]: Request originated from https://localhost:8081
+2026-04-14 22:17:17 [INFO]: 🖊 PUT /api/v1/tools/44ff8a52-24b4-4fb9-bfc6-754e52626862
+2026-04-14 22:17:25 [INFO]: ⬆️ POST /api/v1/node-load-method/customTool
+2026-04-14 22:17:25 [INFO]: ⬆️ POST /api/v1/node-load-method/groqChat
+2026-04-14 22:17:25 [INFO]: 🖊 PUT /api/v1/chatflows/7f5736f5-91db-4341-a2c5-1a1ca1a20750
+2026-04-14 22:17:26 [INFO]: 🖊 PUT /api/v1/chatflows/7f5736f5-91db-4341-a2c5-1a1ca1a20750
+2026-04-14 22:17:26 [INFO]: 🖊 PUT /api/v1/chatflows/7f5736f5-91db-4341-a2c5-1a1ca1a20750
+2026-04-14 22:17:41 [INFO]: ⬆️ POST /api/v1/prediction/7f5736f5-91db-4341-a2c5-1a1ca1a20750
+2026-04-14 22:17:41 [INFO]: [server]: Request originated from https://localhost:8081
+2026-04-14 22:18:27 [INFO]: ⬆️ POST /api/v1/prediction/7f5736f5-91db-4341-a2c5-1a1ca1a20750
+2026-04-14 22:18:27 [INFO]: [server]: Request originated from https://localhost:8081
+2026-04-14 22:19:02 [INFO]: ⬆️ POST /api/v1/auth/resolve
+2026-04-14 22:19:15 [INFO]: ⬆️ POST /api/v1/auth/login
+2026-04-14 22:20:03 [INFO]: 🖊 PUT /api/v1/tools/44ff8a52-24b4-4fb9-bfc6-754e52626862
+2026-04-14 22:20:16 [INFO]: ⬆️ POST /api/v1/node-load-method/groqChat
+2026-04-14 22:20:16 [INFO]: ⬆️ POST /api/v1/node-load-method/customTool
+2026-04-14 22:20:17 [INFO]: 🖊 PUT /api/v1/chatflows/7f5736f5-91db-4341-a2c5-1a1ca1a20750
+2026-04-14 22:20:26 [INFO]: ⬆️ POST /api/v1/prediction/7f5736f5-91db-4341-a2c5-1a1ca1a20750
+2026-04-14 22:20:26 [INFO]: [server]: Request originated from https://localhost:8081
+2026-04-14 22:21:06 [INFO]: ⬆️ POST /api/v1/node-load-method/groqChat
+2026-04-14 22:21:06 [INFO]: ⬆️ POST /api/v1/node-load-method/customTool
+2026-04-14 22:21:13 [INFO]: 🖊 PUT /api/v1/tools/44ff8a52-24b4-4fb9-bfc6-754e52626862
+2026-04-14 22:21:17 [INFO]: ⬆️ POST /api/v1/node-load-method/groqChat
+2026-04-14 22:21:17 [INFO]: ⬆️ POST /api/v1/node-load-method/customTool
+2026-04-14 22:21:18 [INFO]: 🖊 PUT /api/v1/chatflows/7f5736f5-91db-4341-a2c5-1a1ca1a20750
+2026-04-14 22:22:29 [INFO]: ⬆️ POST /api/v1/prediction/7f5736f5-91db-4341-a2c5-1a1ca1a20750
+2026-04-14 22:22:29 [INFO]: [server]: Request originated from https://localhost:8081
+2026-04-14 22:23:26 [INFO]: ⬆️ POST /api/v1/node-load-method/groqChat
+2026-04-14 22:23:26 [INFO]: ⬆️ POST /api/v1/node-load-method/customTool
+2026-04-14 22:24:07 [INFO]: 🖊 PUT /api/v1/chatflows/7f5736f5-91db-4341-a2c5-1a1ca1a20750
+2026-04-14 22:24:14 [INFO]: ⬆️ POST /api/v1/prediction/7f5736f5-91db-4341-a2c5-1a1ca1a20750
+2026-04-14 22:24:14 [INFO]: [server]: Request originated from https://localhost:8081
+2026-04-14 22:24:21 [INFO]: ⬆️ POST /api/v1/prediction/7f5736f5-91db-4341-a2c5-1a1ca1a20750
+2026-04-14 22:24:21 [INFO]: [server]: Request originated from https://localhost:8081
+2026-04-14 22:27:26 [INFO]: ⬆️ POST /api/v1/prediction/7f5736f5-91db-4341-a2c5-1a1ca1a20750
+2026-04-14 22:27:26 [INFO]: [server]: Request originated from https://localhost:8081
+2026-04-14 22:31:19 [INFO]: ⬆️ POST /api/v1/prediction/7f5736f5-91db-4341-a2c5-1a1ca1a20750
+2026-04-14 22:31:19 [INFO]: [server]: Request originated from https://localhost:8081
+2026-04-14 22:33:06 [INFO]: 🖊 PUT /api/v1/tools/44ff8a52-24b4-4fb9-bfc6-754e52626862
+2026-04-14 22:33:07 [INFO]: ⬆️ POST /api/v1/node-load-method/customTool
+2026-04-14 22:33:08 [INFO]: 🖊 PUT /api/v1/chatflows/7f5736f5-91db-4341-a2c5-1a1ca1a20750
+2026-04-14 22:33:42 [INFO]: 🖊 PUT /api/v1/chatflows/7f5736f5-91db-4341-a2c5-1a1ca1a20750
+2026-04-14 22:35:00 [INFO]: ⬆️ POST /api/v1/prediction/7f5736f5-91db-4341-a2c5-1a1ca1a20750
+2026-04-14 22:35:00 [INFO]: [server]: Request originated from https://localhost:8081
+2026-04-14 22:38:14 [INFO]: ⬆️ POST /api/v1/prediction/7f5736f5-91db-4341-a2c5-1a1ca1a20750
+2026-04-14 22:38:14 [INFO]: [server]: Request originated from https://localhost:8081
+2026-04-14 22:39:43 [INFO]: ⬆️ POST /api/v1/prediction/7f5736f5-91db-4341-a2c5-1a1ca1a20750
+2026-04-14 22:39:43 [INFO]: [server]: Request originated from https://localhost:8081
+2026-04-14 22:44:40 [INFO]: Shutting down Flowise...

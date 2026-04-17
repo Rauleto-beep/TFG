@@ -79,6 +79,7 @@ class TareaRepository extends ServiceEntityRepository
 
         $this->getEntityManager()->getConnection()->executeQuery($sqlTareaUsuario, $paramsTareaUsuario);
     }
+
     /*
     * ELIMINAR
     */
@@ -92,6 +93,40 @@ class TareaRepository extends ServiceEntityRepository
         $this->getEntityManager()->getConnection()->executeQuery($sql, $params);
         $this->getEntityManager()->getConnection()->executeQuery($sqlTU, $params);
     }
+
+    public function eliminarTareaIA(string $nombre, int $idUsuario) {
+    $conn = $this->getEntityManager()->getConnection();
+
+        $sqlGetId = '
+            SELECT t.id 
+            FROM tarea t
+            INNER JOIN tarea_usuario tu ON t.id = tu.tarea_id
+            WHERE t.nombre_tarea = :nombre AND tu.usuario_id = :idUsuario
+            LIMIT 1';
+    
+        $tareaId = $conn->fetchOne($sqlGetId, [
+            'nombre' => $nombre,
+            'idUsuario' => $idUsuario
+        ]);
+
+        if ($tareaId) {
+            // 2. Borramos primero la relación en tarea_usuario (por integridad referencial)
+            $conn->executeStatement(
+                'DELETE FROM tarea_usuario WHERE tarea_id = :tareaId AND usuario_id = :idUsuario',
+                ['tareaId' => $tareaId, 'idUsuario' => $idUsuario]
+            );
+
+            // 3. Finalmente borramos la tarea física
+            $conn->executeStatement(
+                'DELETE FROM tarea WHERE id = :tareaId',
+                ['tareaId' => $tareaId]
+            );
+        
+            return true;
+        }
+    
+    return false;
+}
 
     /*
     * VER
@@ -137,6 +172,69 @@ class TareaRepository extends ServiceEntityRepository
 
             return $tareasFormateadas;
     }
+
+    //Ver tareas IA
+    public function verTodasTareasIA(int $id, $nombreTarea){
+        $sql = "SELECT t.id, t.nombre_tarea, t.descripcion, t.fecha_publicacion, t.fecha_vencimiento, 
+                   t.ia, t.estado, t.prioridad, t.categoria_id, t.grupo_id, 
+                   c.nombre_categoria, c.color 
+            FROM tarea t 
+            INNER JOIN tarea_usuario tu ON t.id = tu.tarea_id 
+            LEFT JOIN categoria c ON t.categoria_id = c.id
+            WHERE tu.usuario_id = :usuario_id";
+
+        $params = ['usuario_id' => $id];
+
+        // 2. Si la IA envía un nombre, filtramos por aproximación
+        if ($nombreTarea) {
+            $sql .= " AND t.nombre_tarea LIKE :nombre";
+            $params['nombre'] = '%' . $nombreTarea . '%';
+        }
+
+        return $this->getEntityManager()->getConnection()->executeQuery($sql,$params)->fetchAllAssociative();
+
+    }
+
+
+
+    //Ver todas las tareas de 1 mes
+    public function verTodasTareasMes(int $id) {
+    // Calculamos el primer y último segundo del mes actual
+    $primerDia = (new \DateTime('first day of this month'))->format('Y-m-d 00:00:00');
+    $ultimoDia = (new \DateTime('last day of this month'))->format('Y-m-d 23:59:59');
+
+    $sql = "SELECT t.id, t.nombre_tarea, t.descripcion, t.fecha_publicacion, t.fecha_vencimiento, t.ia, 
+                   t.estado, t.prioridad, t.categoria_id, t.grupo_id, c.nombre_categoria, c.color 
+            FROM tarea t 
+            INNER JOIN tarea_usuario tu ON t.id = tu.tarea_id 
+            LEFT JOIN categoria c ON t.categoria_id = c.id
+            WHERE tu.usuario_id = :usuario_id 
+            AND t.fecha_vencimiento >= :fecha_inicio 
+            AND t.fecha_vencimiento <= :fecha_fin;";
+
+    $params = [
+        'usuario_id'   => $id,
+        'fecha_inicio' => $primerDia,
+        'fecha_fin'    => $ultimoDia
+    ];
+
+    $resultados = $this->getEntityManager()->getConnection()->executeQuery($sql, $params)->fetchAllAssociative();
+
+    foreach ($resultados as &$tarea) {
+        // Transformar IA a booleano
+        $tarea['ia'] = (bool)$tarea['ia'];
+
+        // Formatear fechas para la respuesta (d-m-Y)
+        if ($tarea['fecha_publicacion']) {
+            $tarea['fecha_publicacion'] = (new \DateTime($tarea['fecha_publicacion']))->format('d-m-Y H:i:s');
+        }
+        if ($tarea['fecha_vencimiento']) {
+            $tarea['fecha_vencimiento'] = (new \DateTime($tarea['fecha_vencimiento']))->format('d-m-Y H:i:s');
+        }
+    }
+
+    return $resultados;
+}
 
     public function verTareasPorEstado(string $estado){
         $sql = "SELECT id, nombre_tarea, descripcion, fecha_publicacion, fecha_vencimiento, ia, estado, prioridad, categoria_id, grupo_id 
@@ -213,6 +311,16 @@ class TareaRepository extends ServiceEntityRepository
 
         $this->getEntityManager()->getConnection()->executeQuery($sql, $params);
     }
+
+    public function actualizarEstadoTareaIA(string $nombre, string $estado) {
+        $sql = "UPDATE tarea SET estado = :estado WHERE nombre_tarea = :nombre";
+        $params = [
+            'nombre' => $nombre,
+            'estado' => $estado,
+        ];
+    $this->getEntityManager()->getConnection()->executeQuery($sql, $params);
+}
+
     public function actualizarDescripcionTarea(int $id, string $nuevaDescripcion){
         $sql = "UPDATE tarea SET descripcion = :descripcion WHERE id = :id";
         $params = [
@@ -244,4 +352,43 @@ class TareaRepository extends ServiceEntityRepository
 
         $this->getEntityManager()->getConnection()->executeQuery($sql, $params);
     }
+
+    //Actualizar tarea IA
+    public function editarTareaIA(string $nombreOriginal, array $datosNuevos, int $idUsuario){
+    $conn = $this->getEntityManager()->getConnection();
+
+    //Buscamos el ID de la tarea basándonos en el nombre que la IA identificó y asegurándonos de que pertenezca al usuario del token.
+    $sqlGetId = '
+        SELECT t.id 
+        FROM tarea t
+        INNER JOIN tarea_usuario tu ON t.id = tu.tarea_id
+        WHERE t.nombre_tarea = :nombreOriginal AND tu.usuario_id = :idUsuario
+        LIMIT 1';
+    
+    $idTarea = $conn->fetchOne($sqlGetId, [
+        'nombreOriginal' => $nombreOriginal,
+        'idUsuario' => $idUsuario
+    ]);
+
+    //Ejecutamos el UPDATE
+    $sql = "UPDATE tarea SET 
+                nombre_tarea = :nombre,
+                descripcion = :descripcion,
+                fecha_vencimiento = :fechaVencimiento,
+                prioridad = :prioridad,
+                categoria_id = :categoria WHERE id = :id;";
+
+    $params = [
+        'nombre'           => $datosNuevos['nombre'] ?? $nombreOriginal,
+        'descripcion'      => $datosNuevos['descripcion'],
+        'fechaVencimiento' => $datosNuevos['fechaVencimiento'] . ' 00:00:00',
+        'prioridad'        => $datosNuevos['prioridad'],
+        'categoria'        => $datosNuevos['categoria_id'],
+        'id'               => $idTarea // El ID que acabamos de recuperar
+    ];
+
+    $conn->executeQuery($sql, $params);
+
+    return true;
+}
 }

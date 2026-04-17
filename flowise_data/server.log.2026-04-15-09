@@ -1,0 +1,156 @@
+2026-04-15 09:04:31 [INFO]: ⬆️ POST /api/v1/node-load-method/customTool
+2026-04-15 09:04:41 [INFO]: ⬆️ POST /api/v1/node-load-method/customTool
+2026-04-15 09:04:48 [INFO]: ⬆️ POST /api/v1/node-load-method/customTool
+2026-04-15 09:04:51 [INFO]: ⬆️ POST /api/v1/node-load-method/customTool
+2026-04-15 09:06:25 [INFO]: 🖊 PUT /api/v1/chatflows/7f5736f5-91db-4341-a2c5-1a1ca1a20750
+2026-04-15 09:09:21 [INFO]: 🖊 PUT /api/v1/chatflows/7f5736f5-91db-4341-a2c5-1a1ca1a20750
+2026-04-15 09:09:40 [INFO]: 🖊 PUT /api/v1/chatflows/7f5736f5-91db-4341-a2c5-1a1ca1a20750
+2026-04-15 09:10:01 [INFO]: ⬆️ POST /api/v1/auth/resolve
+2026-04-15 09:10:11 [INFO]: ⬆️ POST /api/v1/auth/login
+2026-04-15 09:11:03 [INFO]: ⬆️ POST /api/v1/prediction/7f5736f5-91db-4341-a2c5-1a1ca1a20750
+2026-04-15 09:11:03 [INFO]: [server]: Request originated from https://localhost:8081
+2026-04-15 09:11:20 [INFO]: ⬆️ POST /api/v1/prediction/7f5736f5-91db-4341-a2c5-1a1ca1a20750
+2026-04-15 09:11:20 [INFO]: [server]: Request originated from https://localhost:8081
+2026-04-15 09:13:06 [INFO]: 🖊 PUT /api/v1/tools/077ee32a-03e2-4bf4-8066-e01c7eb74922
+2026-04-15 09:13:09 [INFO]: ⬆️ POST /api/v1/node-load-method/groqChat
+2026-04-15 09:13:09 [INFO]: ⬆️ POST /api/v1/node-load-method/customTool
+2026-04-15 09:13:09 [INFO]: ⬆️ POST /api/v1/node-load-method/customTool
+2026-04-15 09:13:09 [INFO]: ⬆️ POST /api/v1/node-load-method/customTool
+2026-04-15 09:13:10 [INFO]: 🖊 PUT /api/v1/chatflows/7f5736f5-91db-4341-a2c5-1a1ca1a20750
+2026-04-15 09:13:18 [INFO]: ⬆️ POST /api/v1/prediction/7f5736f5-91db-4341-a2c5-1a1ca1a20750
+2026-04-15 09:13:18 [INFO]: [server]: Request originated from https://localhost:8081
+2026-04-15 09:15:51 [INFO]: 🖊 PUT /api/v1/tools/077ee32a-03e2-4bf4-8066-e01c7eb74922
+2026-04-15 09:21:31 [INFO]: ⬆️ POST /api/v1/prediction/7f5736f5-91db-4341-a2c5-1a1ca1a20750
+2026-04-15 09:21:31 [INFO]: [server]: Request originated from https://localhost:8081
+2026-04-15 09:23:46 [INFO]: 🖊 PUT /api/v1/tools/c9161d28-a741-4266-b6f3-18fef9eae0d5
+2026-04-15 09:24:32 [INFO]: ⬆️ POST /api/v1/prediction/7f5736f5-91db-4341-a2c5-1a1ca1a20750
+2026-04-15 09:24:32 [INFO]: [server]: Request originated from https://localhost:8081
+2026-04-15 09:26:31 [INFO]: ⬆️ POST /api/v1/prediction/7f5736f5-91db-4341-a2c5-1a1ca1a20750
+2026-04-15 09:26:31 [INFO]: [server]: Request originated from https://localhost:8081
+2026-04-15 09:27:59 [INFO]: 🖊 PUT /api/v1/tools/077ee32a-03e2-4bf4-8066-e01c7eb74922
+2026-04-15 09:28:33 [INFO]: ⬆️ POST /api/v1/prediction/7f5736f5-91db-4341-a2c5-1a1ca1a20750
+2026-04-15 09:28:33 [INFO]: [server]: Request originated from https://localhost:8081
+2026-04-15 09:30:52 [INFO]: ⬆️ POST /api/v1/node-load-method/groqChat
+2026-04-15 09:30:52 [INFO]: ⬆️ POST /api/v1/node-load-method/customTool
+2026-04-15 09:30:52 [INFO]: ⬆️ POST /api/v1/node-load-method/customTool
+2026-04-15 09:30:52 [INFO]: ⬆️ POST /api/v1/node-load-method/customTool
+2026-04-15 09:31:56 [INFO]: 🖊 PUT /api/v1/chatflows/7f5736f5-91db-4341-a2c5-1a1ca1a20750
+2026-04-15 09:32:04 [INFO]: ⬆️ POST /api/v1/prediction/7f5736f5-91db-4341-a2c5-1a1ca1a20750
+2026-04-15 09:32:04 [INFO]: [server]: Request originated from https://localhost:8081
+2026-04-15 09:32:05 [ERROR]: [server]:3daa061b-8913-453e-9c86-f8248e12ebbb/7f5736f5-91db-4341-a2c5-1a1ca1a20750/f7d1cfee-ab7b-4d25-ae65-8c4e70ccba57 Error: 400 Failed to call a function. Please adjust your prompt. See 'failed_generation' for more details.
+Error: 400 Failed to call a function. Please adjust your prompt. See 'failed_generation' for more details.
+    at Stream.iterator (/usr/local/lib/node_modules/flowise/node_modules/@langchain/groq/node_modules/groq-sdk/lib/streaming.js:60:35)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async ChatGroq._streamResponseChunks (/usr/local/lib/node_modules/flowise/node_modules/@langchain/groq/dist/chat_models.cjs:693:20)
+    at async ChatGroq._streamIterator (/usr/local/lib/node_modules/flowise/node_modules/@langchain/core/dist/language_models/chat_models.cjs:108:22)
+    at async ChatGroq.transform (/usr/local/lib/node_modules/flowise/node_modules/@langchain/core/dist/runnables/base.cjs:303:3)
+    at async RunnableBinding.transform (/usr/local/lib/node_modules/flowise/node_modules/@langchain/core/dist/runnables/base.cjs:660:3)
+    at async ToolCallingAgentOutputParser.transform (/usr/local/lib/node_modules/flowise/node_modules/flowise-components/node_modules/@langchain/core/dist/runnables/base.cjs:307:20)
+    at async RunnableSequence._streamIterator (/usr/local/lib/node_modules/flowise/node_modules/flowise-components/node_modules/@langchain/core/dist/runnables/base.cjs:1005:21)
+2026-04-15 09:33:52 [INFO]: 🖊 PUT /api/v1/chatflows/7f5736f5-91db-4341-a2c5-1a1ca1a20750
+2026-04-15 09:35:52 [INFO]: 🖊 PUT /api/v1/chatflows/7f5736f5-91db-4341-a2c5-1a1ca1a20750
+2026-04-15 09:36:02 [INFO]: ⬆️ POST /api/v1/prediction/7f5736f5-91db-4341-a2c5-1a1ca1a20750
+2026-04-15 09:36:02 [INFO]: [server]: Request originated from https://localhost:8081
+2026-04-15 09:36:03 [ERROR]: [server]:3daa061b-8913-453e-9c86-f8248e12ebbb/7f5736f5-91db-4341-a2c5-1a1ca1a20750/5c2984bc-e40a-4af3-b47c-ecdac3e6059c Error: 400 Failed to call a function. Please adjust your prompt. See 'failed_generation' for more details.
+Error: 400 Failed to call a function. Please adjust your prompt. See 'failed_generation' for more details.
+    at Stream.iterator (/usr/local/lib/node_modules/flowise/node_modules/@langchain/groq/node_modules/groq-sdk/lib/streaming.js:60:35)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async ChatGroq._streamResponseChunks (/usr/local/lib/node_modules/flowise/node_modules/@langchain/groq/dist/chat_models.cjs:693:20)
+    at async ChatGroq._streamIterator (/usr/local/lib/node_modules/flowise/node_modules/@langchain/core/dist/language_models/chat_models.cjs:108:22)
+    at async ChatGroq.transform (/usr/local/lib/node_modules/flowise/node_modules/@langchain/core/dist/runnables/base.cjs:303:3)
+    at async RunnableBinding.transform (/usr/local/lib/node_modules/flowise/node_modules/@langchain/core/dist/runnables/base.cjs:660:3)
+    at async ToolCallingAgentOutputParser.transform (/usr/local/lib/node_modules/flowise/node_modules/flowise-components/node_modules/@langchain/core/dist/runnables/base.cjs:307:20)
+    at async RunnableSequence._streamIterator (/usr/local/lib/node_modules/flowise/node_modules/flowise-components/node_modules/@langchain/core/dist/runnables/base.cjs:1005:21)
+2026-04-15 09:39:33 [INFO]: 🖊 PUT /api/v1/chatflows/7f5736f5-91db-4341-a2c5-1a1ca1a20750
+2026-04-15 09:39:40 [INFO]: ⬆️ POST /api/v1/prediction/7f5736f5-91db-4341-a2c5-1a1ca1a20750
+2026-04-15 09:39:40 [INFO]: [server]: Request originated from https://localhost:8081
+2026-04-15 09:39:41 [ERROR]: [server]:3daa061b-8913-453e-9c86-f8248e12ebbb/7f5736f5-91db-4341-a2c5-1a1ca1a20750/53212325-df3c-4d9f-b174-941fc20de70a Error: 400 Failed to call a function. Please adjust your prompt. See 'failed_generation' for more details.
+Error: 400 Failed to call a function. Please adjust your prompt. See 'failed_generation' for more details.
+    at Stream.iterator (/usr/local/lib/node_modules/flowise/node_modules/@langchain/groq/node_modules/groq-sdk/lib/streaming.js:60:35)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async ChatGroq._streamResponseChunks (/usr/local/lib/node_modules/flowise/node_modules/@langchain/groq/dist/chat_models.cjs:693:20)
+    at async ChatGroq._streamIterator (/usr/local/lib/node_modules/flowise/node_modules/@langchain/core/dist/language_models/chat_models.cjs:108:22)
+    at async ChatGroq.transform (/usr/local/lib/node_modules/flowise/node_modules/@langchain/core/dist/runnables/base.cjs:303:3)
+    at async RunnableBinding.transform (/usr/local/lib/node_modules/flowise/node_modules/@langchain/core/dist/runnables/base.cjs:660:3)
+    at async ToolCallingAgentOutputParser.transform (/usr/local/lib/node_modules/flowise/node_modules/flowise-components/node_modules/@langchain/core/dist/runnables/base.cjs:307:20)
+    at async RunnableSequence._streamIterator (/usr/local/lib/node_modules/flowise/node_modules/flowise-components/node_modules/@langchain/core/dist/runnables/base.cjs:1005:21)
+2026-04-15 09:40:04 [INFO]: 🖊 PUT /api/v1/chatflows/7f5736f5-91db-4341-a2c5-1a1ca1a20750
+2026-04-15 09:40:09 [INFO]: ⬆️ POST /api/v1/prediction/7f5736f5-91db-4341-a2c5-1a1ca1a20750
+2026-04-15 09:40:09 [INFO]: [server]: Request originated from https://localhost:8081
+2026-04-15 09:40:10 [ERROR]: [server]:3daa061b-8913-453e-9c86-f8248e12ebbb/7f5736f5-91db-4341-a2c5-1a1ca1a20750/c04de1a3-b767-4672-a0a1-aac51c96c37f Error: 400 Failed to call a function. Please adjust your prompt. See 'failed_generation' for more details.
+Error: 400 Failed to call a function. Please adjust your prompt. See 'failed_generation' for more details.
+    at Stream.iterator (/usr/local/lib/node_modules/flowise/node_modules/@langchain/groq/node_modules/groq-sdk/lib/streaming.js:60:35)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async ChatGroq._streamResponseChunks (/usr/local/lib/node_modules/flowise/node_modules/@langchain/groq/dist/chat_models.cjs:693:20)
+    at async ChatGroq._streamIterator (/usr/local/lib/node_modules/flowise/node_modules/@langchain/core/dist/language_models/chat_models.cjs:108:22)
+    at async ChatGroq.transform (/usr/local/lib/node_modules/flowise/node_modules/@langchain/core/dist/runnables/base.cjs:303:3)
+    at async RunnableBinding.transform (/usr/local/lib/node_modules/flowise/node_modules/@langchain/core/dist/runnables/base.cjs:660:3)
+    at async ToolCallingAgentOutputParser.transform (/usr/local/lib/node_modules/flowise/node_modules/flowise-components/node_modules/@langchain/core/dist/runnables/base.cjs:307:20)
+    at async RunnableSequence._streamIterator (/usr/local/lib/node_modules/flowise/node_modules/flowise-components/node_modules/@langchain/core/dist/runnables/base.cjs:1005:21)
+2026-04-15 09:46:50 [INFO]: ⬆️ POST /api/v1/node-load-method/groqChat
+2026-04-15 09:46:50 [INFO]: ⬆️ POST /api/v1/node-load-method/customTool
+2026-04-15 09:46:50 [INFO]: ⬆️ POST /api/v1/node-load-method/customTool
+2026-04-15 09:46:50 [INFO]: ⬆️ POST /api/v1/node-load-method/customTool
+2026-04-15 09:46:51 [INFO]: 🖊 PUT /api/v1/chatflows/7f5736f5-91db-4341-a2c5-1a1ca1a20750
+2026-04-15 09:46:59 [INFO]: ⬆️ POST /api/v1/prediction/7f5736f5-91db-4341-a2c5-1a1ca1a20750
+2026-04-15 09:46:59 [INFO]: [server]: Request originated from https://localhost:8081
+2026-04-15 09:47:00 [ERROR]: [server]:3daa061b-8913-453e-9c86-f8248e12ebbb/7f5736f5-91db-4341-a2c5-1a1ca1a20750/34a36052-721c-40dc-9aff-b2a67bffbd2e Error: 400 Failed to call a function. Please adjust your prompt. See 'failed_generation' for more details.
+Error: 400 Failed to call a function. Please adjust your prompt. See 'failed_generation' for more details.
+    at Stream.iterator (/usr/local/lib/node_modules/flowise/node_modules/@langchain/groq/node_modules/groq-sdk/lib/streaming.js:60:35)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async ChatGroq._streamResponseChunks (/usr/local/lib/node_modules/flowise/node_modules/@langchain/groq/dist/chat_models.cjs:693:20)
+    at async ChatGroq._streamIterator (/usr/local/lib/node_modules/flowise/node_modules/@langchain/core/dist/language_models/chat_models.cjs:108:22)
+    at async ChatGroq.transform (/usr/local/lib/node_modules/flowise/node_modules/@langchain/core/dist/runnables/base.cjs:303:3)
+    at async RunnableBinding.transform (/usr/local/lib/node_modules/flowise/node_modules/@langchain/core/dist/runnables/base.cjs:660:3)
+    at async ToolCallingAgentOutputParser.transform (/usr/local/lib/node_modules/flowise/node_modules/flowise-components/node_modules/@langchain/core/dist/runnables/base.cjs:307:20)
+    at async RunnableSequence._streamIterator (/usr/local/lib/node_modules/flowise/node_modules/flowise-components/node_modules/@langchain/core/dist/runnables/base.cjs:1005:21)
+2026-04-15 09:48:32 [INFO]: 🖊 PUT /api/v1/tools/077ee32a-03e2-4bf4-8066-e01c7eb74922
+2026-04-15 09:48:32 [INFO]: ⬆️ POST /api/v1/node-load-method/customTool
+2026-04-15 09:48:49 [INFO]: 🖊 PUT /api/v1/tools/c9161d28-a741-4266-b6f3-18fef9eae0d5
+2026-04-15 09:48:49 [INFO]: ⬆️ POST /api/v1/node-load-method/customTool
+2026-04-15 09:49:20 [INFO]: 🖊 PUT /api/v1/chatflows/7f5736f5-91db-4341-a2c5-1a1ca1a20750
+2026-04-15 09:52:12 [INFO]: 🖊 PUT /api/v1/chatflows/7f5736f5-91db-4341-a2c5-1a1ca1a20750
+2026-04-15 09:53:16 [INFO]: ⬆️ POST /api/v1/node-load-method/groqChat
+2026-04-15 09:53:43 [INFO]: 🖊 PUT /api/v1/chatflows/7f5736f5-91db-4341-a2c5-1a1ca1a20750
+2026-04-15 09:53:50 [INFO]: ⬆️ POST /api/v1/prediction/7f5736f5-91db-4341-a2c5-1a1ca1a20750
+2026-04-15 09:53:50 [INFO]: [server]: Request originated from https://localhost:8081
+2026-04-15 09:53:50 [ERROR]: [server]:3daa061b-8913-453e-9c86-f8248e12ebbb/7f5736f5-91db-4341-a2c5-1a1ca1a20750/1d590280-4b09-4266-adf4-e7303a98dd11 Error: 404 {"error":{"message":"The model `mixtral-saba-24b` does not exist or you do not have access to it.","type":"invalid_request_error","code":"model_not_found"}}
+Error: 404 {"error":{"message":"The model `mixtral-saba-24b` does not exist or you do not have access to it.","type":"invalid_request_error","code":"model_not_found"}}
+    at APIError.generate (/usr/local/lib/node_modules/flowise/node_modules/@langchain/groq/node_modules/groq-sdk/error.js:49:20)
+    at Groq.makeStatusError (/usr/local/lib/node_modules/flowise/node_modules/@langchain/groq/node_modules/groq-sdk/core.js:291:33)
+    at Groq.makeRequest (/usr/local/lib/node_modules/flowise/node_modules/@langchain/groq/node_modules/groq-sdk/core.js:335:30)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async Object.pRetry [as default] (/usr/local/lib/node_modules/flowise/node_modules/@langchain/core/dist/utils/p-retry/index.cjs:122:19)
+    at async run (/usr/local/lib/node_modules/flowise/node_modules/p-queue/dist/index.js:163:29)
+2026-04-15 09:55:07 [INFO]: ⬆️ POST /api/v1/node-load-method/groqChat
+2026-04-15 09:55:30 [INFO]: 🖊 PUT /api/v1/tools/c9161d28-a741-4266-b6f3-18fef9eae0d5
+2026-04-15 09:55:30 [INFO]: ⬆️ POST /api/v1/node-load-method/customTool
+2026-04-15 09:55:37 [INFO]: 🖊 PUT /api/v1/tools/c9161d28-a741-4266-b6f3-18fef9eae0d5
+2026-04-15 09:55:37 [INFO]: ⬆️ POST /api/v1/node-load-method/customTool
+2026-04-15 09:55:44 [INFO]: 🖊 PUT /api/v1/tools/c9161d28-a741-4266-b6f3-18fef9eae0d5
+2026-04-15 09:55:44 [INFO]: ⬆️ POST /api/v1/node-load-method/customTool
+2026-04-15 09:55:49 [INFO]: 🖊 PUT /api/v1/tools/c9161d28-a741-4266-b6f3-18fef9eae0d5
+2026-04-15 09:55:50 [INFO]: ⬆️ POST /api/v1/node-load-method/customTool
+2026-04-15 09:55:51 [INFO]: 🖊 PUT /api/v1/chatflows/7f5736f5-91db-4341-a2c5-1a1ca1a20750
+2026-04-15 09:56:00 [INFO]: ⬆️ POST /api/v1/prediction/7f5736f5-91db-4341-a2c5-1a1ca1a20750
+2026-04-15 09:56:00 [INFO]: [server]: Request originated from https://localhost:8081
+2026-04-15 09:56:01 [ERROR]: [server]:3daa061b-8913-453e-9c86-f8248e12ebbb/7f5736f5-91db-4341-a2c5-1a1ca1a20750/439295a1-f37d-4152-a9ed-da1fd7c0fb54 Error: 400 Failed to call a function. Please adjust your prompt. See 'failed_generation' for more details.
+Error: 400 Failed to call a function. Please adjust your prompt. See 'failed_generation' for more details.
+    at Stream.iterator (/usr/local/lib/node_modules/flowise/node_modules/@langchain/groq/node_modules/groq-sdk/lib/streaming.js:60:35)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async ChatGroq._streamResponseChunks (/usr/local/lib/node_modules/flowise/node_modules/@langchain/groq/dist/chat_models.cjs:693:20)
+    at async ChatGroq._streamIterator (/usr/local/lib/node_modules/flowise/node_modules/@langchain/core/dist/language_models/chat_models.cjs:108:22)
+    at async ChatGroq.transform (/usr/local/lib/node_modules/flowise/node_modules/@langchain/core/dist/runnables/base.cjs:303:3)
+    at async RunnableBinding.transform (/usr/local/lib/node_modules/flowise/node_modules/@langchain/core/dist/runnables/base.cjs:660:3)
+    at async ToolCallingAgentOutputParser.transform (/usr/local/lib/node_modules/flowise/node_modules/flowise-components/node_modules/@langchain/core/dist/runnables/base.cjs:307:20)
+    at async RunnableSequence._streamIterator (/usr/local/lib/node_modules/flowise/node_modules/flowise-components/node_modules/@langchain/core/dist/runnables/base.cjs:1005:21)
+2026-04-15 09:57:30 [INFO]: 🖊 PUT /api/v1/tools/c9161d28-a741-4266-b6f3-18fef9eae0d5
+2026-04-15 09:57:36 [INFO]: 🖊 PUT /api/v1/tools/077ee32a-03e2-4bf4-8066-e01c7eb74922
+2026-04-15 09:57:41 [INFO]: 🖊 PUT /api/v1/tools/44ff8a52-24b4-4fb9-bfc6-754e52626862
+2026-04-15 09:57:43 [INFO]: ⬆️ POST /api/v1/node-load-method/groqChat
+2026-04-15 09:57:43 [INFO]: ⬆️ POST /api/v1/node-load-method/customTool
+2026-04-15 09:57:43 [INFO]: ⬆️ POST /api/v1/node-load-method/customTool
+2026-04-15 09:57:43 [INFO]: ⬆️ POST /api/v1/node-load-method/customTool
+2026-04-15 09:58:22 [INFO]: 🖊 PUT /api/v1/chatflows/7f5736f5-91db-4341-a2c5-1a1ca1a20750
+2026-04-15 09:58:32 [INFO]: ⬆️ POST /api/v1/prediction/7f5736f5-91db-4341-a2c5-1a1ca1a20750
+2026-04-15 09:58:32 [INFO]: [server]: Request originated from https://localhost:8081

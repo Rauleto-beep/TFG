@@ -1,0 +1,189 @@
+2026-04-16 13:00:21 [INFO]: 🖊 PUT /api/v1/chatflows/6bced32a-a14d-42fa-bf5d-4ea0ba009fb3
+2026-04-16 13:00:43 [INFO]: ⬆️ POST /api/v1/prediction/6bced32a-a14d-42fa-bf5d-4ea0ba009fb3
+2026-04-16 13:00:43 [INFO]: [server]: Request originated from https://localhost:8081
+2026-04-16 13:00:44 [ERROR]: [server]:3daa061b-8913-453e-9c86-f8248e12ebbb/6bced32a-a14d-42fa-bf5d-4ea0ba009fb3/6538f9b2-2e23-4f5f-8b20-046788771a54 Error: endingNodeInstance.run is not a function
+TypeError: endingNodeInstance.run is not a function
+    at executeFlow (/usr/local/lib/node_modules/flowise/dist/utils/buildChatflow.js:598:47)
+    at async utilBuildChatflow (/usr/local/lib/node_modules/flowise/dist/utils/buildChatflow.js:884:28)
+    at async Object.buildChatflow (/usr/local/lib/node_modules/flowise/dist/services/predictions/index.js:9:28)
+    at async createPrediction (/usr/local/lib/node_modules/flowise/dist/controllers/predictions/index.js:91:37)
+2026-04-16 13:01:00 [INFO]: ⬆️ POST /api/v1/prediction/6bced32a-a14d-42fa-bf5d-4ea0ba009fb3
+2026-04-16 13:01:00 [INFO]: [server]: Request originated from https://localhost:8081
+2026-04-16 13:01:01 [ERROR]: [server]:3daa061b-8913-453e-9c86-f8248e12ebbb/6bced32a-a14d-42fa-bf5d-4ea0ba009fb3/4da96c9d-3ef2-4a2a-b1a1-ca46a0c48694 Error: endingNodeInstance.run is not a function
+TypeError: endingNodeInstance.run is not a function
+    at executeFlow (/usr/local/lib/node_modules/flowise/dist/utils/buildChatflow.js:598:47)
+    at async utilBuildChatflow (/usr/local/lib/node_modules/flowise/dist/utils/buildChatflow.js:884:28)
+    at async Object.buildChatflow (/usr/local/lib/node_modules/flowise/dist/services/predictions/index.js:9:28)
+    at async createPrediction (/usr/local/lib/node_modules/flowise/dist/controllers/predictions/index.js:91:37)
+2026-04-16 13:05:19 [INFO]: 🖊 PUT /api/v1/chatflows/6bced32a-a14d-42fa-bf5d-4ea0ba009fb3
+2026-04-16 13:05:46 [INFO]: ⬆️ POST /api/v1/prediction/6bced32a-a14d-42fa-bf5d-4ea0ba009fb3
+2026-04-16 13:05:46 [INFO]: [server]: Request originated from https://localhost:8081
+2026-04-16 13:05:48 [ERROR]: [server]:3daa061b-8913-453e-9c86-f8248e12ebbb/6bced32a-a14d-42fa-bf5d-4ea0ba009fb3/58508c40-6b32-46cb-b68a-0c809175ff86 Error: endingNodeInstance.run is not a function
+TypeError: endingNodeInstance.run is not a function
+    at executeFlow (/usr/local/lib/node_modules/flowise/dist/utils/buildChatflow.js:598:47)
+    at async utilBuildChatflow (/usr/local/lib/node_modules/flowise/dist/utils/buildChatflow.js:884:28)
+    at async Object.buildChatflow (/usr/local/lib/node_modules/flowise/dist/services/predictions/index.js:9:28)
+    at async createPrediction (/usr/local/lib/node_modules/flowise/dist/controllers/predictions/index.js:91:37)
+2026-04-16 13:13:01 [INFO]: 🖊 PUT /api/v1/chatflows/6bced32a-a14d-42fa-bf5d-4ea0ba009fb3
+2026-04-16 13:13:20 [INFO]: ⬆️ POST /api/v1/prediction/6bced32a-a14d-42fa-bf5d-4ea0ba009fb3
+2026-04-16 13:13:20 [INFO]: [server]: Request originated from https://localhost:8081
+2026-04-16 13:13:22 [ERROR]: [server]:3daa061b-8913-453e-9c86-f8248e12ebbb/6bced32a-a14d-42fa-bf5d-4ea0ba009fb3/d50b4aa1-158b-4e23-9f00-560e10dc52c2 Error: 400 Failed to call a function. Please adjust your prompt. See 'failed_generation' for more details.
+Error: 400 Failed to call a function. Please adjust your prompt. See 'failed_generation' for more details.
+    at Stream.iterator (/usr/local/lib/node_modules/flowise/node_modules/@langchain/groq/node_modules/groq-sdk/lib/streaming.js:60:35)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async ChatGroq._streamResponseChunks (/usr/local/lib/node_modules/flowise/node_modules/@langchain/groq/dist/chat_models.cjs:693:20)
+    at async ChatGroq._streamIterator (/usr/local/lib/node_modules/flowise/node_modules/@langchain/core/dist/language_models/chat_models.cjs:108:22)
+    at async ChatGroq.transform (/usr/local/lib/node_modules/flowise/node_modules/@langchain/core/dist/runnables/base.cjs:303:3)
+    at async RunnableBinding.transform (/usr/local/lib/node_modules/flowise/node_modules/@langchain/core/dist/runnables/base.cjs:660:3)
+    at async ToolCallingAgentOutputParser.transform (/usr/local/lib/node_modules/flowise/node_modules/flowise-components/node_modules/@langchain/core/dist/runnables/base.cjs:307:20)
+    at async RunnableSequence._streamIterator (/usr/local/lib/node_modules/flowise/node_modules/flowise-components/node_modules/@langchain/core/dist/runnables/base.cjs:1005:21)
+2026-04-16 13:16:03 [INFO]: ❌ DELETE /api/v1/chatmessage/6bced32a-a14d-42fa-bf5d-4ea0ba009fb3?chatId=1c00a528-cead-492e-81e3-0881f049fcca&chatType=INTERNAL
+2026-04-16 13:16:12 [INFO]: ⬆️ POST /api/v1/internal-prediction/6bced32a-a14d-42fa-bf5d-4ea0ba009fb3
+2026-04-16 13:16:13 [ERROR]: [server]:3daa061b-8913-453e-9c86-f8248e12ebbb/6bced32a-a14d-42fa-bf5d-4ea0ba009fb3/5bf48684-5520-4a16-9940-2ce0a5c1b91b Error: 400 Failed to call a function. Please adjust your prompt. See 'failed_generation' for more details.
+Error: 400 Failed to call a function. Please adjust your prompt. See 'failed_generation' for more details.
+    at Stream.iterator (/usr/local/lib/node_modules/flowise/node_modules/@langchain/groq/node_modules/groq-sdk/lib/streaming.js:60:35)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async ChatGroq._streamResponseChunks (/usr/local/lib/node_modules/flowise/node_modules/@langchain/groq/dist/chat_models.cjs:693:20)
+    at async ChatGroq._streamIterator (/usr/local/lib/node_modules/flowise/node_modules/@langchain/core/dist/language_models/chat_models.cjs:108:22)
+    at async ChatGroq.transform (/usr/local/lib/node_modules/flowise/node_modules/@langchain/core/dist/runnables/base.cjs:303:3)
+    at async RunnableBinding.transform (/usr/local/lib/node_modules/flowise/node_modules/@langchain/core/dist/runnables/base.cjs:660:3)
+    at async ToolCallingAgentOutputParser.transform (/usr/local/lib/node_modules/flowise/node_modules/flowise-components/node_modules/@langchain/core/dist/runnables/base.cjs:307:20)
+    at async RunnableSequence._streamIterator (/usr/local/lib/node_modules/flowise/node_modules/flowise-components/node_modules/@langchain/core/dist/runnables/base.cjs:1005:21)
+2026-04-16 13:19:23 [INFO]: 🖊 PUT /api/v1/chatflows/6bced32a-a14d-42fa-bf5d-4ea0ba009fb3
+2026-04-16 13:19:51 [INFO]: ⬆️ POST /api/v1/prediction/6bced32a-a14d-42fa-bf5d-4ea0ba009fb3
+2026-04-16 13:19:52 [INFO]: [server]: Request originated from https://localhost:8081
+2026-04-16 13:19:53 [ERROR]: [server]:3daa061b-8913-453e-9c86-f8248e12ebbb/6bced32a-a14d-42fa-bf5d-4ea0ba009fb3/122d9fb2-7a65-4805-8649-c4973dcd5394 Error: 400 Failed to call a function. Please adjust your prompt. See 'failed_generation' for more details.
+Error: 400 Failed to call a function. Please adjust your prompt. See 'failed_generation' for more details.
+    at Stream.iterator (/usr/local/lib/node_modules/flowise/node_modules/@langchain/groq/node_modules/groq-sdk/lib/streaming.js:60:35)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async ChatGroq._streamResponseChunks (/usr/local/lib/node_modules/flowise/node_modules/@langchain/groq/dist/chat_models.cjs:693:20)
+    at async ChatGroq._streamIterator (/usr/local/lib/node_modules/flowise/node_modules/@langchain/core/dist/language_models/chat_models.cjs:108:22)
+    at async ChatGroq.transform (/usr/local/lib/node_modules/flowise/node_modules/@langchain/core/dist/runnables/base.cjs:303:3)
+    at async RunnableBinding.transform (/usr/local/lib/node_modules/flowise/node_modules/@langchain/core/dist/runnables/base.cjs:660:3)
+    at async ToolCallingAgentOutputParser.transform (/usr/local/lib/node_modules/flowise/node_modules/flowise-components/node_modules/@langchain/core/dist/runnables/base.cjs:307:20)
+    at async RunnableSequence._streamIterator (/usr/local/lib/node_modules/flowise/node_modules/flowise-components/node_modules/@langchain/core/dist/runnables/base.cjs:1005:21)
+2026-04-16 13:20:34 [INFO]: 🖊 PUT /api/v1/tools/60cc696d-2535-4b4c-acd1-21334b31d77f
+2026-04-16 13:20:35 [INFO]: ⬆️ POST /api/v1/node-load-method/customTool
+2026-04-16 13:20:46 [INFO]: 🖊 PUT /api/v1/chatflows/6bced32a-a14d-42fa-bf5d-4ea0ba009fb3
+2026-04-16 13:22:41 [INFO]: 🖊 PUT /api/v1/chatflows/6bced32a-a14d-42fa-bf5d-4ea0ba009fb3
+2026-04-16 13:22:52 [INFO]: ⬆️ POST /api/v1/prediction/6bced32a-a14d-42fa-bf5d-4ea0ba009fb3
+2026-04-16 13:22:52 [INFO]: [server]: Request originated from https://localhost:8081
+2026-04-16 13:27:23 [INFO]: 🖊 PUT /api/v1/chatflows/6bced32a-a14d-42fa-bf5d-4ea0ba009fb3
+2026-04-16 13:27:39 [INFO]: ⬆️ POST /api/v1/prediction/6bced32a-a14d-42fa-bf5d-4ea0ba009fb3
+2026-04-16 13:27:39 [INFO]: [server]: Request originated from https://localhost:8081
+2026-04-16 13:28:55 [INFO]: ⬆️ POST /api/v1/prediction/6bced32a-a14d-42fa-bf5d-4ea0ba009fb3
+2026-04-16 13:28:55 [INFO]: [server]: Request originated from https://localhost:8081
+2026-04-16 13:30:42 [INFO]: 🖊 PUT /api/v1/chatflows/6bced32a-a14d-42fa-bf5d-4ea0ba009fb3
+2026-04-16 13:30:50 [INFO]: ⬆️ POST /api/v1/prediction/6bced32a-a14d-42fa-bf5d-4ea0ba009fb3
+2026-04-16 13:30:50 [INFO]: [server]: Request originated from https://localhost:8081
+2026-04-16 13:30:51 [ERROR]: [server]:3daa061b-8913-453e-9c86-f8248e12ebbb/6bced32a-a14d-42fa-bf5d-4ea0ba009fb3/afc2ec90-6a8d-41a2-9252-551ca1e4f401 Error: 400 Failed to call a function. Please adjust your prompt. See 'failed_generation' for more details.
+Error: 400 Failed to call a function. Please adjust your prompt. See 'failed_generation' for more details.
+    at Stream.iterator (/usr/local/lib/node_modules/flowise/node_modules/@langchain/groq/node_modules/groq-sdk/lib/streaming.js:60:35)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async ChatGroq._streamResponseChunks (/usr/local/lib/node_modules/flowise/node_modules/@langchain/groq/dist/chat_models.cjs:693:20)
+    at async ChatGroq._streamIterator (/usr/local/lib/node_modules/flowise/node_modules/@langchain/core/dist/language_models/chat_models.cjs:108:22)
+    at async ChatGroq.transform (/usr/local/lib/node_modules/flowise/node_modules/@langchain/core/dist/runnables/base.cjs:303:3)
+    at async RunnableBinding.transform (/usr/local/lib/node_modules/flowise/node_modules/@langchain/core/dist/runnables/base.cjs:660:3)
+    at async ToolCallingAgentOutputParser.transform (/usr/local/lib/node_modules/flowise/node_modules/flowise-components/node_modules/@langchain/core/dist/runnables/base.cjs:307:20)
+    at async RunnableSequence._streamIterator (/usr/local/lib/node_modules/flowise/node_modules/flowise-components/node_modules/@langchain/core/dist/runnables/base.cjs:1005:21)
+2026-04-16 13:31:25 [INFO]: 🖊 PUT /api/v1/chatflows/6bced32a-a14d-42fa-bf5d-4ea0ba009fb3
+2026-04-16 13:31:38 [INFO]: ⬆️ POST /api/v1/prediction/6bced32a-a14d-42fa-bf5d-4ea0ba009fb3
+2026-04-16 13:31:38 [INFO]: [server]: Request originated from https://localhost:8081
+2026-04-16 13:31:39 [ERROR]: [server]:3daa061b-8913-453e-9c86-f8248e12ebbb/6bced32a-a14d-42fa-bf5d-4ea0ba009fb3/71aa9919-7a35-4ad3-affb-8a147a10fae3 Error: 400 Failed to call a function. Please adjust your prompt. See 'failed_generation' for more details.
+Error: 400 Failed to call a function. Please adjust your prompt. See 'failed_generation' for more details.
+    at Stream.iterator (/usr/local/lib/node_modules/flowise/node_modules/@langchain/groq/node_modules/groq-sdk/lib/streaming.js:60:35)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async ChatGroq._streamResponseChunks (/usr/local/lib/node_modules/flowise/node_modules/@langchain/groq/dist/chat_models.cjs:693:20)
+    at async ChatGroq._streamIterator (/usr/local/lib/node_modules/flowise/node_modules/@langchain/core/dist/language_models/chat_models.cjs:108:22)
+    at async ChatGroq.transform (/usr/local/lib/node_modules/flowise/node_modules/@langchain/core/dist/runnables/base.cjs:303:3)
+    at async RunnableBinding.transform (/usr/local/lib/node_modules/flowise/node_modules/@langchain/core/dist/runnables/base.cjs:660:3)
+    at async ToolCallingAgentOutputParser.transform (/usr/local/lib/node_modules/flowise/node_modules/flowise-components/node_modules/@langchain/core/dist/runnables/base.cjs:307:20)
+    at async RunnableSequence._streamIterator (/usr/local/lib/node_modules/flowise/node_modules/flowise-components/node_modules/@langchain/core/dist/runnables/base.cjs:1005:21)
+2026-04-16 13:37:03 [INFO]: 🖊 PUT /api/v1/chatflows/6bced32a-a14d-42fa-bf5d-4ea0ba009fb3
+2026-04-16 13:37:14 [INFO]: ⬆️ POST /api/v1/prediction/6bced32a-a14d-42fa-bf5d-4ea0ba009fb3
+2026-04-16 13:37:14 [INFO]: [server]: Request originated from https://localhost:8081
+2026-04-16 13:37:15 [ERROR]: [server]: [3daa061b-8913-453e-9c86-f8248e12ebbb]: Error: NodeVM Execution Error: Error: No es una creación
+Error: Error: NodeVM Execution Error: Error: No es una creación
+    at CustomFunction_Utilities.init (/usr/local/lib/node_modules/flowise/node_modules/flowise-components/dist/nodes/utilities/CustomFunction/CustomFunction.js:127:19)
+    at async buildFlow (/usr/local/lib/node_modules/flowise/dist/utils/index.js:493:36)
+    at async executeFlow (/usr/local/lib/node_modules/flowise/dist/utils/buildChatflow.js:389:28)
+    at async utilBuildChatflow (/usr/local/lib/node_modules/flowise/dist/utils/buildChatflow.js:884:28)
+    at async Object.buildChatflow (/usr/local/lib/node_modules/flowise/dist/services/predictions/index.js:9:28)
+    at async createPrediction (/usr/local/lib/node_modules/flowise/dist/controllers/predictions/index.js:91:37)
+2026-04-16 13:37:15 [ERROR]: [server]:3daa061b-8913-453e-9c86-f8248e12ebbb/6bced32a-a14d-42fa-bf5d-4ea0ba009fb3/e1464a11-fc34-445f-9de0-46ef503aea31 Error: Error: Error: NodeVM Execution Error: Error: No es una creación
+Error: Error: Error: NodeVM Execution Error: Error: No es una creación
+    at buildFlow (/usr/local/lib/node_modules/flowise/dist/utils/index.js:548:19)
+    at async executeFlow (/usr/local/lib/node_modules/flowise/dist/utils/buildChatflow.js:389:28)
+    at async utilBuildChatflow (/usr/local/lib/node_modules/flowise/dist/utils/buildChatflow.js:884:28)
+    at async Object.buildChatflow (/usr/local/lib/node_modules/flowise/dist/services/predictions/index.js:9:28)
+    at async createPrediction (/usr/local/lib/node_modules/flowise/dist/controllers/predictions/index.js:91:37)
+2026-04-16 13:37:36 [INFO]: 🖊 PUT /api/v1/chatflows/6bced32a-a14d-42fa-bf5d-4ea0ba009fb3
+2026-04-16 13:37:43 [INFO]: ⬆️ POST /api/v1/internal-prediction/6bced32a-a14d-42fa-bf5d-4ea0ba009fb3
+2026-04-16 13:37:43 [ERROR]: [server]: [3daa061b-8913-453e-9c86-f8248e12ebbb]: Error: NodeVM Execution Error: Error: No es una creación
+Error: Error: NodeVM Execution Error: Error: No es una creación
+    at CustomFunction_Utilities.init (/usr/local/lib/node_modules/flowise/node_modules/flowise-components/dist/nodes/utilities/CustomFunction/CustomFunction.js:127:19)
+    at async buildFlow (/usr/local/lib/node_modules/flowise/dist/utils/index.js:493:36)
+    at async executeFlow (/usr/local/lib/node_modules/flowise/dist/utils/buildChatflow.js:389:28)
+    at async utilBuildChatflow (/usr/local/lib/node_modules/flowise/dist/utils/buildChatflow.js:884:28)
+    at async createAndStreamInternalPrediction (/usr/local/lib/node_modules/flowise/dist/controllers/internal-predictions/index.js:50:29)
+2026-04-16 13:37:43 [ERROR]: [server]:3daa061b-8913-453e-9c86-f8248e12ebbb/6bced32a-a14d-42fa-bf5d-4ea0ba009fb3/c8655cd4-72aa-45bb-a474-5c03c9650377 Error: Error: Error: NodeVM Execution Error: Error: No es una creación
+Error: Error: Error: NodeVM Execution Error: Error: No es una creación
+    at buildFlow (/usr/local/lib/node_modules/flowise/dist/utils/index.js:548:19)
+    at async executeFlow (/usr/local/lib/node_modules/flowise/dist/utils/buildChatflow.js:389:28)
+    at async utilBuildChatflow (/usr/local/lib/node_modules/flowise/dist/utils/buildChatflow.js:884:28)
+    at async createAndStreamInternalPrediction (/usr/local/lib/node_modules/flowise/dist/controllers/internal-predictions/index.js:50:29)
+2026-04-16 13:40:03 [INFO]: 🖊 PUT /api/v1/chatflows/6bced32a-a14d-42fa-bf5d-4ea0ba009fb3
+2026-04-16 13:40:11 [INFO]: ⬆️ POST /api/v1/internal-prediction/6bced32a-a14d-42fa-bf5d-4ea0ba009fb3
+2026-04-16 13:40:11 [ERROR]: [server]: [3daa061b-8913-453e-9c86-f8248e12ebbb]: Error: NodeVM Execution Error: Error: No es completar
+Error: Error: NodeVM Execution Error: Error: No es completar
+    at CustomFunction_Utilities.init (/usr/local/lib/node_modules/flowise/node_modules/flowise-components/dist/nodes/utilities/CustomFunction/CustomFunction.js:127:19)
+    at async buildFlow (/usr/local/lib/node_modules/flowise/dist/utils/index.js:493:36)
+    at async executeFlow (/usr/local/lib/node_modules/flowise/dist/utils/buildChatflow.js:389:28)
+    at async utilBuildChatflow (/usr/local/lib/node_modules/flowise/dist/utils/buildChatflow.js:884:28)
+    at async createAndStreamInternalPrediction (/usr/local/lib/node_modules/flowise/dist/controllers/internal-predictions/index.js:50:29)
+2026-04-16 13:40:11 [ERROR]: [server]:3daa061b-8913-453e-9c86-f8248e12ebbb/6bced32a-a14d-42fa-bf5d-4ea0ba009fb3/dd237707-eddb-43dc-8044-46807a22554b Error: Error: Error: NodeVM Execution Error: Error: No es completar
+Error: Error: Error: NodeVM Execution Error: Error: No es completar
+    at buildFlow (/usr/local/lib/node_modules/flowise/dist/utils/index.js:548:19)
+    at async executeFlow (/usr/local/lib/node_modules/flowise/dist/utils/buildChatflow.js:389:28)
+    at async utilBuildChatflow (/usr/local/lib/node_modules/flowise/dist/utils/buildChatflow.js:884:28)
+    at async createAndStreamInternalPrediction (/usr/local/lib/node_modules/flowise/dist/controllers/internal-predictions/index.js:50:29)
+2026-04-16 13:43:18 [INFO]: 🖊 PUT /api/v1/chatflows/6bced32a-a14d-42fa-bf5d-4ea0ba009fb3
+2026-04-16 13:43:27 [INFO]: ⬆️ POST /api/v1/prediction/6bced32a-a14d-42fa-bf5d-4ea0ba009fb3
+2026-04-16 13:43:27 [INFO]: [server]: Request originated from https://localhost:8081
+2026-04-16 13:43:28 [ERROR]: [server]: [3daa061b-8913-453e-9c86-f8248e12ebbb]: Error: NodeVM Execution Error: Error: No es completar
+Error: Error: NodeVM Execution Error: Error: No es completar
+    at CustomFunction_Utilities.init (/usr/local/lib/node_modules/flowise/node_modules/flowise-components/dist/nodes/utilities/CustomFunction/CustomFunction.js:127:19)
+    at async buildFlow (/usr/local/lib/node_modules/flowise/dist/utils/index.js:493:36)
+    at async executeFlow (/usr/local/lib/node_modules/flowise/dist/utils/buildChatflow.js:389:28)
+    at async utilBuildChatflow (/usr/local/lib/node_modules/flowise/dist/utils/buildChatflow.js:884:28)
+    at async Object.buildChatflow (/usr/local/lib/node_modules/flowise/dist/services/predictions/index.js:9:28)
+    at async createPrediction (/usr/local/lib/node_modules/flowise/dist/controllers/predictions/index.js:91:37)
+2026-04-16 13:43:28 [ERROR]: [server]:3daa061b-8913-453e-9c86-f8248e12ebbb/6bced32a-a14d-42fa-bf5d-4ea0ba009fb3/4cf6d24c-d01e-4ce8-be3b-47b893746ccb Error: Error: Error: NodeVM Execution Error: Error: No es completar
+Error: Error: Error: NodeVM Execution Error: Error: No es completar
+    at buildFlow (/usr/local/lib/node_modules/flowise/dist/utils/index.js:548:19)
+    at async executeFlow (/usr/local/lib/node_modules/flowise/dist/utils/buildChatflow.js:389:28)
+    at async utilBuildChatflow (/usr/local/lib/node_modules/flowise/dist/utils/buildChatflow.js:884:28)
+    at async Object.buildChatflow (/usr/local/lib/node_modules/flowise/dist/services/predictions/index.js:9:28)
+    at async createPrediction (/usr/local/lib/node_modules/flowise/dist/controllers/predictions/index.js:91:37)
+2026-04-16 13:44:18 [INFO]: 🖊 PUT /api/v1/chatflows/6bced32a-a14d-42fa-bf5d-4ea0ba009fb3
+2026-04-16 13:44:26 [INFO]: 🖊 PUT /api/v1/chatflows/6bced32a-a14d-42fa-bf5d-4ea0ba009fb3
+2026-04-16 13:53:51 [INFO]: ⬆️ POST /api/v1/auth/refreshToken
+2026-04-16 13:53:51 [INFO]: 🖊 PUT /api/v1/chatflows/6bced32a-a14d-42fa-bf5d-4ea0ba009fb3
+2026-04-16 13:54:12 [INFO]: 🖊 PUT /api/v1/chatflows/6bced32a-a14d-42fa-bf5d-4ea0ba009fb3
+2026-04-16 13:54:23 [INFO]: ⬆️ POST /api/v1/prediction/6bced32a-a14d-42fa-bf5d-4ea0ba009fb3
+2026-04-16 13:54:23 [INFO]: [server]: Request originated from https://localhost:8081
+2026-04-16 13:54:23 [ERROR]: [server]:3daa061b-8913-453e-9c86-f8248e12ebbb/6bced32a-a14d-42fa-bf5d-4ea0ba009fb3/3db9225b-fca6-4135-83fa-b95a02137cdb Error: endingNodeInstance.run is not a function
+TypeError: endingNodeInstance.run is not a function
+    at executeFlow (/usr/local/lib/node_modules/flowise/dist/utils/buildChatflow.js:598:47)
+    at async utilBuildChatflow (/usr/local/lib/node_modules/flowise/dist/utils/buildChatflow.js:884:28)
+    at async Object.buildChatflow (/usr/local/lib/node_modules/flowise/dist/services/predictions/index.js:9:28)
+    at async createPrediction (/usr/local/lib/node_modules/flowise/dist/controllers/predictions/index.js:91:37)
+2026-04-16 13:54:46 [INFO]: 🖊 PUT /api/v1/chatflows/6bced32a-a14d-42fa-bf5d-4ea0ba009fb3
+2026-04-16 13:54:55 [INFO]: ⬆️ POST /api/v1/prediction/6bced32a-a14d-42fa-bf5d-4ea0ba009fb3
+2026-04-16 13:54:55 [INFO]: [server]: Request originated from https://localhost:8081
+2026-04-16 13:54:55 [ERROR]: [server]:3daa061b-8913-453e-9c86-f8248e12ebbb/6bced32a-a14d-42fa-bf5d-4ea0ba009fb3/f4e44288-9244-40e2-beff-d43ed9243e39 Error: endingNodeInstance.run is not a function
+TypeError: endingNodeInstance.run is not a function
+    at executeFlow (/usr/local/lib/node_modules/flowise/dist/utils/buildChatflow.js:598:47)
+    at async utilBuildChatflow (/usr/local/lib/node_modules/flowise/dist/utils/buildChatflow.js:884:28)
+    at async Object.buildChatflow (/usr/local/lib/node_modules/flowise/dist/services/predictions/index.js:9:28)
+    at async createPrediction (/usr/local/lib/node_modules/flowise/dist/controllers/predictions/index.js:91:37)

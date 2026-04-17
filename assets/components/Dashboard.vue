@@ -44,34 +44,35 @@
     </main>
 
     <!-- CHAT IA -->
-    <aside class="w-80 border-l border-gray-800 p-6 flex flex-col space-y-6">
+    <aside class="w-80 border-l border-gray-800 p-6 flex flex-col space-y-6 bg-gray-900/20">
       <div class="flex justify-between items-center">
         <h3 class="font-bold text-white">Asistente inteligente</h3>
+        <span v-if="cargandoIA" class="text-[10px] text-purple-400 animate-pulse">Escribiendo...</span>
       </div>
 
-      <div class="bg-gray-900/40 border border-purple-500/20 p-5 rounded-2xl space-y-4">
-        <div class="flex justify-between items-center">
-          <div class="flex items-center gap-2">
-            <div class="w-2 h-2 rounded-full bg-purple-500"></div>
-            <p class="text-sm font-semibold text-white">Finalize Backend Schema</p>
-          </div>
-          <span class="text-xs text-gray-600">^</span>
-        </div>
-        <p class="text-[11px] text-gray-500">Finalize the API endpoints for task CRUD operations and ensure Postgres indexes are correctly applied.</p>
-        <div class="flex justify-between items-center pt-2">
-          <span class="text-[10px] text-gray-600 uppercase">Due: Today, 18:00</span>
-          <button class="text-[10px] bg-purple-600/10 text-purple-400 border border-purple-600/20 px-3 py-1 rounded-md">Complete</button>
+      <div class="flex-1 overflow-y-auto space-y-4 pr-2 custom-scroll">
+        <div v-for="(msg, index) in mensajesChat" :key="index" 
+           :class="['p-4 rounded-2xl text-xs leading-relaxed', 
+                    msg.role === 'user' ? 'bg-purple-600/20 border border-purple-500/30 ml-4 text-gray-200' : 'bg-gray-800/40 border border-gray-700/50 mr-4 text-gray-400']">
+          <p>{{ msg.text }}</p>
         </div>
       </div>
 
       <div class="mt-auto bg-gray-900/50 border border-gray-800 p-4 rounded-2xl">
-        <div class="relative">
-          <input type="text" placeholder="Analyze system status..." class="w-full bg-black/40 border border-gray-800 rounded-xl px-4 py-3 text-xs focus:outline-none focus:border-purple-500">
-          <button class="absolute right-3 top-2.5 text-purple-500 text-lg">➤</button>
-        </div>
+        <form @submit.prevent="manejarEnvioChat" class="relative">
+          <input 
+            v-model="preguntaUsuario"
+            type="text" 
+            placeholder="Dime: 'Anota reunión mañana'..." 
+            class="w-full bg-black/40 border border-gray-800 rounded-xl px-4 py-3 text-xs focus:outline-none focus:border-purple-500 text-white"
+            :disabled="cargandoIA">
+          <button 
+            type="submit"
+            class="absolute right-3 top-2.5 text-purple-500 text-lg hover:scale-110 transition-transform"
+            :class="{ 'opacity-50': cargandoIA }">➤</button>
+        </form>
       </div>
     </aside>
-
   </div>
 </template>
 <style>
@@ -122,7 +123,13 @@
     filter: brightness(1.2);
     transition: filter 0.2s;
   }
-
+.custom-scroll::-webkit-scrollbar {
+  width: 4px;
+}
+.custom-scroll::-webkit-scrollbar-thumb {
+  background: #374151;
+  border-radius: 10px;
+}
 
   /* ========================================================================= 
        MAPEADO DE CLASES ESPECÍFICAS SEGÚN LISTADO DE COLORES DE LAS CATEGORIAS               
@@ -206,10 +213,12 @@ import dayGridPlugin from '@fullcalendar/daygrid'
 import timeGridPlugin from '@fullcalendar/timegrid'
 import { obtenerTareasUsuario } from '../../src/JavaScript/CRUDtareas/obtenerTareas.js';
 
+
 const { tareas,infoTareas } = obtenerTareasUsuario();
 const tituloActual = ref('');
 const fullCalendar = ref(null);
 const vistaActiva = ref('dayGridMonth');
+const eventosCalendario = ref([]);
 
  const calendarOptions = ref({
   plugins: [dayGridPlugin, timeGridPlugin],
@@ -231,7 +240,7 @@ const vistaActiva = ref('dayGridMonth');
     // Ponemos el tooltip tanto en el elemento principal como en el título
     info.el.setAttribute('title', `${title}`);
   },
-  events: []
+  events: eventosCalendario
 })
 
 // Función para cambiar de vista (Month, Week, Day)
@@ -259,36 +268,112 @@ const mapaColores = {
 
 onMounted(async () => {
   await infoTareas(); 
+  await refrescarCalendario();
+});
 
-  if (tareas.value && tareas.value.length > 0) {
-    const eventosProcesados = tareas.value.map(tarea => {
+//Actualizar calendario
+const refrescarCalendario = async () => {
+  await infoTareas(); // Llamamos a tu JS de obtener tareas
+
+  if (tareas.value) {
+    eventosCalendario.value = tareas.value.map(tarea => {
       const colorHex = mapaColores[tarea.color] || '#9333ea';
-
-      // Creo un array de clases CSS
       const clasesEfecto = [(tarea.color || 'morado').toLowerCase().trim()];
       
-      // Si esta completada, le añado la clase 'tarea-completada'
+      // Aplicamos la lógica de clases que ya definiste en tu CSS
       if (tarea.estado === 'Completada') {
         clasesEfecto.push('tarea-completada');
-      }else{
+      } else {
         clasesEfecto.push('tarea-no-completada');
       }
+
       return {
+        id: tarea.id, // Importante para que FullCalendar los identifique
         title: tarea.nombre_tarea,
         start: formatearFecha(tarea.fecha_vencimiento),
-        //añadir color basado en la prioridad o categoría
         backgroundColor: colorHex,
         borderColor: colorHex,
         classNames: clasesEfecto,
         extendedProps: {
           descripcion: tarea.descripcion,
-          categoria: tarea.nombre_categoria
+          categoria: tarea.nombre_categoria,
+          estado: tarea.estado
         }
       };
     });
-
-    calendarOptions.value.events = eventosProcesados;
   }
-});
+};
+
+// --- LÓGICA DEL CHAT ---
+const preguntaUsuario = ref('');
+const mensajesChat = ref([
+  { role: 'bot', text: '¡Hola! Soy tu asistente. ¿En qué puedo ayudarte hoy?' }
+]);
+const cargandoIA = ref(false);
+
+const manejarEnvioChat = async () => {
+  if (!preguntaUsuario.value.trim() || cargandoIA.ref) return;
+
+  const texto = preguntaUsuario.value;
+  preguntaUsuario.value = ''; // Limpiar input
+  
+  // 1. Añadir mensaje del usuario al chat
+  mensajesChat.value.push({ role: 'user', text: texto });
+  
+  cargandoIA.value = true;
+
+  try {
+    const res = await enviarMensajeAlBot(texto);
+    
+    // 2. Añadir respuesta del bot (Flowise devuelve 'text' o 'prediction')
+    const respuestaBot = res.text || res.prediction || "Tarea procesada correctamente.";
+    mensajesChat.value.push({ role: 'bot', text: respuestaBot });
+    
+    // OPCIONAL: Si la tarea se creó, podrías recargar el calendario
+    setTimeout(async () => {
+      await refrescarCalendario();
+    }, 500);
+  } catch (error) {
+    mensajesChat.value.push({ role: 'bot', text: 'Error al conectar con el asistente.' });
+  } finally {
+    cargandoIA.value = false;
+  }
+};
+
+const enviarMensajeAlBot = async (textoUsuario) => {
+  // Asegúrate de que el nombre de la clave en localStorage sea exacto
+  const token = localStorage.getItem('jwt_token'); 
+
+  const URL_FLOWISE = "http://localhost:3005/api/v1/prediction/7f5736f5-91db-4341-a2c5-1a1ca1a20750";
+  const preguntaConToken = `${textoUsuario} #TOKEN#${token}#`;
+  try {
+    const response = await fetch(URL_FLOWISE, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+          question: preguntaConToken,
+          overrideConfig: {
+            authToken: token,
+            vars: { 
+              authToken: token // Se envía aquí para que llegue a $vars en Flowise
+            }
+          }
+      })
+    });
+
+    if (response.ok){
+      setTimeout(async () => {
+      await refrescarCalendario();
+    }, 500);
+  }
+    
+    return await response.json();
+  } catch (error) {
+    console.error("Error en el chat:", error);
+    return { text: "Lo siento, hubo un error de conexión con el asistente." };
+  }
+};
 </script>
 

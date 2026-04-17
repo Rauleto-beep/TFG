@@ -1,0 +1,153 @@
+2026-04-16 11:00:30 [INFO]: ⬆️ POST /api/v1/node-load-method/groqChat
+2026-04-16 11:12:25 [INFO]: ⬆️ POST /api/v1/auth/refreshToken
+2026-04-16 11:12:30 [INFO]: 🖊 PUT /api/v1/tools/44ff8a52-24b4-4fb9-bfc6-754e52626862
+2026-04-16 11:12:31 [INFO]: ⬆️ POST /api/v1/node-load-method/customTool
+2026-04-16 11:12:32 [INFO]: 🖊 PUT /api/v1/chatflows/6bced32a-a14d-42fa-bf5d-4ea0ba009fb3
+2026-04-16 11:13:49 [INFO]: 🖊 PUT /api/v1/chatflows/6bced32a-a14d-42fa-bf5d-4ea0ba009fb3
+2026-04-16 11:13:52 [INFO]: ❌ DELETE /api/v1/chatmessage/6bced32a-a14d-42fa-bf5d-4ea0ba009fb3?chatId=ba8ead94-9bda-45e4-8da5-634d8d1f9270&chatType=INTERNAL
+2026-04-16 11:15:22 [INFO]: ⬆️ POST /api/v1/internal-prediction/6bced32a-a14d-42fa-bf5d-4ea0ba009fb3
+2026-04-16 11:15:22 [ERROR]: [server]: [3daa061b-8913-453e-9c86-f8248e12ebbb]: Error: NodeVM Execution Error: TypeError: Cannot read properties of undefined (reading 'includes')
+Error: Error: NodeVM Execution Error: TypeError: Cannot read properties of undefined (reading 'includes')
+    at CustomFunction_Utilities.init (/usr/local/lib/node_modules/flowise/node_modules/flowise-components/dist/nodes/utilities/CustomFunction/CustomFunction.js:127:19)
+    at async buildFlow (/usr/local/lib/node_modules/flowise/dist/utils/index.js:493:36)
+    at async executeFlow (/usr/local/lib/node_modules/flowise/dist/utils/buildChatflow.js:389:28)
+    at async utilBuildChatflow (/usr/local/lib/node_modules/flowise/dist/utils/buildChatflow.js:884:28)
+    at async createAndStreamInternalPrediction (/usr/local/lib/node_modules/flowise/dist/controllers/internal-predictions/index.js:50:29)
+2026-04-16 11:15:22 [ERROR]: [server]:3daa061b-8913-453e-9c86-f8248e12ebbb/6bced32a-a14d-42fa-bf5d-4ea0ba009fb3/6f76f94a-cb65-4ed6-9c1f-323aed05663e Error: Error: Error: NodeVM Execution Error: TypeError: Cannot read properties of undefined (reading 'includes')
+Error: Error: Error: NodeVM Execution Error: TypeError: Cannot read properties of undefined (reading 'includes')
+    at buildFlow (/usr/local/lib/node_modules/flowise/dist/utils/index.js:548:19)
+    at async executeFlow (/usr/local/lib/node_modules/flowise/dist/utils/buildChatflow.js:389:28)
+    at async utilBuildChatflow (/usr/local/lib/node_modules/flowise/dist/utils/buildChatflow.js:884:28)
+    at async createAndStreamInternalPrediction (/usr/local/lib/node_modules/flowise/dist/controllers/internal-predictions/index.js:50:29)
+2026-04-16 11:17:13 [INFO]: ⬆️ POST /api/v1/internal-prediction/6bced32a-a14d-42fa-bf5d-4ea0ba009fb3
+2026-04-16 11:17:14 [ERROR]: [server]: [3daa061b-8913-453e-9c86-f8248e12ebbb]: Error: NodeVM Execution Error: TypeError: Cannot read properties of undefined (reading 'includes')
+Error: Error: NodeVM Execution Error: TypeError: Cannot read properties of undefined (reading 'includes')
+    at CustomFunction_Utilities.init (/usr/local/lib/node_modules/flowise/node_modules/flowise-components/dist/nodes/utilities/CustomFunction/CustomFunction.js:127:19)
+    at async buildFlow (/usr/local/lib/node_modules/flowise/dist/utils/index.js:493:36)
+    at async executeFlow (/usr/local/lib/node_modules/flowise/dist/utils/buildChatflow.js:389:28)
+    at async utilBuildChatflow (/usr/local/lib/node_modules/flowise/dist/utils/buildChatflow.js:884:28)
+    at async createAndStreamInternalPrediction (/usr/local/lib/node_modules/flowise/dist/controllers/internal-predictions/index.js:50:29)
+2026-04-16 11:17:14 [ERROR]: [server]:3daa061b-8913-453e-9c86-f8248e12ebbb/6bced32a-a14d-42fa-bf5d-4ea0ba009fb3/a6c120f8-5f95-47e1-8665-18de4af0ef03 Error: Error: Error: NodeVM Execution Error: TypeError: Cannot read properties of undefined (reading 'includes')
+Error: Error: Error: NodeVM Execution Error: TypeError: Cannot read properties of undefined (reading 'includes')
+    at buildFlow (/usr/local/lib/node_modules/flowise/dist/utils/index.js:548:19)
+    at async executeFlow (/usr/local/lib/node_modules/flowise/dist/utils/buildChatflow.js:389:28)
+    at async utilBuildChatflow (/usr/local/lib/node_modules/flowise/dist/utils/buildChatflow.js:884:28)
+    at async createAndStreamInternalPrediction (/usr/local/lib/node_modules/flowise/dist/controllers/internal-predictions/index.js:50:29)
+2026-04-16 11:18:18 [INFO]: 🖊 PUT /api/v1/chatflows/6bced32a-a14d-42fa-bf5d-4ea0ba009fb3
+2026-04-16 11:18:26 [INFO]: ⬆️ POST /api/v1/internal-prediction/6bced32a-a14d-42fa-bf5d-4ea0ba009fb3
+2026-04-16 11:18:26 [ERROR]: [server]: [3daa061b-8913-453e-9c86-f8248e12ebbb]: Error: NodeVM Execution Error: TypeError: Cannot read properties of undefined (reading 'toUpperCase')
+Error: Error: NodeVM Execution Error: TypeError: Cannot read properties of undefined (reading 'toUpperCase')
+    at CustomFunction_Utilities.init (/usr/local/lib/node_modules/flowise/node_modules/flowise-components/dist/nodes/utilities/CustomFunction/CustomFunction.js:127:19)
+    at async buildFlow (/usr/local/lib/node_modules/flowise/dist/utils/index.js:493:36)
+    at async executeFlow (/usr/local/lib/node_modules/flowise/dist/utils/buildChatflow.js:389:28)
+    at async utilBuildChatflow (/usr/local/lib/node_modules/flowise/dist/utils/buildChatflow.js:884:28)
+    at async createAndStreamInternalPrediction (/usr/local/lib/node_modules/flowise/dist/controllers/internal-predictions/index.js:50:29)
+2026-04-16 11:18:26 [ERROR]: [server]:3daa061b-8913-453e-9c86-f8248e12ebbb/6bced32a-a14d-42fa-bf5d-4ea0ba009fb3/7fe369cc-aa83-40b6-8ff5-c3d113297953 Error: Error: Error: NodeVM Execution Error: TypeError: Cannot read properties of undefined (reading 'toUpperCase')
+Error: Error: Error: NodeVM Execution Error: TypeError: Cannot read properties of undefined (reading 'toUpperCase')
+    at buildFlow (/usr/local/lib/node_modules/flowise/dist/utils/index.js:548:19)
+    at async executeFlow (/usr/local/lib/node_modules/flowise/dist/utils/buildChatflow.js:389:28)
+    at async utilBuildChatflow (/usr/local/lib/node_modules/flowise/dist/utils/buildChatflow.js:884:28)
+    at async createAndStreamInternalPrediction (/usr/local/lib/node_modules/flowise/dist/controllers/internal-predictions/index.js:50:29)
+2026-04-16 11:18:49 [INFO]: ⬆️ POST /api/v1/internal-prediction/6bced32a-a14d-42fa-bf5d-4ea0ba009fb3
+2026-04-16 11:18:50 [ERROR]: [server]: [3daa061b-8913-453e-9c86-f8248e12ebbb]: Error: NodeVM Execution Error: TypeError: Cannot read properties of undefined (reading 'toUpperCase')
+Error: Error: NodeVM Execution Error: TypeError: Cannot read properties of undefined (reading 'toUpperCase')
+    at CustomFunction_Utilities.init (/usr/local/lib/node_modules/flowise/node_modules/flowise-components/dist/nodes/utilities/CustomFunction/CustomFunction.js:127:19)
+    at async buildFlow (/usr/local/lib/node_modules/flowise/dist/utils/index.js:493:36)
+    at async executeFlow (/usr/local/lib/node_modules/flowise/dist/utils/buildChatflow.js:389:28)
+    at async utilBuildChatflow (/usr/local/lib/node_modules/flowise/dist/utils/buildChatflow.js:884:28)
+    at async createAndStreamInternalPrediction (/usr/local/lib/node_modules/flowise/dist/controllers/internal-predictions/index.js:50:29)
+2026-04-16 11:18:50 [ERROR]: [server]:3daa061b-8913-453e-9c86-f8248e12ebbb/6bced32a-a14d-42fa-bf5d-4ea0ba009fb3/eafea419-1f36-45d3-870f-999ec06d95be Error: Error: Error: NodeVM Execution Error: TypeError: Cannot read properties of undefined (reading 'toUpperCase')
+Error: Error: Error: NodeVM Execution Error: TypeError: Cannot read properties of undefined (reading 'toUpperCase')
+    at buildFlow (/usr/local/lib/node_modules/flowise/dist/utils/index.js:548:19)
+    at async executeFlow (/usr/local/lib/node_modules/flowise/dist/utils/buildChatflow.js:389:28)
+    at async utilBuildChatflow (/usr/local/lib/node_modules/flowise/dist/utils/buildChatflow.js:884:28)
+    at async createAndStreamInternalPrediction (/usr/local/lib/node_modules/flowise/dist/controllers/internal-predictions/index.js:50:29)
+2026-04-16 11:20:17 [INFO]: 🖊 PUT /api/v1/chatflows/6bced32a-a14d-42fa-bf5d-4ea0ba009fb3
+2026-04-16 11:20:22 [INFO]: ⬆️ POST /api/v1/internal-prediction/6bced32a-a14d-42fa-bf5d-4ea0ba009fb3
+2026-04-16 11:25:18 [INFO]: 🖊 PUT /api/v1/chatflows/6bced32a-a14d-42fa-bf5d-4ea0ba009fb3
+2026-04-16 11:25:21 [INFO]: ❌ DELETE /api/v1/chatmessage/6bced32a-a14d-42fa-bf5d-4ea0ba009fb3?chatId=1120f420-68b0-4ab8-84f5-ec540cc90b21&chatType=INTERNAL
+2026-04-16 11:25:26 [INFO]: ⬆️ POST /api/v1/internal-prediction/6bced32a-a14d-42fa-bf5d-4ea0ba009fb3
+2026-04-16 11:25:27 [ERROR]: [server]:3daa061b-8913-453e-9c86-f8248e12ebbb/6bced32a-a14d-42fa-bf5d-4ea0ba009fb3/0fb2c59c-0da0-49c1-8dab-d4005d042daf Error: 400 Failed to call a function. Please adjust your prompt. See 'failed_generation' for more details.
+Error: 400 Failed to call a function. Please adjust your prompt. See 'failed_generation' for more details.
+    at Stream.iterator (/usr/local/lib/node_modules/flowise/node_modules/@langchain/groq/node_modules/groq-sdk/lib/streaming.js:60:35)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async ChatGroq._streamResponseChunks (/usr/local/lib/node_modules/flowise/node_modules/@langchain/groq/dist/chat_models.cjs:693:20)
+    at async ChatGroq._streamIterator (/usr/local/lib/node_modules/flowise/node_modules/@langchain/core/dist/language_models/chat_models.cjs:108:22)
+    at async ChatGroq.transform (/usr/local/lib/node_modules/flowise/node_modules/@langchain/core/dist/runnables/base.cjs:303:3)
+    at async RunnableBinding.transform (/usr/local/lib/node_modules/flowise/node_modules/@langchain/core/dist/runnables/base.cjs:660:3)
+    at async ToolCallingAgentOutputParser.transform (/usr/local/lib/node_modules/flowise/node_modules/flowise-components/node_modules/@langchain/core/dist/runnables/base.cjs:307:20)
+    at async RunnableSequence._streamIterator (/usr/local/lib/node_modules/flowise/node_modules/flowise-components/node_modules/@langchain/core/dist/runnables/base.cjs:1005:21)
+2026-04-16 11:25:44 [INFO]: ⬆️ POST /api/v1/internal-prediction/6bced32a-a14d-42fa-bf5d-4ea0ba009fb3
+2026-04-16 11:25:45 [ERROR]: [server]:3daa061b-8913-453e-9c86-f8248e12ebbb/6bced32a-a14d-42fa-bf5d-4ea0ba009fb3/8208e509-3362-411d-882c-ab00f3e5e87e Error: 400 Failed to call a function. Please adjust your prompt. See 'failed_generation' for more details.
+Error: 400 Failed to call a function. Please adjust your prompt. See 'failed_generation' for more details.
+    at Stream.iterator (/usr/local/lib/node_modules/flowise/node_modules/@langchain/groq/node_modules/groq-sdk/lib/streaming.js:60:35)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async ChatGroq._streamResponseChunks (/usr/local/lib/node_modules/flowise/node_modules/@langchain/groq/dist/chat_models.cjs:693:20)
+    at async ChatGroq._streamIterator (/usr/local/lib/node_modules/flowise/node_modules/@langchain/core/dist/language_models/chat_models.cjs:108:22)
+    at async ChatGroq.transform (/usr/local/lib/node_modules/flowise/node_modules/@langchain/core/dist/runnables/base.cjs:303:3)
+    at async RunnableBinding.transform (/usr/local/lib/node_modules/flowise/node_modules/@langchain/core/dist/runnables/base.cjs:660:3)
+    at async ToolCallingAgentOutputParser.transform (/usr/local/lib/node_modules/flowise/node_modules/flowise-components/node_modules/@langchain/core/dist/runnables/base.cjs:307:20)
+    at async RunnableSequence._streamIterator (/usr/local/lib/node_modules/flowise/node_modules/flowise-components/node_modules/@langchain/core/dist/runnables/base.cjs:1005:21)
+2026-04-16 11:27:55 [INFO]: 🖊 PUT /api/v1/chatflows/6bced32a-a14d-42fa-bf5d-4ea0ba009fb3
+2026-04-16 11:30:29 [INFO]: 🖊 PUT /api/v1/tools/44ff8a52-24b4-4fb9-bfc6-754e52626862
+2026-04-16 11:30:29 [INFO]: ⬆️ POST /api/v1/node-load-method/customTool
+2026-04-16 11:30:33 [INFO]: 🖊 PUT /api/v1/tools/44ff8a52-24b4-4fb9-bfc6-754e52626862
+2026-04-16 11:30:33 [INFO]: ⬆️ POST /api/v1/node-load-method/customTool
+2026-04-16 11:31:45 [INFO]: 🖊 PUT /api/v1/chatflows/6bced32a-a14d-42fa-bf5d-4ea0ba009fb3
+2026-04-16 11:32:33 [INFO]: ❌ DELETE /api/v1/chatmessage/6bced32a-a14d-42fa-bf5d-4ea0ba009fb3?chatId=8208e509-3362-411d-882c-ab00f3e5e87e&chatType=INTERNAL
+2026-04-16 11:32:41 [INFO]: ⬆️ POST /api/v1/internal-prediction/6bced32a-a14d-42fa-bf5d-4ea0ba009fb3
+2026-04-16 11:33:17 [INFO]: ⬆️ POST /api/v1/internal-prediction/6bced32a-a14d-42fa-bf5d-4ea0ba009fb3
+2026-04-16 11:33:18 [ERROR]: [server]:3daa061b-8913-453e-9c86-f8248e12ebbb/6bced32a-a14d-42fa-bf5d-4ea0ba009fb3/1c00a528-cead-492e-81e3-0881f049fcca Error: 400 Failed to call a function. Please adjust your prompt. See 'failed_generation' for more details.
+Error: 400 Failed to call a function. Please adjust your prompt. See 'failed_generation' for more details.
+    at Stream.iterator (/usr/local/lib/node_modules/flowise/node_modules/@langchain/groq/node_modules/groq-sdk/lib/streaming.js:60:35)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async ChatGroq._streamResponseChunks (/usr/local/lib/node_modules/flowise/node_modules/@langchain/groq/dist/chat_models.cjs:693:20)
+    at async ChatGroq._streamIterator (/usr/local/lib/node_modules/flowise/node_modules/@langchain/core/dist/language_models/chat_models.cjs:108:22)
+    at async ChatGroq.transform (/usr/local/lib/node_modules/flowise/node_modules/@langchain/core/dist/runnables/base.cjs:303:3)
+    at async RunnableBinding.transform (/usr/local/lib/node_modules/flowise/node_modules/@langchain/core/dist/runnables/base.cjs:660:3)
+    at async ToolCallingAgentOutputParser.transform (/usr/local/lib/node_modules/flowise/node_modules/flowise-components/node_modules/@langchain/core/dist/runnables/base.cjs:307:20)
+    at async RunnableSequence._streamIterator (/usr/local/lib/node_modules/flowise/node_modules/flowise-components/node_modules/@langchain/core/dist/runnables/base.cjs:1005:21)
+2026-04-16 11:33:44 [INFO]: ⬆️ POST /api/v1/internal-prediction/6bced32a-a14d-42fa-bf5d-4ea0ba009fb3
+2026-04-16 11:33:45 [ERROR]: [server]:3daa061b-8913-453e-9c86-f8248e12ebbb/6bced32a-a14d-42fa-bf5d-4ea0ba009fb3/1c00a528-cead-492e-81e3-0881f049fcca Error: 400 Failed to call a function. Please adjust your prompt. See 'failed_generation' for more details.
+Error: 400 Failed to call a function. Please adjust your prompt. See 'failed_generation' for more details.
+    at Stream.iterator (/usr/local/lib/node_modules/flowise/node_modules/@langchain/groq/node_modules/groq-sdk/lib/streaming.js:60:35)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async ChatGroq._streamResponseChunks (/usr/local/lib/node_modules/flowise/node_modules/@langchain/groq/dist/chat_models.cjs:693:20)
+    at async ChatGroq._streamIterator (/usr/local/lib/node_modules/flowise/node_modules/@langchain/core/dist/language_models/chat_models.cjs:108:22)
+    at async ChatGroq.transform (/usr/local/lib/node_modules/flowise/node_modules/@langchain/core/dist/runnables/base.cjs:303:3)
+    at async RunnableBinding.transform (/usr/local/lib/node_modules/flowise/node_modules/@langchain/core/dist/runnables/base.cjs:660:3)
+    at async ToolCallingAgentOutputParser.transform (/usr/local/lib/node_modules/flowise/node_modules/flowise-components/node_modules/@langchain/core/dist/runnables/base.cjs:307:20)
+    at async RunnableSequence._streamIterator (/usr/local/lib/node_modules/flowise/node_modules/flowise-components/node_modules/@langchain/core/dist/runnables/base.cjs:1005:21)
+2026-04-16 11:34:09 [INFO]: 🖊 PUT /api/v1/chatflows/6bced32a-a14d-42fa-bf5d-4ea0ba009fb3
+2026-04-16 11:34:21 [INFO]: 🖊 PUT /api/v1/chatflows/6bced32a-a14d-42fa-bf5d-4ea0ba009fb3
+2026-04-16 11:34:28 [INFO]: ⬆️ POST /api/v1/internal-prediction/6bced32a-a14d-42fa-bf5d-4ea0ba009fb3
+2026-04-16 11:34:28 [ERROR]: [server]:3daa061b-8913-453e-9c86-f8248e12ebbb/6bced32a-a14d-42fa-bf5d-4ea0ba009fb3/1c00a528-cead-492e-81e3-0881f049fcca Error: 400 Failed to call a function. Please adjust your prompt. See 'failed_generation' for more details.
+Error: 400 Failed to call a function. Please adjust your prompt. See 'failed_generation' for more details.
+    at Stream.iterator (/usr/local/lib/node_modules/flowise/node_modules/@langchain/groq/node_modules/groq-sdk/lib/streaming.js:60:35)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async ChatGroq._streamResponseChunks (/usr/local/lib/node_modules/flowise/node_modules/@langchain/groq/dist/chat_models.cjs:693:20)
+    at async ChatGroq._streamIterator (/usr/local/lib/node_modules/flowise/node_modules/@langchain/core/dist/language_models/chat_models.cjs:108:22)
+    at async ChatGroq.transform (/usr/local/lib/node_modules/flowise/node_modules/@langchain/core/dist/runnables/base.cjs:303:3)
+    at async RunnableBinding.transform (/usr/local/lib/node_modules/flowise/node_modules/@langchain/core/dist/runnables/base.cjs:660:3)
+    at async ToolCallingAgentOutputParser.transform (/usr/local/lib/node_modules/flowise/node_modules/flowise-components/node_modules/@langchain/core/dist/runnables/base.cjs:307:20)
+    at async RunnableSequence._streamIterator (/usr/local/lib/node_modules/flowise/node_modules/flowise-components/node_modules/@langchain/core/dist/runnables/base.cjs:1005:21)
+2026-04-16 11:34:55 [INFO]: 🖊 PUT /api/v1/chatflows/6bced32a-a14d-42fa-bf5d-4ea0ba009fb3
+2026-04-16 11:35:02 [INFO]: ⬆️ POST /api/v1/internal-prediction/6bced32a-a14d-42fa-bf5d-4ea0ba009fb3
+2026-04-16 11:35:45 [INFO]: ⬆️ POST /api/v1/internal-prediction/6bced32a-a14d-42fa-bf5d-4ea0ba009fb3
+2026-04-16 11:38:38 [INFO]: ⬆️ POST /api/v1/prediction/6bced32a-a14d-42fa-bf5d-4ea0ba009fb3
+2026-04-16 11:38:38 [INFO]: [server]: Request originated from https://localhost:8081
+2026-04-16 11:40:47 [INFO]: 🖊 PUT /api/v1/chatflows/6bced32a-a14d-42fa-bf5d-4ea0ba009fb3
+2026-04-16 11:41:17 [INFO]: ⬆️ POST /api/v1/prediction/6bced32a-a14d-42fa-bf5d-4ea0ba009fb3
+2026-04-16 11:41:17 [INFO]: [server]: Request originated from https://localhost:8081
+2026-04-16 11:48:42 [INFO]: 🖊 PUT /api/v1/chatflows/6bced32a-a14d-42fa-bf5d-4ea0ba009fb3
+2026-04-16 11:49:04 [INFO]: ⬆️ POST /api/v1/prediction/6bced32a-a14d-42fa-bf5d-4ea0ba009fb3
+2026-04-16 11:49:04 [INFO]: [server]: Request originated from https://localhost:8081
+2026-04-16 11:50:23 [INFO]: 🖊 PUT /api/v1/chatflows/6bced32a-a14d-42fa-bf5d-4ea0ba009fb3
+2026-04-16 11:50:43 [INFO]: ⬆️ POST /api/v1/prediction/6bced32a-a14d-42fa-bf5d-4ea0ba009fb3
+2026-04-16 11:50:43 [INFO]: [server]: Request originated from https://localhost:8081
+2026-04-16 11:52:48 [INFO]: 🖊 PUT /api/v1/chatflows/6bced32a-a14d-42fa-bf5d-4ea0ba009fb3
+2026-04-16 11:53:07 [INFO]: ⬆️ POST /api/v1/prediction/6bced32a-a14d-42fa-bf5d-4ea0ba009fb3
+2026-04-16 11:53:07 [INFO]: [server]: Request originated from https://localhost:8081
+2026-04-16 11:54:13 [INFO]: 🖊 PUT /api/v1/chatflows/6bced32a-a14d-42fa-bf5d-4ea0ba009fb3
+2026-04-16 11:54:42 [INFO]: ⬆️ POST /api/v1/prediction/6bced32a-a14d-42fa-bf5d-4ea0ba009fb3
+2026-04-16 11:54:42 [INFO]: [server]: Request originated from https://localhost:8081

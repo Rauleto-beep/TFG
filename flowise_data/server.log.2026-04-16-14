@@ -1,0 +1,60 @@
+2026-04-16 14:41:37 [INFO]: ⬆️ POST /api/v1/node-load-method/groqChat
+2026-04-16 14:42:59 [INFO]: 🖊 PUT /api/v1/chatflows/6bced32a-a14d-42fa-bf5d-4ea0ba009fb3
+2026-04-16 14:43:12 [INFO]: ⬆️ POST /api/v1/prediction/6bced32a-a14d-42fa-bf5d-4ea0ba009fb3
+2026-04-16 14:43:12 [INFO]: [server]: Request originated from https://localhost:8081
+2026-04-16 14:43:12 [ERROR]: [server]: [3daa061b-8913-453e-9c86-f8248e12ebbb]: Error: NodeVM Execution Error: ReferenceError: AnalizadorPeticion is not defined
+Error: Error: NodeVM Execution Error: ReferenceError: AnalizadorPeticion is not defined
+    at IfElseFunction_Utilities.init (/usr/local/lib/node_modules/flowise/node_modules/flowise-components/dist/nodes/utilities/IfElseFunction/IfElseFunction.js:122:19)
+    at async buildFlow (/usr/local/lib/node_modules/flowise/dist/utils/index.js:493:36)
+    at async executeFlow (/usr/local/lib/node_modules/flowise/dist/utils/buildChatflow.js:389:28)
+    at async utilBuildChatflow (/usr/local/lib/node_modules/flowise/dist/utils/buildChatflow.js:884:28)
+    at async Object.buildChatflow (/usr/local/lib/node_modules/flowise/dist/services/predictions/index.js:9:28)
+    at async createPrediction (/usr/local/lib/node_modules/flowise/dist/controllers/predictions/index.js:91:37)
+2026-04-16 14:43:12 [ERROR]: [server]:3daa061b-8913-453e-9c86-f8248e12ebbb/6bced32a-a14d-42fa-bf5d-4ea0ba009fb3/a44e8a55-5fb8-4225-8bc1-dc027963c8b5 Error: Error: Error: NodeVM Execution Error: ReferenceError: AnalizadorPeticion is not defined
+Error: Error: Error: NodeVM Execution Error: ReferenceError: AnalizadorPeticion is not defined
+    at buildFlow (/usr/local/lib/node_modules/flowise/dist/utils/index.js:548:19)
+    at async executeFlow (/usr/local/lib/node_modules/flowise/dist/utils/buildChatflow.js:389:28)
+    at async utilBuildChatflow (/usr/local/lib/node_modules/flowise/dist/utils/buildChatflow.js:884:28)
+    at async Object.buildChatflow (/usr/local/lib/node_modules/flowise/dist/services/predictions/index.js:9:28)
+    at async createPrediction (/usr/local/lib/node_modules/flowise/dist/controllers/predictions/index.js:91:37)
+2026-04-16 14:44:48 [INFO]: 🖊 PUT /api/v1/chatflows/6bced32a-a14d-42fa-bf5d-4ea0ba009fb3
+2026-04-16 14:44:59 [INFO]: ⬆️ POST /api/v1/prediction/6bced32a-a14d-42fa-bf5d-4ea0ba009fb3
+2026-04-16 14:44:59 [INFO]: [server]: Request originated from https://localhost:8081
+2026-04-16 14:44:59 [ERROR]: [server]: [3daa061b-8913-453e-9c86-f8248e12ebbb]: Error: NodeVM Execution Error: ReferenceError: AnalizadorPeticion is not defined
+Error: Error: NodeVM Execution Error: ReferenceError: AnalizadorPeticion is not defined
+    at IfElseFunction_Utilities.init (/usr/local/lib/node_modules/flowise/node_modules/flowise-components/dist/nodes/utilities/IfElseFunction/IfElseFunction.js:122:19)
+    at async buildFlow (/usr/local/lib/node_modules/flowise/dist/utils/index.js:493:36)
+    at async executeFlow (/usr/local/lib/node_modules/flowise/dist/utils/buildChatflow.js:389:28)
+    at async utilBuildChatflow (/usr/local/lib/node_modules/flowise/dist/utils/buildChatflow.js:884:28)
+    at async Object.buildChatflow (/usr/local/lib/node_modules/flowise/dist/services/predictions/index.js:9:28)
+    at async createPrediction (/usr/local/lib/node_modules/flowise/dist/controllers/predictions/index.js:91:37)
+2026-04-16 14:44:59 [ERROR]: [server]:3daa061b-8913-453e-9c86-f8248e12ebbb/6bced32a-a14d-42fa-bf5d-4ea0ba009fb3/27953f4b-ef5d-40f8-9a16-83fffd9c06e3 Error: Error: Error: NodeVM Execution Error: ReferenceError: AnalizadorPeticion is not defined
+Error: Error: Error: NodeVM Execution Error: ReferenceError: AnalizadorPeticion is not defined
+    at buildFlow (/usr/local/lib/node_modules/flowise/dist/utils/index.js:548:19)
+    at async executeFlow (/usr/local/lib/node_modules/flowise/dist/utils/buildChatflow.js:389:28)
+    at async utilBuildChatflow (/usr/local/lib/node_modules/flowise/dist/utils/buildChatflow.js:884:28)
+    at async Object.buildChatflow (/usr/local/lib/node_modules/flowise/dist/services/predictions/index.js:9:28)
+    at async createPrediction (/usr/local/lib/node_modules/flowise/dist/controllers/predictions/index.js:91:37)
+2026-04-16 14:46:23 [INFO]: 🖊 PUT /api/v1/chatflows/6bced32a-a14d-42fa-bf5d-4ea0ba009fb3
+2026-04-16 14:46:33 [INFO]: ⬆️ POST /api/v1/prediction/6bced32a-a14d-42fa-bf5d-4ea0ba009fb3
+2026-04-16 14:46:33 [INFO]: [server]: Request originated from https://localhost:8081
+2026-04-16 14:46:33 [ERROR]: [server]:3daa061b-8913-453e-9c86-f8248e12ebbb/6bced32a-a14d-42fa-bf5d-4ea0ba009fb3/f7185578-ca7f-4d98-884e-3a521008f8b9 Error: endingNodeInstance.run is not a function
+TypeError: endingNodeInstance.run is not a function
+    at executeFlow (/usr/local/lib/node_modules/flowise/dist/utils/buildChatflow.js:598:47)
+    at async utilBuildChatflow (/usr/local/lib/node_modules/flowise/dist/utils/buildChatflow.js:884:28)
+    at async Object.buildChatflow (/usr/local/lib/node_modules/flowise/dist/services/predictions/index.js:9:28)
+    at async createPrediction (/usr/local/lib/node_modules/flowise/dist/controllers/predictions/index.js:91:37)
+2026-04-16 14:51:25 [INFO]: 🖊 PUT /api/v1/chatflows/6bced32a-a14d-42fa-bf5d-4ea0ba009fb3
+2026-04-16 14:51:31 [INFO]: 🖊 PUT /api/v1/chatflows/6bced32a-a14d-42fa-bf5d-4ea0ba009fb3
+2026-04-16 14:51:42 [INFO]: ⬆️ POST /api/v1/prediction/6bced32a-a14d-42fa-bf5d-4ea0ba009fb3
+2026-04-16 14:51:42 [INFO]: [server]: Request originated from https://localhost:8081
+2026-04-16 14:57:01 [INFO]: ⬆️ POST /api/v1/auth/refreshToken
+2026-04-16 14:57:01 [INFO]: 🖊 PUT /api/v1/chatflows/6bced32a-a14d-42fa-bf5d-4ea0ba009fb3
+2026-04-16 14:57:20 [INFO]: ⬆️ POST /api/v1/prediction/6bced32a-a14d-42fa-bf5d-4ea0ba009fb3
+2026-04-16 14:57:20 [INFO]: [server]: Request originated from https://localhost:8081
+2026-04-16 14:57:20 [ERROR]: [server]:3daa061b-8913-453e-9c86-f8248e12ebbb/6bced32a-a14d-42fa-bf5d-4ea0ba009fb3/ddf322ec-a28a-4dfb-979c-c1433ab6c713 Error: endingNodeInstance.run is not a function
+TypeError: endingNodeInstance.run is not a function
+    at executeFlow (/usr/local/lib/node_modules/flowise/dist/utils/buildChatflow.js:598:47)
+    at async utilBuildChatflow (/usr/local/lib/node_modules/flowise/dist/utils/buildChatflow.js:884:28)
+    at async Object.buildChatflow (/usr/local/lib/node_modules/flowise/dist/services/predictions/index.js:9:28)
+    at async createPrediction (/usr/local/lib/node_modules/flowise/dist/controllers/predictions/index.js:91:37)
