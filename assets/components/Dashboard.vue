@@ -26,21 +26,31 @@
       </section>
 
       <section class="bg-gray-900/30 border border-gray-800 p-8 rounded-3xl relative overflow-hidden">
-        <div class="flex gap-4 items-start">
-          <div class="bg-purple-900/30 p-3 rounded-2xl text-purple-400">🤖</div>
-          <div class="space-y-4">
-            <h3 class="text-xl font-bold text-white">Mensaje del agente inteligente</h3>
-            <p class="text-sm leading-relaxed max-w-2xl text-gray-400">
-              System analysis complete. I recommend prioritizing the <span class="text-purple-400 font-bold">JWT Refresh Token logic</span> refactoring. 
-              Detected high complexity in the current auth middleware that may cause latency spikes.
-            </p>
-            <div class="flex gap-3">
-              <button class="text-xs border border-gray-700 px-4 py-2 rounded-full hover:bg-gray-800">Optimize Code</button>
-              <button class="text-xs border border-gray-700 px-4 py-2 rounded-full hover:bg-gray-800">View Logs</button>
-            </div>
-          </div>
-        </div>
-      </section>
+  <div class="flex gap-4 items-start">
+    <div class="bg-purple-900/30 p-3 rounded-2xl text-purple-400">
+      <span v-if="cargandoAnalisis" class="animate-spin block">⚙️</span>
+      <span v-else>🤖</span>
+    </div>
+    <div class="space-y-4">
+      <div class="flex items-center gap-3">
+        <h3 class="text-xl font-bold text-white">Mensaje del agente inteligente</h3>
+        <span v-if="cargandoAnalisis" class="text-[10px] text-purple-400 animate-pulse uppercase tracking-widest">Calculando estrategia...</span>
+      </div>
+      
+      <p class="text-sm leading-relaxed max-w-2xl text-gray-400 whitespace-pre-line">
+        {{ mensajeAgenteEstratega }}
+      </p>
+      
+      <div v-if="!cargandoAnalisis" class="flex gap-3">
+        <button 
+          @click="ejecutarAnalisisEstrategico" 
+          class="text-[10px] border border-purple-500/30 text-purple-400 px-3 py-1 rounded-full hover:bg-purple-500/10 transition-colors">
+          Actualizar análisis
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
     </main>
 
     <!-- CHAT IA -->
@@ -219,6 +229,9 @@ const tituloActual = ref('');
 const fullCalendar = ref(null);
 const vistaActiva = ref('dayGridMonth');
 const eventosCalendario = ref([]);
+//Instrucciones del agente
+const mensajeAgenteEstratega = ref('Analizando tus tareas para optimizar tu flujo...');
+const cargandoAnalisis = ref(true);
 
  const calendarOptions = ref({
   plugins: [dayGridPlugin, timeGridPlugin],
@@ -269,6 +282,7 @@ const mapaColores = {
 onMounted(async () => {
   await infoTareas(); 
   await refrescarCalendario();
+  await ejecutarAnalisisEstrategico(); // Lanzamos el análisis al cargar
 });
 
 //Actualizar calendario
@@ -312,28 +326,27 @@ const mensajesChat = ref([
 const cargandoIA = ref(false);
 
 const manejarEnvioChat = async () => {
-  if (!preguntaUsuario.value.trim() || cargandoIA.ref) return;
+  // CORREGIDO: .value en lugar de .ref
+  if (!preguntaUsuario.value.trim() || cargandoIA.value) return;
 
   const texto = preguntaUsuario.value;
-  preguntaUsuario.value = ''; // Limpiar input
+  preguntaUsuario.value = ''; 
   
-  // 1. Añadir mensaje del usuario al chat
   mensajesChat.value.push({ role: 'user', text: texto });
-  
   cargandoIA.value = true;
 
   try {
     const res = await enviarMensajeAlBot(texto);
     
-    // 2. Añadir respuesta del bot (Flowise devuelve 'text' o 'prediction')
-    const respuestaBot = res.text || res.prediction || "Tarea procesada correctamente.";
+    // Flowise suele devolver el texto en 'text'
+    const respuestaBot = res.text || res.prediction || "Acción procesada.";
     mensajesChat.value.push({ role: 'bot', text: respuestaBot });
     
-    // OPCIONAL: Si la tarea se creó, podrías recargar el calendario
-    setTimeout(async () => {
-      await refrescarCalendario();
-    }, 500);
+    // Solo refrescamos si la respuesta fue exitosa
+    await refrescarCalendario();
+    
   } catch (error) {
+    console.error("Error en manejarEnvioChat:", error);
     mensajesChat.value.push({ role: 'bot', text: 'Error al conectar con el asistente.' });
   } finally {
     cargandoIA.value = false;
@@ -341,39 +354,38 @@ const manejarEnvioChat = async () => {
 };
 
 const enviarMensajeAlBot = async (textoUsuario) => {
-  // Asegúrate de que el nombre de la clave en localStorage sea exacto
-  const token = localStorage.getItem('jwt_token'); 
-
   const URL_FLOWISE = "http://localhost:3005/api/v1/prediction/7f5736f5-91db-4341-a2c5-1a1ca1a20750";
-  const preguntaConToken = `${textoUsuario} #TOKEN#${token}#`;
+
+  const response = await fetch(URL_FLOWISE, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ question: textoUsuario })
+  });
+
+  if (!response.ok) throw new Error("Error en la respuesta de Flowise");
+  
+  return await response.json();
+};
+
+const ejecutarAnalisisEstrategico = async () => {
+  cargandoAnalisis.value = true;
   try {
-    const response = await fetch(URL_FLOWISE, {
+    const response = await fetch("http://localhost:3005/api/v1/prediction/fcb20894-0a45-47a8-8966-e00ab0fd340f", {
       method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
+      headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
-          question: preguntaConToken,
-          overrideConfig: {
-            authToken: token,
-            vars: { 
-              authToken: token // Se envía aquí para que llegue a $vars en Flowise
-            }
-          }
+        // Enviamos un trigger que dispare el listar
+        question: "Realiza el análisis estratégico de mis tareas actuales." 
       })
     });
-
-    if (response.ok){
-      setTimeout(async () => {
-      await refrescarCalendario();
-    }, 500);
-  }
     
-    return await response.json();
+    const data = await response.json();
+    mensajeAgenteEstratega.value = data.text;
   } catch (error) {
-    console.error("Error en el chat:", error);
-    return { text: "Lo siento, hubo un error de conexión con el asistente." };
+    mensajeAgenteEstratega.value = "Error al sincronizar con el estratega.";
+  } finally {
+    cargandoAnalisis.value = false;
   }
-};
+  };
 </script>
 

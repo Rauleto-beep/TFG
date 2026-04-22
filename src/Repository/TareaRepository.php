@@ -57,7 +57,7 @@ class TareaRepository extends ServiceEntityRepository
             'nombre' => $datos['nombre_tarea'],
             'desc' => $datos['descripcion'],
             //Fechas
-            'fPub' => $datos['fecha_publicacion'],
+            'fPub' => (new \DateTime())->format('Y-m-d'),
             'fVenc' => $datos['fecha_vencimiento'],
             //Boolean
             'ia' => $datos['ia'] ? 1 : 0, // 1 = true, 0 = false
@@ -390,5 +390,17 @@ class TareaRepository extends ServiceEntityRepository
     $conn->executeQuery($sql, $params);
 
     return true;
+}
+
+//Obtener tarea IA
+public function listarTareasIA(int $idUsuario): array {
+    $conn = $this->getEntityManager()->getConnection();
+    $sql = 'SELECT t.nombre_tarea, t.descripcion, t.fecha_vencimiento, t.prioridad, c.nombre_categoria as categoria
+            FROM tarea t
+            INNER JOIN tarea_usuario tu ON t.id = tu.tarea_id
+            LEFT JOIN categoria c ON t.categoria_id = c.id
+            WHERE tu.usuario_id = :id AND t.estado = "No completada"';
+    
+    return $conn->fetchAllAssociative($sql, ['id' => $idUsuario]);
 }
 }

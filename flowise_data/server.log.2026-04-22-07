@@ -1,0 +1,65 @@
+2026-04-22 07:38:55 [INFO]: Starting Flowise...
+2026-04-22 07:38:55 [INFO]: 📦 [server]: Data Source initialized successfully
+2026-04-22 07:38:55 [INFO]: 🔄 [server]: Database migrations completed successfully
+2026-04-22 07:38:55 [INFO]: 🔐 [server]: Identity Manager initialized successfully
+2026-04-22 07:39:01 [INFO]: 🔧 [server]: Nodes pool initialized successfully
+2026-04-22 07:39:01 [INFO]: ⏹️ [server]: Abort controllers pool initialized successfully
+2026-04-22 07:39:01 [INFO]: 🔑 [server]: Encryption key initialized successfully
+2026-04-22 07:39:01 [INFO]: 🔐 [server]: Auth initialized successfully
+2026-04-22 07:39:01 [INFO]: 🚦 [server]: Rate limiters initialized successfully
+2026-04-22 07:39:01 [INFO]: 💾 [server]: Cache pool initialized successfully
+2026-04-22 07:39:01 [INFO]: 📊 [server]: Usage cache manager initialized successfully
+2026-04-22 07:39:01 [INFO]: 📈 [server]: Telemetry initialized successfully
+2026-04-22 07:39:01 [INFO]: 🌊 [server]: SSE Streamer initialized successfully
+2026-04-22 07:39:01 [INFO]: 🎉 [server]: All initialization steps completed successfully!
+2026-04-22 07:39:01 [INFO]: ⚡️ [server]: Flowise Server is listening at :3000
+2026-04-22 07:40:14 [INFO]: ⬆️ POST /api/v1/auth/resolve
+2026-04-22 07:40:14 [INFO]: ⬆️ POST /api/v1/auth/resolve
+2026-04-22 07:40:20 [INFO]: ⬆️ POST /api/v1/auth/login
+2026-04-22 07:40:24 [INFO]: ⬆️ POST /api/v1/node-load-method/groqChat
+2026-04-22 07:40:24 [INFO]: ⬆️ POST /api/v1/node-load-method/customTool
+2026-04-22 07:40:24 [INFO]: ⬆️ POST /api/v1/node-load-method/groqChat
+2026-04-22 07:40:24 [INFO]: ⬆️ POST /api/v1/node-load-method/groqChat
+2026-04-22 07:40:24 [INFO]: ⬆️ POST /api/v1/node-load-method/groqChat
+2026-04-22 07:40:24 [INFO]: ⬆️ POST /api/v1/node-load-method/customTool
+2026-04-22 07:40:27 [INFO]: ❌ DELETE /api/v1/chatflows/6bced32a-a14d-42fa-bf5d-4ea0ba009fb3
+2026-04-22 07:40:28 [INFO]: ⬆️ POST /api/v1/node-load-method/customTool
+2026-04-22 07:40:28 [INFO]: ⬆️ POST /api/v1/node-load-method/customTool
+2026-04-22 07:40:28 [INFO]: ⬆️ POST /api/v1/node-load-method/groqChat
+2026-04-22 07:40:31 [INFO]: ❌ DELETE /api/v1/chatflows/95088773-48f9-4cee-8693-7bf712340e5c
+2026-04-22 07:40:32 [INFO]: ⬆️ POST /api/v1/node-load-method/groqChat
+2026-04-22 07:40:32 [INFO]: ⬆️ POST /api/v1/node-load-method/customTool
+2026-04-22 07:40:35 [INFO]: ❌ DELETE /api/v1/chatflows/07bbe505-208c-4626-988e-8c2c5c526104
+2026-04-22 07:40:36 [INFO]: ⬆️ POST /api/v1/node-load-method/groqChat
+2026-04-22 07:40:36 [INFO]: ⬆️ POST /api/v1/node-load-method/ChatflowTool
+2026-04-22 07:40:36 [INFO]: ⬆️ POST /api/v1/node-load-method/ChatflowTool
+2026-04-22 07:40:39 [INFO]: ❌ DELETE /api/v1/chatflows/139a7c9a-1f99-4607-a022-c6d04dc89fd1
+2026-04-22 07:40:41 [INFO]: ⬆️ POST /api/v1/node-load-method/chatGoogleGenerativeAI
+2026-04-22 07:40:41 [INFO]: ⬆️ POST /api/v1/node-load-method/customTool
+2026-04-22 07:40:41 [INFO]: ⬆️ POST /api/v1/node-load-method/groqChat
+2026-04-22 07:40:51 [INFO]: 🖊 PUT /api/v1/chatflows/7f5736f5-91db-4341-a2c5-1a1ca1a20750
+2026-04-22 07:41:51 [INFO]: 🖊 PUT /api/v1/tools/44ff8a52-24b4-4fb9-bfc6-754e52626862
+2026-04-22 07:41:51 [INFO]: ⬆️ POST /api/v1/node-load-method/customTool
+2026-04-22 07:46:15 [INFO]: 🖊 PUT /api/v1/tools/44ff8a52-24b4-4fb9-bfc6-754e52626862
+2026-04-22 07:46:15 [INFO]: ⬆️ POST /api/v1/node-load-method/customTool
+2026-04-22 07:46:16 [INFO]: 🖊 PUT /api/v1/chatflows/7f5736f5-91db-4341-a2c5-1a1ca1a20750
+2026-04-22 07:51:00 [INFO]: 🖊 PUT /api/v1/tools/44ff8a52-24b4-4fb9-bfc6-754e52626862
+2026-04-22 07:51:00 [INFO]: ⬆️ POST /api/v1/node-load-method/customTool
+2026-04-22 07:51:27 [INFO]: 🖊 PUT /api/v1/chatflows/7f5736f5-91db-4341-a2c5-1a1ca1a20750
+2026-04-22 07:54:33 [INFO]: ⬆️ POST /api/v1/prediction/7f5736f5-91db-4341-a2c5-1a1ca1a20750
+2026-04-22 07:54:33 [INFO]: [server]: Request originated from https://localhost:8081
+2026-04-22 07:54:47 [INFO]: ⬆️ POST /api/v1/prediction/7f5736f5-91db-4341-a2c5-1a1ca1a20750
+2026-04-22 07:54:47 [INFO]: [server]: Request originated from https://localhost:8081
+2026-04-22 07:56:19 [INFO]: 🖊 PUT /api/v1/tools/44ff8a52-24b4-4fb9-bfc6-754e52626862
+2026-04-22 07:56:19 [INFO]: ⬆️ POST /api/v1/node-load-method/customTool
+2026-04-22 07:56:22 [INFO]: 🖊 PUT /api/v1/chatflows/7f5736f5-91db-4341-a2c5-1a1ca1a20750
+2026-04-22 07:56:45 [INFO]: ⬆️ POST /api/v1/prediction/7f5736f5-91db-4341-a2c5-1a1ca1a20750
+2026-04-22 07:56:45 [INFO]: [server]: Request originated from https://localhost:8081
+2026-04-22 07:57:51 [INFO]: 🖊 PUT /api/v1/tools/44ff8a52-24b4-4fb9-bfc6-754e52626862
+2026-04-22 07:57:52 [INFO]: ⬆️ POST /api/v1/node-load-method/customTool
+2026-04-22 07:57:53 [INFO]: 🖊 PUT /api/v1/chatflows/7f5736f5-91db-4341-a2c5-1a1ca1a20750
+2026-04-22 07:58:07 [INFO]: ⬆️ POST /api/v1/prediction/7f5736f5-91db-4341-a2c5-1a1ca1a20750
+2026-04-22 07:58:07 [INFO]: [server]: Request originated from https://localhost:8081
+2026-04-22 07:59:49 [INFO]: 🖊 PUT /api/v1/tools/44ff8a52-24b4-4fb9-bfc6-754e52626862
+2026-04-22 07:59:49 [INFO]: ⬆️ POST /api/v1/node-load-method/customTool
+2026-04-22 07:59:50 [INFO]: 🖊 PUT /api/v1/chatflows/7f5736f5-91db-4341-a2c5-1a1ca1a20750

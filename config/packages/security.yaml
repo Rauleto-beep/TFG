@@ -30,10 +30,12 @@ security:
             jwt: ~ 
 
     access_control:
-        # Quitamos "requires_channel: https" para que Docker no bloquee la comunicación interna
         - { path: ^/api/login_check, roles: PUBLIC_ACCESS }
         - { path: ^/api/register, roles: PUBLIC_ACCESS }
-        # Esta línea DEBE ir ANTES de la genérica de ^/api
-        - { path: ^/api/ai/crear, roles: IS_AUTHENTICATED_FULLY }
+        
+        # PERMITIMOS EL ACCESO PÚBLICO A LA IA
+        # Esta línea debe estar ARRIBA de ^/api
+        - { path: ^/api/ai, roles: PUBLIC_ACCESS }
+        
         - { path: ^/api, roles: IS_AUTHENTICATED_FULLY }
         - { path: ^/, roles: PUBLIC_ACCESS }

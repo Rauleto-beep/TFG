@@ -1,0 +1,185 @@
+2026-04-22 09:00:08 [INFO]: ⬆️ POST /api/v1/node-load-method/groqChat
+2026-04-22 09:00:08 [INFO]: ⬆️ POST /api/v1/node-load-method/customTool
+2026-04-22 09:00:08 [INFO]: ⬆️ POST /api/v1/node-load-method/chatGoogleGenerativeAI
+2026-04-22 09:00:18 [INFO]: 🖊 PUT /api/v1/chatflows/7f5736f5-91db-4341-a2c5-1a1ca1a20750
+2026-04-22 09:06:21 [INFO]: ⬆️ POST /api/v1/prediction/7f5736f5-91db-4341-a2c5-1a1ca1a20750
+2026-04-22 09:06:21 [INFO]: [server]: Request originated from https://localhost:8081
+2026-04-22 09:06:40 [INFO]: ⬆️ POST /api/v1/prediction/7f5736f5-91db-4341-a2c5-1a1ca1a20750
+2026-04-22 09:06:40 [INFO]: [server]: Request originated from https://localhost:8081
+2026-04-22 09:06:41 [INFO]: ⬆️ POST /api/v1/prediction/7f5736f5-91db-4341-a2c5-1a1ca1a20750
+2026-04-22 09:06:41 [INFO]: [server]: Request originated from https://localhost:8081
+2026-04-22 09:07:53 [INFO]: ⬆️ POST /api/v1/prediction/7f5736f5-91db-4341-a2c5-1a1ca1a20750
+2026-04-22 09:07:53 [INFO]: [server]: Request originated from https://localhost:8081
+2026-04-22 09:08:14 [ERROR]: [server]:3daa061b-8913-453e-9c86-f8248e12ebbb/7f5736f5-91db-4341-a2c5-1a1ca1a20750/511a2d40-608f-4fdb-823a-81192982c28f Error: 429 {"error":{"message":"Rate limit reached for model `llama-3.3-70b-versatile` in organization `org_01kp63j5hfe20a9jty5cv8dpr3` service tier `on_demand` on tokens per day (TPD): Limit 100000, Used 99743, Requested 766. Please try again in 7m19.776s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing","type":"tokens","code":"rate_limit_exceeded"}}
+Error: 429 {"error":{"message":"Rate limit reached for model `llama-3.3-70b-versatile` in organization `org_01kp63j5hfe20a9jty5cv8dpr3` service tier `on_demand` on tokens per day (TPD): Limit 100000, Used 99743, Requested 766. Please try again in 7m19.776s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing","type":"tokens","code":"rate_limit_exceeded"}}
+    at APIError.generate (/usr/local/lib/node_modules/flowise/node_modules/@langchain/groq/node_modules/groq-sdk/error.js:58:20)
+    at Groq.makeStatusError (/usr/local/lib/node_modules/flowise/node_modules/@langchain/groq/node_modules/groq-sdk/core.js:291:33)
+    at Groq.makeRequest (/usr/local/lib/node_modules/flowise/node_modules/@langchain/groq/node_modules/groq-sdk/core.js:335:30)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async Object.pRetry [as default] (/usr/local/lib/node_modules/flowise/node_modules/@langchain/core/dist/utils/p-retry/index.cjs:122:19)
+    at async run (/usr/local/lib/node_modules/flowise/node_modules/p-queue/dist/index.js:163:29)
+2026-04-22 09:08:24 [ERROR]: [server]:3daa061b-8913-453e-9c86-f8248e12ebbb/7f5736f5-91db-4341-a2c5-1a1ca1a20750/734c49bf-3b4f-46a7-bc76-911a6a0889a8 Error: 429 {"error":{"message":"Rate limit reached for model `llama-3.3-70b-versatile` in organization `org_01kp63j5hfe20a9jty5cv8dpr3` service tier `on_demand` on tokens per day (TPD): Limit 100000, Used 99732, Requested 905. Please try again in 9m10.367999999s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing","type":"tokens","code":"rate_limit_exceeded"}}
+Error: 429 {"error":{"message":"Rate limit reached for model `llama-3.3-70b-versatile` in organization `org_01kp63j5hfe20a9jty5cv8dpr3` service tier `on_demand` on tokens per day (TPD): Limit 100000, Used 99732, Requested 905. Please try again in 9m10.367999999s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing","type":"tokens","code":"rate_limit_exceeded"}}
+    at APIError.generate (/usr/local/lib/node_modules/flowise/node_modules/@langchain/groq/node_modules/groq-sdk/error.js:58:20)
+    at Groq.makeStatusError (/usr/local/lib/node_modules/flowise/node_modules/@langchain/groq/node_modules/groq-sdk/core.js:291:33)
+    at Groq.makeRequest (/usr/local/lib/node_modules/flowise/node_modules/@langchain/groq/node_modules/groq-sdk/core.js:335:30)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async Object.pRetry [as default] (/usr/local/lib/node_modules/flowise/node_modules/@langchain/core/dist/utils/p-retry/index.cjs:122:19)
+    at async run (/usr/local/lib/node_modules/flowise/node_modules/p-queue/dist/index.js:163:29)
+2026-04-22 09:09:08 [ERROR]: [server]:3daa061b-8913-453e-9c86-f8248e12ebbb/7f5736f5-91db-4341-a2c5-1a1ca1a20750/4ed611bf-7c2b-4a41-a6b0-ad1596243185 Error: 429 {"error":{"message":"Rate limit reached for model `llama-3.3-70b-versatile` in organization `org_01kp63j5hfe20a9jty5cv8dpr3` service tier `on_demand` on tokens per day (TPD): Limit 100000, Used 99682, Requested 766. Please try again in 6m27.071999999s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing","type":"tokens","code":"rate_limit_exceeded"}}
+Error: 429 {"error":{"message":"Rate limit reached for model `llama-3.3-70b-versatile` in organization `org_01kp63j5hfe20a9jty5cv8dpr3` service tier `on_demand` on tokens per day (TPD): Limit 100000, Used 99682, Requested 766. Please try again in 6m27.071999999s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing","type":"tokens","code":"rate_limit_exceeded"}}
+    at APIError.generate (/usr/local/lib/node_modules/flowise/node_modules/@langchain/groq/node_modules/groq-sdk/error.js:58:20)
+    at Groq.makeStatusError (/usr/local/lib/node_modules/flowise/node_modules/@langchain/groq/node_modules/groq-sdk/core.js:291:33)
+    at Groq.makeRequest (/usr/local/lib/node_modules/flowise/node_modules/@langchain/groq/node_modules/groq-sdk/core.js:335:30)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async Object.pRetry [as default] (/usr/local/lib/node_modules/flowise/node_modules/@langchain/core/dist/utils/p-retry/index.cjs:122:19)
+    at async run (/usr/local/lib/node_modules/flowise/node_modules/p-queue/dist/index.js:163:29)
+2026-04-22 09:10:56 [INFO]: 🖊 PUT /api/v1/credentials/efb1667d-5aab-4a17-b9a0-6f3ebc3d958d
+2026-04-22 09:10:57 [INFO]: 🖊 PUT /api/v1/chatflows/7f5736f5-91db-4341-a2c5-1a1ca1a20750
+2026-04-22 09:11:12 [INFO]: ⬆️ POST /api/v1/prediction/7f5736f5-91db-4341-a2c5-1a1ca1a20750
+2026-04-22 09:11:12 [INFO]: [server]: Request originated from https://localhost:8081
+2026-04-22 09:12:50 [ERROR]: [server]:3daa061b-8913-453e-9c86-f8248e12ebbb/7f5736f5-91db-4341-a2c5-1a1ca1a20750/be9fe70b-8183-4d42-a3d5-85c51d9bc8c1 Error: 429 {"error":{"message":"Rate limit reached for model `llama-3.3-70b-versatile` in organization `org_01kp63j5hfe20a9jty5cv8dpr3` service tier `on_demand` on tokens per day (TPD): Limit 100000, Used 99424, Requested 2785. Please try again in 31m48.575999999s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing","type":"tokens","code":"rate_limit_exceeded"}}
+Error: 429 {"error":{"message":"Rate limit reached for model `llama-3.3-70b-versatile` in organization `org_01kp63j5hfe20a9jty5cv8dpr3` service tier `on_demand` on tokens per day (TPD): Limit 100000, Used 99424, Requested 2785. Please try again in 31m48.575999999s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing","type":"tokens","code":"rate_limit_exceeded"}}
+    at APIError.generate (/usr/local/lib/node_modules/flowise/node_modules/@langchain/groq/node_modules/groq-sdk/error.js:58:20)
+    at Groq.makeStatusError (/usr/local/lib/node_modules/flowise/node_modules/@langchain/groq/node_modules/groq-sdk/core.js:291:33)
+    at Groq.makeRequest (/usr/local/lib/node_modules/flowise/node_modules/@langchain/groq/node_modules/groq-sdk/core.js:335:30)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async Object.pRetry [as default] (/usr/local/lib/node_modules/flowise/node_modules/@langchain/core/dist/utils/p-retry/index.cjs:122:19)
+    at async run (/usr/local/lib/node_modules/flowise/node_modules/p-queue/dist/index.js:163:29)
+2026-04-22 09:14:59 [INFO]: ⬆️ POST /api/v1/prediction/7f5736f5-91db-4341-a2c5-1a1ca1a20750
+2026-04-22 09:14:59 [INFO]: [server]: Request originated from https://localhost:8081
+2026-04-22 09:16:29 [ERROR]: [server]:3daa061b-8913-453e-9c86-f8248e12ebbb/7f5736f5-91db-4341-a2c5-1a1ca1a20750/596b8e47-17be-42df-aca8-731b44beb2bf Error: 429 {"error":{"message":"Rate limit reached for model `llama-3.3-70b-versatile` in organization `org_01kp63j5hfe20a9jty5cv8dpr3` service tier `on_demand` on tokens per day (TPD): Limit 100000, Used 99170, Requested 2785. Please try again in 28m9.12s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing","type":"tokens","code":"rate_limit_exceeded"}}
+Error: 429 {"error":{"message":"Rate limit reached for model `llama-3.3-70b-versatile` in organization `org_01kp63j5hfe20a9jty5cv8dpr3` service tier `on_demand` on tokens per day (TPD): Limit 100000, Used 99170, Requested 2785. Please try again in 28m9.12s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing","type":"tokens","code":"rate_limit_exceeded"}}
+    at APIError.generate (/usr/local/lib/node_modules/flowise/node_modules/@langchain/groq/node_modules/groq-sdk/error.js:58:20)
+    at Groq.makeStatusError (/usr/local/lib/node_modules/flowise/node_modules/@langchain/groq/node_modules/groq-sdk/core.js:291:33)
+    at Groq.makeRequest (/usr/local/lib/node_modules/flowise/node_modules/@langchain/groq/node_modules/groq-sdk/core.js:335:30)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async Object.pRetry [as default] (/usr/local/lib/node_modules/flowise/node_modules/@langchain/core/dist/utils/p-retry/index.cjs:122:19)
+    at async run (/usr/local/lib/node_modules/flowise/node_modules/p-queue/dist/index.js:163:29)
+2026-04-22 09:20:09 [INFO]: 🖊 PUT /api/v1/tools/44ff8a52-24b4-4fb9-bfc6-754e52626862
+2026-04-22 09:20:09 [INFO]: ⬆️ POST /api/v1/node-load-method/customTool
+2026-04-22 09:20:10 [INFO]: 🖊 PUT /api/v1/chatflows/7f5736f5-91db-4341-a2c5-1a1ca1a20750
+2026-04-22 09:20:24 [INFO]: ⬆️ POST /api/v1/prediction/7f5736f5-91db-4341-a2c5-1a1ca1a20750
+2026-04-22 09:20:24 [INFO]: [server]: Request originated from https://localhost:8081
+2026-04-22 09:21:44 [ERROR]: [server]:3daa061b-8913-453e-9c86-f8248e12ebbb/7f5736f5-91db-4341-a2c5-1a1ca1a20750/f7816e92-db14-4f78-bc0e-9ee41cb0f998 Error: 429 {"error":{"message":"Rate limit reached for model `llama-3.3-70b-versatile` in organization `org_01kp63j5hfe20a9jty5cv8dpr3` service tier `on_demand` on tokens per day (TPD): Limit 100000, Used 98806, Requested 2785. Please try again in 22m54.624s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing","type":"tokens","code":"rate_limit_exceeded"}}
+Error: 429 {"error":{"message":"Rate limit reached for model `llama-3.3-70b-versatile` in organization `org_01kp63j5hfe20a9jty5cv8dpr3` service tier `on_demand` on tokens per day (TPD): Limit 100000, Used 98806, Requested 2785. Please try again in 22m54.624s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing","type":"tokens","code":"rate_limit_exceeded"}}
+    at APIError.generate (/usr/local/lib/node_modules/flowise/node_modules/@langchain/groq/node_modules/groq-sdk/error.js:58:20)
+    at Groq.makeStatusError (/usr/local/lib/node_modules/flowise/node_modules/@langchain/groq/node_modules/groq-sdk/core.js:291:33)
+    at Groq.makeRequest (/usr/local/lib/node_modules/flowise/node_modules/@langchain/groq/node_modules/groq-sdk/core.js:335:30)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async Object.pRetry [as default] (/usr/local/lib/node_modules/flowise/node_modules/@langchain/core/dist/utils/p-retry/index.cjs:122:19)
+    at async run (/usr/local/lib/node_modules/flowise/node_modules/p-queue/dist/index.js:163:29)
+2026-04-22 09:22:49 [INFO]: 🖊 PUT /api/v1/tools/44ff8a52-24b4-4fb9-bfc6-754e52626862
+2026-04-22 09:22:49 [INFO]: ⬆️ POST /api/v1/node-load-method/customTool
+2026-04-22 09:22:50 [INFO]: 🖊 PUT /api/v1/chatflows/7f5736f5-91db-4341-a2c5-1a1ca1a20750
+2026-04-22 09:23:17 [INFO]: 🖊 PUT /api/v1/credentials/efb1667d-5aab-4a17-b9a0-6f3ebc3d958d
+2026-04-22 09:23:18 [INFO]: 🖊 PUT /api/v1/chatflows/7f5736f5-91db-4341-a2c5-1a1ca1a20750
+2026-04-22 09:23:35 [INFO]: ⬆️ POST /api/v1/prediction/7f5736f5-91db-4341-a2c5-1a1ca1a20750
+2026-04-22 09:23:35 [INFO]: [server]: Request originated from https://localhost:8081
+2026-04-22 09:24:12 [INFO]: ❌ DELETE /api/v1/chatmessage/7f5736f5-91db-4341-a2c5-1a1ca1a20750?chatflowid=7f5736f5-91db-4341-a2c5-1a1ca1a20750&isClearFromViewMessageDialog=true&startDate=2026-03-22T10:24:09.737Z&endDate=2026-04-22T09:24:09.737Z&hardDelete=true
+2026-04-22 09:24:59 [ERROR]: [server]:3daa061b-8913-453e-9c86-f8248e12ebbb/7f5736f5-91db-4341-a2c5-1a1ca1a20750/b843b13b-2d1f-4356-ab7c-7ea43d0b8183 Error: 429 {"error":{"message":"Rate limit reached for model `llama-3.3-70b-versatile` in organization `org_01kp63j5hfe20a9jty5cv8dpr3` service tier `on_demand` on tokens per day (TPD): Limit 100000, Used 98581, Requested 2785. Please try again in 19m40.224s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing","type":"tokens","code":"rate_limit_exceeded"}}
+Error: 429 {"error":{"message":"Rate limit reached for model `llama-3.3-70b-versatile` in organization `org_01kp63j5hfe20a9jty5cv8dpr3` service tier `on_demand` on tokens per day (TPD): Limit 100000, Used 98581, Requested 2785. Please try again in 19m40.224s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing","type":"tokens","code":"rate_limit_exceeded"}}
+    at APIError.generate (/usr/local/lib/node_modules/flowise/node_modules/@langchain/groq/node_modules/groq-sdk/error.js:58:20)
+    at Groq.makeStatusError (/usr/local/lib/node_modules/flowise/node_modules/@langchain/groq/node_modules/groq-sdk/core.js:291:33)
+    at Groq.makeRequest (/usr/local/lib/node_modules/flowise/node_modules/@langchain/groq/node_modules/groq-sdk/core.js:335:30)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async Object.pRetry [as default] (/usr/local/lib/node_modules/flowise/node_modules/@langchain/core/dist/utils/p-retry/index.cjs:122:19)
+    at async run (/usr/local/lib/node_modules/flowise/node_modules/p-queue/dist/index.js:163:29)
+2026-04-22 09:43:00 [INFO]: ⬆️ POST /api/v1/prediction/7f5736f5-91db-4341-a2c5-1a1ca1a20750
+2026-04-22 09:43:00 [INFO]: [server]: Request originated from https://localhost:8081
+2026-04-22 09:44:22 [ERROR]: [server]:3daa061b-8913-453e-9c86-f8248e12ebbb/7f5736f5-91db-4341-a2c5-1a1ca1a20750/2d4141a8-213c-4c5b-927a-2fdb0b7ecf1d Error: 429 {"error":{"message":"Rate limit reached for model `llama-3.3-70b-versatile` in organization `org_01kp63j5hfe20a9jty5cv8dpr3` service tier `on_demand` on tokens per day (TPD): Limit 100000, Used 97234, Requested 2784. Please try again in 15.552s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing","type":"tokens","code":"rate_limit_exceeded"}}
+Error: 429 {"error":{"message":"Rate limit reached for model `llama-3.3-70b-versatile` in organization `org_01kp63j5hfe20a9jty5cv8dpr3` service tier `on_demand` on tokens per day (TPD): Limit 100000, Used 97234, Requested 2784. Please try again in 15.552s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing","type":"tokens","code":"rate_limit_exceeded"}}
+    at APIError.generate (/usr/local/lib/node_modules/flowise/node_modules/@langchain/groq/node_modules/groq-sdk/error.js:58:20)
+    at Groq.makeStatusError (/usr/local/lib/node_modules/flowise/node_modules/@langchain/groq/node_modules/groq-sdk/core.js:291:33)
+    at Groq.makeRequest (/usr/local/lib/node_modules/flowise/node_modules/@langchain/groq/node_modules/groq-sdk/core.js:335:30)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async Object.pRetry [as default] (/usr/local/lib/node_modules/flowise/node_modules/@langchain/core/dist/utils/p-retry/index.cjs:122:19)
+    at async run (/usr/local/lib/node_modules/flowise/node_modules/p-queue/dist/index.js:163:29)
+2026-04-22 09:44:38 [INFO]: ⬆️ POST /api/v1/auth/refreshToken
+2026-04-22 09:44:38 [INFO]: 🖊 PUT /api/v1/chatflows/7f5736f5-91db-4341-a2c5-1a1ca1a20750
+2026-04-22 09:44:46 [INFO]: ⬆️ POST /api/v1/prediction/7f5736f5-91db-4341-a2c5-1a1ca1a20750
+2026-04-22 09:44:46 [INFO]: [server]: Request originated from https://localhost:8081
+2026-04-22 09:45:45 [INFO]: 🖊 PUT /api/v1/chatflows/7f5736f5-91db-4341-a2c5-1a1ca1a20750
+2026-04-22 09:45:55 [INFO]: ⬆️ POST /api/v1/prediction/7f5736f5-91db-4341-a2c5-1a1ca1a20750
+2026-04-22 09:45:55 [INFO]: [server]: Request originated from https://localhost:8081
+2026-04-22 09:46:25 [ERROR]: [server]:3daa061b-8913-453e-9c86-f8248e12ebbb/7f5736f5-91db-4341-a2c5-1a1ca1a20750/bb18749f-e084-4370-bd68-50190d39f8e3 Error: 429 {"error":{"message":"Rate limit reached for model `llama-3.3-70b-versatile` in organization `org_01kp63j5hfe20a9jty5cv8dpr3` service tier `on_demand` on tokens per day (TPD): Limit 100000, Used 99991, Requested 2888. Please try again in 41m27.456s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing","type":"tokens","code":"rate_limit_exceeded"}}
+Error: 429 {"error":{"message":"Rate limit reached for model `llama-3.3-70b-versatile` in organization `org_01kp63j5hfe20a9jty5cv8dpr3` service tier `on_demand` on tokens per day (TPD): Limit 100000, Used 99991, Requested 2888. Please try again in 41m27.456s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing","type":"tokens","code":"rate_limit_exceeded"}}
+    at APIError.generate (/usr/local/lib/node_modules/flowise/node_modules/@langchain/groq/node_modules/groq-sdk/error.js:58:20)
+    at Groq.makeStatusError (/usr/local/lib/node_modules/flowise/node_modules/@langchain/groq/node_modules/groq-sdk/core.js:291:33)
+    at Groq.makeRequest (/usr/local/lib/node_modules/flowise/node_modules/@langchain/groq/node_modules/groq-sdk/core.js:335:30)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async Object.pRetry [as default] (/usr/local/lib/node_modules/flowise/node_modules/@langchain/core/dist/utils/p-retry/index.cjs:122:19)
+    at async run (/usr/local/lib/node_modules/flowise/node_modules/p-queue/dist/index.js:163:29)
+2026-04-22 09:47:01 [INFO]: 🖊 PUT /api/v1/tools/44ff8a52-24b4-4fb9-bfc6-754e52626862
+2026-04-22 09:47:01 [INFO]: ⬆️ POST /api/v1/node-load-method/customTool
+2026-04-22 09:47:23 [INFO]: 🖊 PUT /api/v1/chatflows/7f5736f5-91db-4341-a2c5-1a1ca1a20750
+2026-04-22 09:47:35 [INFO]: ⬆️ POST /api/v1/prediction/7f5736f5-91db-4341-a2c5-1a1ca1a20750
+2026-04-22 09:47:35 [INFO]: [server]: Request originated from https://localhost:8081
+2026-04-22 09:48:12 [ERROR]: [server]:3daa061b-8913-453e-9c86-f8248e12ebbb/7f5736f5-91db-4341-a2c5-1a1ca1a20750/f175a085-62e8-4e05-a62b-06432b0ccb16 Error: 429 {"error":{"message":"Rate limit reached for model `llama-3.3-70b-versatile` in organization `org_01kp63j5hfe20a9jty5cv8dpr3` service tier `on_demand` on tokens per day (TPD): Limit 100000, Used 99868, Requested 3730. Please try again in 51m48.672s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing","type":"tokens","code":"rate_limit_exceeded"}}
+Error: 429 {"error":{"message":"Rate limit reached for model `llama-3.3-70b-versatile` in organization `org_01kp63j5hfe20a9jty5cv8dpr3` service tier `on_demand` on tokens per day (TPD): Limit 100000, Used 99868, Requested 3730. Please try again in 51m48.672s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing","type":"tokens","code":"rate_limit_exceeded"}}
+    at APIError.generate (/usr/local/lib/node_modules/flowise/node_modules/@langchain/groq/node_modules/groq-sdk/error.js:58:20)
+    at Groq.makeStatusError (/usr/local/lib/node_modules/flowise/node_modules/@langchain/groq/node_modules/groq-sdk/core.js:291:33)
+    at Groq.makeRequest (/usr/local/lib/node_modules/flowise/node_modules/@langchain/groq/node_modules/groq-sdk/core.js:335:30)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async Object.pRetry [as default] (/usr/local/lib/node_modules/flowise/node_modules/@langchain/core/dist/utils/p-retry/index.cjs:122:19)
+    at async run (/usr/local/lib/node_modules/flowise/node_modules/p-queue/dist/index.js:163:29)
+2026-04-22 09:48:24 [INFO]: ⬆️ POST /api/v1/node-load-method/groqChat
+2026-04-22 09:48:50 [INFO]: ⬆️ POST /api/v1/credentials
+2026-04-22 09:48:54 [INFO]: ⬆️ POST /api/v1/node-load-method/groqChat
+2026-04-22 09:49:14 [ERROR]: [server]:3daa061b-8913-453e-9c86-f8248e12ebbb/7f5736f5-91db-4341-a2c5-1a1ca1a20750/28bc8c73-41d0-430c-95e2-6122fd073caf Error: 429 {"error":{"message":"Rate limit reached for model `llama-3.3-70b-versatile` in organization `org_01kp63j5hfe20a9jty5cv8dpr3` service tier `on_demand` on tokens per day (TPD): Limit 100000, Used 99796, Requested 688. Please try again in 6m58.176s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing","type":"tokens","code":"rate_limit_exceeded"}}
+Error: 429 {"error":{"message":"Rate limit reached for model `llama-3.3-70b-versatile` in organization `org_01kp63j5hfe20a9jty5cv8dpr3` service tier `on_demand` on tokens per day (TPD): Limit 100000, Used 99796, Requested 688. Please try again in 6m58.176s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing","type":"tokens","code":"rate_limit_exceeded"}}
+    at APIError.generate (/usr/local/lib/node_modules/flowise/node_modules/@langchain/groq/node_modules/groq-sdk/error.js:58:20)
+    at Groq.makeStatusError (/usr/local/lib/node_modules/flowise/node_modules/@langchain/groq/node_modules/groq-sdk/core.js:291:33)
+    at Groq.makeRequest (/usr/local/lib/node_modules/flowise/node_modules/@langchain/groq/node_modules/groq-sdk/core.js:335:30)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async Object.pRetry [as default] (/usr/local/lib/node_modules/flowise/node_modules/@langchain/core/dist/utils/p-retry/index.cjs:122:19)
+    at async run (/usr/local/lib/node_modules/flowise/node_modules/p-queue/dist/index.js:163:29)
+2026-04-22 09:49:22 [INFO]: ⬆️ POST /api/v1/node-load-method/customTool
+2026-04-22 09:51:43 [INFO]: ⬆️ POST /api/v1/tools
+2026-04-22 09:51:43 [INFO]: ⬆️ POST /api/v1/node-load-method/customTool
+2026-04-22 09:51:43 [INFO]: ⬆️ POST /api/v1/node-load-method/customTool
+2026-04-22 09:51:45 [INFO]: 🖊 PUT /api/v1/chatflows/fcb20894-0a45-47a8-8966-e00ab0fd340f
+2026-04-22 09:52:57 [INFO]: 🖊 PUT /api/v1/tools/ec8c7d16-a8f2-40e4-97e1-4ede056261ce
+2026-04-22 09:52:57 [INFO]: ⬆️ POST /api/v1/node-load-method/customTool
+2026-04-22 09:53:06 [INFO]: 🖊 PUT /api/v1/chatflows/fcb20894-0a45-47a8-8966-e00ab0fd340f
+2026-04-22 09:56:17 [INFO]: ⬆️ POST /api/v1/node-load-method/groqChat
+2026-04-22 09:56:17 [INFO]: ⬆️ POST /api/v1/node-load-method/customTool
+2026-04-22 09:56:17 [INFO]: ⬆️ POST /api/v1/node-load-method/chatGoogleGenerativeAI
+2026-04-22 09:56:36 [INFO]: 🖊 PUT /api/v1/tools/44ff8a52-24b4-4fb9-bfc6-754e52626862
+2026-04-22 09:56:36 [INFO]: ⬆️ POST /api/v1/node-load-method/customTool
+2026-04-22 09:56:36 [INFO]: 🖊 PUT /api/v1/chatflows/7f5736f5-91db-4341-a2c5-1a1ca1a20750
+2026-04-22 09:56:45 [INFO]: 🖊 PUT /api/v1/chatflows/7f5736f5-91db-4341-a2c5-1a1ca1a20750
+2026-04-22 09:56:59 [INFO]: ⬆️ POST /api/v1/prediction/7f5736f5-91db-4341-a2c5-1a1ca1a20750
+2026-04-22 09:56:59 [INFO]: [server]: Request originated from https://localhost:8081
+2026-04-22 09:57:16 [INFO]: ⬆️ POST /api/v1/prediction/7f5736f5-91db-4341-a2c5-1a1ca1a20750
+2026-04-22 09:57:16 [INFO]: [server]: Request originated from https://localhost:8081
+2026-04-22 09:58:08 [INFO]: ⬆️ POST /api/v1/prediction/7f5736f5-91db-4341-a2c5-1a1ca1a20750
+2026-04-22 09:58:08 [INFO]: [server]: Request originated from https://localhost:8081
+2026-04-22 09:58:42 [INFO]: ⬆️ POST /api/v1/prediction/7f5736f5-91db-4341-a2c5-1a1ca1a20750
+2026-04-22 09:58:42 [INFO]: [server]: Request originated from https://localhost:8081
+2026-04-22 09:58:54 [ERROR]: [server]:3daa061b-8913-453e-9c86-f8248e12ebbb/7f5736f5-91db-4341-a2c5-1a1ca1a20750/114c3ea1-f957-44c2-af8e-13a5b920893d Error: 429 {"error":{"message":"Rate limit reached for model `llama-3.3-70b-versatile` in organization `org_01kp63j5hfe20a9jty5cv8dpr3` service tier `on_demand` on tokens per day (TPD): Limit 100000, Used 99124, Requested 2678. Please try again in 25m56.928s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing","type":"tokens","code":"rate_limit_exceeded"}}
+Error: 429 {"error":{"message":"Rate limit reached for model `llama-3.3-70b-versatile` in organization `org_01kp63j5hfe20a9jty5cv8dpr3` service tier `on_demand` on tokens per day (TPD): Limit 100000, Used 99124, Requested 2678. Please try again in 25m56.928s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing","type":"tokens","code":"rate_limit_exceeded"}}
+    at APIError.generate (/usr/local/lib/node_modules/flowise/node_modules/@langchain/groq/node_modules/groq-sdk/error.js:58:20)
+    at Groq.makeStatusError (/usr/local/lib/node_modules/flowise/node_modules/@langchain/groq/node_modules/groq-sdk/core.js:291:33)
+    at Groq.makeRequest (/usr/local/lib/node_modules/flowise/node_modules/@langchain/groq/node_modules/groq-sdk/core.js:335:30)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async Object.pRetry [as default] (/usr/local/lib/node_modules/flowise/node_modules/@langchain/core/dist/utils/p-retry/index.cjs:122:19)
+    at async run (/usr/local/lib/node_modules/flowise/node_modules/p-queue/dist/index.js:163:29)
+2026-04-22 09:58:56 [ERROR]: [server]:3daa061b-8913-453e-9c86-f8248e12ebbb/7f5736f5-91db-4341-a2c5-1a1ca1a20750/3fdc5700-3214-445a-a4e9-c401d1ae4b2f Error: 429 {"error":{"message":"Rate limit reached for model `llama-3.3-70b-versatile` in organization `org_01kp63j5hfe20a9jty5cv8dpr3` service tier `on_demand` on tokens per day (TPD): Limit 100000, Used 99122, Requested 2685. Please try again in 26m1.248s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing","type":"tokens","code":"rate_limit_exceeded"}}
+Error: 429 {"error":{"message":"Rate limit reached for model `llama-3.3-70b-versatile` in organization `org_01kp63j5hfe20a9jty5cv8dpr3` service tier `on_demand` on tokens per day (TPD): Limit 100000, Used 99122, Requested 2685. Please try again in 26m1.248s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing","type":"tokens","code":"rate_limit_exceeded"}}
+    at APIError.generate (/usr/local/lib/node_modules/flowise/node_modules/@langchain/groq/node_modules/groq-sdk/error.js:58:20)
+    at Groq.makeStatusError (/usr/local/lib/node_modules/flowise/node_modules/@langchain/groq/node_modules/groq-sdk/core.js:291:33)
+    at Groq.makeRequest (/usr/local/lib/node_modules/flowise/node_modules/@langchain/groq/node_modules/groq-sdk/core.js:335:30)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async Object.pRetry [as default] (/usr/local/lib/node_modules/flowise/node_modules/@langchain/core/dist/utils/p-retry/index.cjs:122:19)
+    at async run (/usr/local/lib/node_modules/flowise/node_modules/p-queue/dist/index.js:163:29)
+2026-04-22 09:59:31 [ERROR]: [server]:3daa061b-8913-453e-9c86-f8248e12ebbb/7f5736f5-91db-4341-a2c5-1a1ca1a20750/4fd8d488-6c5b-4024-a5cf-460438392738 Error: 429 {"error":{"message":"Rate limit reached for model `llama-3.3-70b-versatile` in organization `org_01kp63j5hfe20a9jty5cv8dpr3` service tier `on_demand` on tokens per day (TPD): Limit 100000, Used 99081, Requested 2685. Please try again in 25m25.823999999s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing","type":"tokens","code":"rate_limit_exceeded"}}
+Error: 429 {"error":{"message":"Rate limit reached for model `llama-3.3-70b-versatile` in organization `org_01kp63j5hfe20a9jty5cv8dpr3` service tier `on_demand` on tokens per day (TPD): Limit 100000, Used 99081, Requested 2685. Please try again in 25m25.823999999s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing","type":"tokens","code":"rate_limit_exceeded"}}
+    at APIError.generate (/usr/local/lib/node_modules/flowise/node_modules/@langchain/groq/node_modules/groq-sdk/error.js:58:20)
+    at Groq.makeStatusError (/usr/local/lib/node_modules/flowise/node_modules/@langchain/groq/node_modules/groq-sdk/core.js:291:33)
+    at Groq.makeRequest (/usr/local/lib/node_modules/flowise/node_modules/@langchain/groq/node_modules/groq-sdk/core.js:335:30)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async Object.pRetry [as default] (/usr/local/lib/node_modules/flowise/node_modules/@langchain/core/dist/utils/p-retry/index.cjs:122:19)
+    at async run (/usr/local/lib/node_modules/flowise/node_modules/p-queue/dist/index.js:163:29)
+2026-04-22 09:59:39 [INFO]: ⬆️ POST /api/v1/prediction/7f5736f5-91db-4341-a2c5-1a1ca1a20750
+2026-04-22 09:59:39 [INFO]: [server]: Request originated from https://localhost:8081
