@@ -226,12 +226,14 @@
     let { editarTarea,editar, datosTarea } = editarTareasUsuario();
     const { editarTareaConfirmada } = confirmarEdicionTareasUsuario();
 
+    //Se encarga de crear las tareas
     const manejarCreacion = async () => {
-        await crearTarea(); 
+        await crearTarea(); //Crea la tarea
         
-        await infoTareas(); 
-        await cantidadTareas();
+        await infoTareas(); //Una vez creada actualizamos el tablero para que se cree una 'card'
+        await cantidadTareas(); //Actualizamos tambien el numero de "Tarea existente"
         
+        //Limpiamos los campos en el DOM una vez creada la tarea
         document.getElementById("inputNombreTarea").value = "";
         document.getElementById("inputDescripcionTarea").value = "";
     };

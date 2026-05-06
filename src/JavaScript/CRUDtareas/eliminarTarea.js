@@ -7,7 +7,7 @@ export function eliminarTareasUsuario() {
         const token = localStorage.getItem("jwt_token");
 
         try {
-            // 2. Usamos await para la respuesta
+            //Usamos await para la respuesta
             const respuesta = await fetch('https://localhost:8081/api/tarea/eliminar', {
                 method: 'POST',
                 headers: {
@@ -17,10 +17,10 @@ export function eliminarTareasUsuario() {
                 body: JSON.stringify(id_tarea)
             });
 
-            // 3. Convertimos a JSON y lo guardamos en una variable
+            //Convertimos a JSON y lo guardamos en una variable
             const datos = await respuesta.json();
 
-            // 4. DEVOLVEMOS los datos hacia afuera de la función
+            //DEVOLVEMOS los datos hacia afuera de la función
             return datos; 
 
         } catch (error) {

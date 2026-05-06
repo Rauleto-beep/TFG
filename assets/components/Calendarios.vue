@@ -149,17 +149,18 @@ const formatearFecha = (fechaRaw) => {
 }
 
  const calendarOptions = ref({
-  plugins: [dayGridPlugin, timeGridPlugin, multiMonthPlugin],
-  initialView: 'multiMonthYear',
+  plugins: [dayGridPlugin, timeGridPlugin, multiMonthPlugin], //Tipo de visualizacion
+  initialView: 'multiMonthYear', //Visualizacion inicial
   headerToolbar: false, // Desactivamos el suyo para usar el de Tailwind
   themeSystem: 'standard',
   datesSet: (arg) => {
-    tituloActual.value = arg.view.title; // Titulo calendario
+    tituloActual.value = arg.view.title; // Titulo calendario con el mes actual
   },
+  //Estilos del calendario
   eventBackgroundColor: '#9333ea',
   eventBorderColor: 'transparent',
   contentHeight: 'auto',
-  events: []
+  events: [] //Rellenar el calendario con las tareas,esto se hace dinamicamente
 })
 
 
@@ -167,22 +168,21 @@ onMounted(async()=>{
     await infoTareas();
     if (tareas.value && tareas.value.length > 0) {
     const eventosProcesados = tareas.value.map(tarea => {
-      // Obtenemos el color hexadecimal de tu mapa
+      // Obtenemos el color hexadecimal del mapeo de las categorias
       const colorHex = mapaColores[tarea.color] || '#9333ea';
 
       return {
         start: formatearFecha(tarea.fecha_vencimiento),
-        // ESTO ES LO CLAVE:
         display: 'background', 
         backgroundColor: colorHex,
-        // Opcional: puedes mantener los datos para tooltips
+        //Tooltips
         extendedProps: {
           descripcion: tarea.descripcion,
           categoria: tarea.nombre_categoria
         }
       };
     });
-
+    //Meter las tareas que llegan de infoTareas despues de haberlas procesado con las opciones que quiero para el calendario
     calendarOptions.value.events = eventosProcesados;
   }
 });

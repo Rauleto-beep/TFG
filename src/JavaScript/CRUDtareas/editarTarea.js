@@ -11,12 +11,12 @@ export function editarTareasUsuario() {
         let categoriaIdParaJson = null;
 
         if (selectCat) {
-            // BUSCAR EL ID: Buscamos entre las opciones la que tenga el texto igual a 'cat'
+            // Buscamos entre las opciones la que tenga el texto igual a 'cat'
             const opciones = Array.from(selectCat.options);
             const opcionEncontrada = opciones.find(opt => opt.text === cat);
 
             if (opcionEncontrada) {
-                selectCat.value = opcionEncontrada.value; // Selecciona el ID en el HTML (ej: "3")
+                selectCat.value = opcionEncontrada.value; // Selecciona el ID en el HTML
                 categoriaIdParaJson = parseInt(opcionEncontrada.value);
             } else {
                 selectCat.value = ""; // Si no hay coincidencia, "Ninguna"

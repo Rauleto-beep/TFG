@@ -4,7 +4,7 @@ export function crearTareasUsuario() {
     
     // La función principal debe ser ASYNC
     const crearTarea = async () => {
-    const token = localStorage.getItem("jwt_token");
+    const token = localStorage.getItem("jwt_token"); //Obtenemos el token
 
     // Capturamos los elementos
     const nombreTarea = document.getElementById("inputNombreTarea");
@@ -14,8 +14,10 @@ export function crearTareasUsuario() {
     const categoriaInput = document.getElementById("inputCategoria");
 
     try {
-
+        //Obtener el id de la categoria del desplegable del front
         const categoriaId = categoriaInput.value === "" ? null : parseInt(categoriaInput.value);
+
+        //JSON que se envia al controlador conm los datos
         const datosTarea = {
             "nombre_tarea": nombreTarea.value,
             "descripcion": descripcionTarea.value,
@@ -33,7 +35,7 @@ export function crearTareasUsuario() {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
-                'Authorization': `Bearer ${token}`
+                'Authorization': `Bearer ${token}` //Se envia el token para estaar autenticados
             },
             body: JSON.stringify(datosTarea)
         });
@@ -44,5 +46,5 @@ export function crearTareasUsuario() {
     }
 };
 
-    return { crearTarea };
+    return { crearTarea }; //Se devuelve la funcion exportada para que Vue la utilice
 }

@@ -1,0 +1,25 @@
+2026-04-23 10:35:14 [INFO]: Starting Flowise...
+2026-04-23 10:35:14 [INFO]: 📦 [server]: Data Source initialized successfully
+2026-04-23 10:35:14 [INFO]: 🔄 [server]: Database migrations completed successfully
+2026-04-23 10:35:14 [INFO]: 🔐 [server]: Identity Manager initialized successfully
+2026-04-23 10:35:19 [INFO]: 🔧 [server]: Nodes pool initialized successfully
+2026-04-23 10:35:19 [INFO]: ⏹️ [server]: Abort controllers pool initialized successfully
+2026-04-23 10:35:19 [INFO]: 🔑 [server]: Encryption key initialized successfully
+2026-04-23 10:35:19 [INFO]: 🔐 [server]: Auth initialized successfully
+2026-04-23 10:35:19 [INFO]: 🚦 [server]: Rate limiters initialized successfully
+2026-04-23 10:35:19 [INFO]: 💾 [server]: Cache pool initialized successfully
+2026-04-23 10:35:19 [INFO]: 📊 [server]: Usage cache manager initialized successfully
+2026-04-23 10:35:19 [INFO]: 📈 [server]: Telemetry initialized successfully
+2026-04-23 10:35:19 [INFO]: 🌊 [server]: SSE Streamer initialized successfully
+2026-04-23 10:35:19 [INFO]: 🎉 [server]: All initialization steps completed successfully!
+2026-04-23 10:35:19 [INFO]: ⚡️ [server]: Flowise Server is listening at :3000
+2026-04-23 10:55:40 [INFO]: ⬆️ POST /api/v1/prediction/fcb20894-0a45-47a8-8966-e00ab0fd340f
+2026-04-23 10:55:40 [INFO]: [server]: Request originated from https://localhost:8081
+2026-04-23 10:57:05 [ERROR]: [server]:3daa061b-8913-453e-9c86-f8248e12ebbb/fcb20894-0a45-47a8-8966-e00ab0fd340f/b25daf11-b421-44b2-a046-102251aada93 Error: 413 {"error":{"message":"Request too large for model `llama-3.1-8b-instant` in organization `org_01kp63j5hfe20a9jty5cv8dpr3` service tier `on_demand` on tokens per minute (TPM): Limit 6000, Requested 7085, please reduce your message size and try again. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing","type":"tokens","code":"rate_limit_exceeded"}}
+Error: 413 {"error":{"message":"Request too large for model `llama-3.1-8b-instant` in organization `org_01kp63j5hfe20a9jty5cv8dpr3` service tier `on_demand` on tokens per minute (TPM): Limit 6000, Requested 7085, please reduce your message size and try again. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing","type":"tokens","code":"rate_limit_exceeded"}}
+    at APIError.generate (/usr/local/lib/node_modules/flowise/node_modules/@langchain/groq/node_modules/groq-sdk/error.js:63:16)
+    at Groq.makeStatusError (/usr/local/lib/node_modules/flowise/node_modules/@langchain/groq/node_modules/groq-sdk/core.js:291:33)
+    at Groq.makeRequest (/usr/local/lib/node_modules/flowise/node_modules/@langchain/groq/node_modules/groq-sdk/core.js:335:30)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async Object.pRetry [as default] (/usr/local/lib/node_modules/flowise/node_modules/@langchain/core/dist/utils/p-retry/index.cjs:122:19)
+    at async run (/usr/local/lib/node_modules/flowise/node_modules/p-queue/dist/index.js:163:29)

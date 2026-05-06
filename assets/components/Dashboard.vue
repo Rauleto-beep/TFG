@@ -352,8 +352,9 @@ const manejarEnvioChat = async () => {
     cargandoIA.value = false;
   }
 };
-
+//Asistente
 const enviarMensajeAlBot = async (textoUsuario) => {
+  //enviamos al asistente que esta en flowise
   const URL_FLOWISE = "http://localhost:3005/api/v1/prediction/7f5736f5-91db-4341-a2c5-1a1ca1a20750";
 
   const response = await fetch(URL_FLOWISE, {
@@ -380,7 +381,7 @@ const ejecutarAnalisisEstrategico = async () => {
     });
     
     const data = await response.json();
-    mensajeAgenteEstratega.value = data.text;
+    mensajeAgenteEstratega.value = data.text; //Hacer visible el mensaje del agente
   } catch (error) {
     mensajeAgenteEstratega.value = "Error al sincronizar con el estratega.";
   } finally {

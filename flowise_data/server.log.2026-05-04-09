@@ -1,0 +1,3 @@
+2026-05-04 09:21:43 [INFO]: ⬆️ POST /api/v1/prediction/fcb20894-0a45-47a8-8966-e00ab0fd340f
+2026-05-04 09:21:43 [INFO]: [server]: Request originated from https://localhost:8081
+2026-05-04 09:28:28 [INFO]: Shutting down Flowise...

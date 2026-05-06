@@ -69,7 +69,7 @@ class TareaRepository extends ServiceEntityRepository
             'grupoId' => $datos['grupo_id'] ?? null,
         ];
         $this->getEntityManager()->getConnection()->executeQuery($sql, $params);
-
+        
         $sqlTareaUsuario = "INSERT INTO tarea_usuario (tarea_id,usuario_id)  VALUES  (:tarea,:usuario)";
         $tareaId = $this->getEntityManager()->getConnection()->lastInsertId();
         $paramsTareaUsuario = [

@@ -47,3 +47,4 @@
 2026-04-22 19:20:06 [INFO]: [server]: Request originated from https://localhost:8081
 2026-04-22 19:21:08 [INFO]: ⬆️ POST /api/v1/prediction/fcb20894-0a45-47a8-8966-e00ab0fd340f
 2026-04-22 19:21:08 [INFO]: [server]: Request originated from https://localhost:8081
+2026-04-22 19:26:26 [INFO]: Shutting down Flowise...
